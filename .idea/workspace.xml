@@ -7,11 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e8c7a6c3-241a-4e22-b1b4-8951a39ac884" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/02_Simple_App/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01_Hello_JavaEE.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/index.html" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/02_Simple_App/web/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Simple_App/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/02_Simple_App/src/MyClass.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +48,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "D:/IJSE/Second Semester/AAD (Advance API Development)/Java-Enterprise-Edition/01_Hello_JavaEE",
+    "last_opened_file_path": "D:/IJSE/Second Semester/AAD (Advance API Development)/Java-Enterprise-Edition/02_Simple_App/web",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
@@ -59,13 +56,18 @@
     "settings.editor.selected.configurable": "inlay.hints"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IJSE\Second Semester\AAD (Advance API Development)\Java-Enterprise-Edition\02_Simple_App\web" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Tomcat 8.5.83" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.83" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="App_01">
+        <artifact name="App_02">
           <settings>
-            <option name="CONTEXT_PATH" value="/App_01" />
+            <option name="CONTEXT_PATH" value="/App_02" />
           </settings>
         </artifact>
       </deployment>
@@ -144,6 +146,7 @@
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
           <artifact name="App_01" />
+          <artifact name="App_02" />
         </option>
       </method>
     </configuration>
@@ -161,7 +164,7 @@
       <workItem from="1669068942304" duration="242000" />
       <workItem from="1669120195302" duration="165000" />
       <workItem from="1669138384137" duration="71000" />
-      <workItem from="1669138473860" duration="560000" />
+      <workItem from="1669138473860" duration="749000" />
     </task>
     <servers />
   </component>
