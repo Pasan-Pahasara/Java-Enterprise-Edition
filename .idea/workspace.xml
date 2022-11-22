@@ -3,12 +3,18 @@
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
       <artifact name="App_01" />
+      <artifact name="App_02" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e8c7a6c3-241a-4e22-b1b4-8951a39ac884" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/02_Simple_App/web/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/02_Simple_App/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/02_Simple_App/src/MyClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03_Simple_App/03_Simple_App.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03_Simple_App/src/CustomerServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03_Simple_App/web/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03_Simple_App/web/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,11 +52,12 @@
     "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "1.8",
     "last_opened_file_path": "D:/IJSE/Second Semester/AAD (Advance API Development)/Java-Enterprise-Edition/02_Simple_App/web",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "inlay.hints"
@@ -65,9 +72,9 @@
     <configuration name="Tomcat 8.5.83" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.83" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="App_02">
+        <artifact name="App_03">
           <settings>
-            <option name="CONTEXT_PATH" value="/App_02" />
+            <option name="CONTEXT_PATH" value="/App_03" />
           </settings>
         </artifact>
       </deployment>
@@ -146,7 +153,7 @@
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
           <artifact name="App_01" />
-          <artifact name="App_02" />
+          <artifact name="App_03" />
         </option>
       </method>
     </configuration>
@@ -164,7 +171,7 @@
       <workItem from="1669068942304" duration="242000" />
       <workItem from="1669120195302" duration="165000" />
       <workItem from="1669138384137" duration="71000" />
-      <workItem from="1669138473860" duration="749000" />
+      <workItem from="1669138473860" duration="1234000" />
     </task>
     <servers />
   </component>
