@@ -8,14 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e8c7a6c3-241a-4e22-b1b4-8951a39ac884" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/artifacts/App_03/App_03.war" beforeDir="false" afterPath="$PROJECT_DIR$/artifacts/App_03/App_03.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/App_01/App_01.war" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/App_01/App_01.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/App_02/App_02.war" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/01_Hello_JavaEE/MyClass.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/02_Simple_App/MyClass.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/03_Simple_App/CustomerServlet.class" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/04_Simple_App/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +166,7 @@
       <workItem from="1669068942304" duration="242000" />
       <workItem from="1669120195302" duration="165000" />
       <workItem from="1669138384137" duration="71000" />
-      <workItem from="1669138473860" duration="1822000" />
+      <workItem from="1669138473860" duration="2160000" />
     </task>
     <servers />
   </component>
