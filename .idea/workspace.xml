@@ -3,18 +3,19 @@
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
       <artifact name="App_01" />
-      <artifact name="App_02" />
+      <artifact name="App_03" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e8c7a6c3-241a-4e22-b1b4-8951a39ac884" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/03_Simple_App/03_Simple_App.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/03_Simple_App/src/CustomerServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/03_Simple_App/web/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/03_Simple_App/web/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artifacts/App_03/App_03.war" beforeDir="false" afterPath="$PROJECT_DIR$/artifacts/App_03/App_03.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/App_01/App_01.war" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/App_01/App_01.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/App_02/App_02.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/01_Hello_JavaEE/MyClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/02_Simple_App/MyClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/03_Simple_App/CustomerServlet.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +172,7 @@
       <workItem from="1669068942304" duration="242000" />
       <workItem from="1669120195302" duration="165000" />
       <workItem from="1669138384137" duration="71000" />
-      <workItem from="1669138473860" duration="1234000" />
+      <workItem from="1669138473860" duration="1822000" />
     </task>
     <servers />
   </component>
