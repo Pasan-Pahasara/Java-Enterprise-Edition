@@ -158,7 +158,7 @@
         <!--Customer Manage Form-->
         <section class="col-xl-5 row justify-content-xl-end d-grid gap-2 d-md-flex justify-content-sm-center">
             <section class="col-8 border customer-container mt-3 mb-3">
-                <form id="customer-form">
+                <form id="customerForm">
                     <div style="display: inline-block" class="col d-grid gap-2 d-md-flex justify-content-md-end">
                         <button id="btnClear" type="button" class="btn-modern">Clear
                         </button>
@@ -170,33 +170,33 @@
                         </button>
                     </div>
                     <div class="mb-3">
-                        <label for="customerID" class="form-label">Customer ID</label>
-                        <input type="text" class="form-control prevent_tab_key_focus" id="customerID"
-                               aria-describedby="idHelp" placeholder="Eg :- C00-001">
+                        <label for="txtCustomerID" class="form-label">Customer ID</label>
+                        <input type="text" class="form-control prevent_tab_key_focus" id="txtCustomerID"
+                               aria-describedby="idHelp" placeholder="Eg :- C00-001" name="id">
                         <div id="idHelp" class="form-text"></div>
                     </div>
                     <div class="mb-3">
-                        <label for="customerName" class="form-label">Customer Name</label>
-                        <input type="text" class="form-control prevent_tab_key_focus" id="customerName"
-                               aria-describedby="nameHelp" placeholder="Eg :- Pahasara">
+                        <label for="txtCustomerName" class="form-label">Customer Name</label>
+                        <input type="text" class="form-control prevent_tab_key_focus" id="txtCustomerName"
+                               aria-describedby="nameHelp" placeholder="Eg :- Pahasara" name="name">
                         <div id="nameHelp" class="form-text"></div>
                     </div>
                     <div class="mb-3">
-                        <label for="customerAddress" class="form-label">Address</label>
-                        <input type="text" class="form-control prevent_tab_key_focus" id="customerAddress"
-                               aria-describedby="addressHelp" placeholder="Eg :- N0/02, Godahena Watta, Galle">
+                        <label for="txtCustomerAddress" class="form-label">Address</label>
+                        <input type="text" class="form-control prevent_tab_key_focus" id="txtCustomerAddress"
+                               aria-describedby="addressHelp" placeholder="Eg :- N0/02, Godahena Watta, Galle" name="address">
                         <div id="addressHelp" class="form-text"></div>
                     </div>
                     <div class="mb-3">
-                        <label for="customerSalary" class="form-label">Salary</label>
-                        <input type="text" class="form-control prevent_tab_key_focus" id="customerSalary"
+                        <label for="txtCustomerSalary" class="form-label">Salary</label>
+                        <input type="text" class="form-control prevent_tab_key_focus" id="txtCustomerSalary"
                                aria-describedby="salaryHelp"
-                               placeholder="Eg :- 200 or 250.00">
+                               placeholder="Eg :- 200 or 250.00" name="salary">
                         <div id="salaryHelp" class="form-text"></div>
                     </div>
                     <div style="display: inline-block" class="me-2">
-                        <button style="margin-bottom: 8px;margin-top: 8px;" id="btnAddCustomer" type="button"
-                                class="btn-modern">+New Customer
+                        <button style="margin-bottom: 8px;margin-top: 8px;" id="btnCustomer" type="button"
+                                class="btn-modern" form="customerForm" formaction="customer">+New Customer
                         </button>
                     </div>
                     <div style="display: inline-block" class="me-2">
