@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/02_Simple_App/02_Simple_App.iml" filepath="$PROJECT_DIR$/02_Simple_App/02_Simple_App.iml" />
       <module fileurl="file://$PROJECT_DIR$/03_Simple_App/03_Simple_App.iml" filepath="$PROJECT_DIR$/03_Simple_App/03_Simple_App.iml" />
       <module fileurl="file://$PROJECT_DIR$/04_Simple_App/04_Simple_App.iml" filepath="$PROJECT_DIR$/04_Simple_App/04_Simple_App.iml" />
+      <module fileurl="file://$PROJECT_DIR$/05_Mapping-Spec/05_Mapping-Spec.iml" filepath="$PROJECT_DIR$/05_Mapping-Spec/05_Mapping-Spec.iml" />
     </modules>
   </component>
 </project>

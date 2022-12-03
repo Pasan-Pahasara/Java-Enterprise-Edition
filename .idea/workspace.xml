@@ -2,34 +2,43 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="App_01" />
-      <artifact name="App_04" />
+      <artifact name="App_02" />
+      <artifact name="App_05" />
     </artifacts-to-build>
   </component>
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8c7a6c3-241a-4e22-b1b4-8951a39ac884" name="Changes" comment="">
+    <list default="true" id="e6874a54-ab63-48b9-a207-592f90e7c0ee" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/Java-Enterprise-Edition.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/App_05.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_Mapping-Spec/05_Mapping-Spec.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_Mapping-Spec/src/servelet/CustomerServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_Mapping-Spec/src/servelet/DefaultMapping.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_Mapping-Spec/src/servelet/EmptyStringMapping.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_Mapping-Spec/src/servelet/ExtensionMapping.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_Mapping-Spec/src/servelet/MultipleURLMapping.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_Mapping-Spec/src/servelet/WildCardMapping.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_Mapping-Spec/web/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_Mapping-Spec/web/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/copyright/Pahasara.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/357bb4fe-f2e4-4632-88b1-b38113e40357.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/357bb4fe-f2e4-4632-88b1-b38113e40357/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/357bb4fe-f2e4-4632-88b1-b38113e40357/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/357bb4fe-f2e4-4632-88b1-b38113e40357/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/357bb4fe-f2e4-4632-88b1-b38113e40357/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04_Simple_App/src/servlet/CustomerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/04_Simple_App/src/servlet/CustomerServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04_Simple_App/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/04_Simple_App/web/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_Hello_JavaEE/01_Hello_JavaEE.iml" beforeDir="false" afterPath="$PROJECT_DIR$/01_Hello_JavaEE/01_Hello_JavaEE.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Simple_App/02_Simple_App.iml" beforeDir="false" afterPath="$PROJECT_DIR$/02_Simple_App/02_Simple_App.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="HTML File" />
-        <option value="CSS File" />
-        <option value="JavaScript File" />
-        <option value="Class" />
-        <option value="Jsp File" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -44,7 +53,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2HsGksNIlQ1cjtA0fCyfiIegDmu" />
+  <component name="ProjectId" id="2IPufSoJTAyYwHUnPi9CHeWOpqx" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -52,47 +61,35 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/IJSE/Second Semester/AAD (Advance API Development)/Java-Enterprise-Edition/lib/mysql-connector-j-8.0.31.jar&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/IJSE/Second Semester/AAD (Advance API Development)/Java-Enterprise-Edition/05_Mapping-Spec/web&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
-  },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
-    ]
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\IJSE\Second Semester\AAD (Advance API Development)\Java-Enterprise-Edition\04_Simple_App\web\assets\img" />
-      <recent name="D:\IJSE\Second Semester\AAD (Advance API Development)\Java-Enterprise-Edition\04_Simple_App\web\assets\css" />
-      <recent name="D:\IJSE\Second Semester\AAD (Advance API Development)\Java-Enterprise-Edition\04_Simple_App\web\assets" />
-      <recent name="D:\IJSE\Second Semester\AAD (Advance API Development)\Java-Enterprise-Edition\04_Simple_App\web\assets\js" />
-      <recent name="D:\IJSE\Second Semester\AAD (Advance API Development)\Java-Enterprise-Edition\04_Simple_App\web\assets\jQuery" />
+      <recent name="D:\IJSE\Second Semester\AAD (Advance API Development)\Java-Enterprise-Edition\05_Mapping-Spec\web" />
+      <recent name="D:\IJSE\Second Semester\AAD (Advance API Development)\Java-Enterprise-Edition\05_Mapping-Spec\src\servelet" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Tomcat 8.5.83" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.83" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+    <configuration name="Tomcat 8.5.83" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.83" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="App_04">
+        <artifact name="App_05">
           <settings>
-            <option name="CONTEXT_PATH" value="/App_04" />
+            <option name="CONTEXT_PATH" value="/App_05" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="79bfc693-4882-4665-ad9b-935162702b28" />
+        <option name="BASE_DIRECTORY_NAME" value="a57479af-e145-4e25-a4a2-30ec14d62af8" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -100,7 +97,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="13066" />
+        <option name="DEBUG_PORT" value="9368" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -165,8 +162,96 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="App_01" />
-          <artifact name="App_04" />
+          <artifact name="App_02" />
+          <artifact name="App_05" />
+        </option>
+      </method>
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="App_05">
+          <settings>
+            <option name="CONTEXT_PATH" value="/App_05" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="34867ffe-fc3e-430a-86f2-5acfa19bd642" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="9368" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="App_02" />
+          <artifact name="App_05" />
         </option>
       </method>
     </configuration>
@@ -174,31 +259,14 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e8c7a6c3-241a-4e22-b1b4-8951a39ac884" name="Changes" comment="" />
-      <created>1669066525856</created>
+      <changelist id="e6874a54-ab63-48b9-a207-592f90e7c0ee" name="Changes" comment="" />
+      <created>1670095642473</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1669066525856</updated>
-      <workItem from="1669066527200" duration="1652000" />
-      <workItem from="1669068196414" duration="712000" />
-      <workItem from="1669068942304" duration="242000" />
-      <workItem from="1669120195302" duration="165000" />
-      <workItem from="1669138384137" duration="71000" />
-      <workItem from="1669138473860" duration="2615000" />
-      <workItem from="1669148605492" duration="583000" />
-      <workItem from="1669177093378" duration="62000" />
-      <workItem from="1669181210944" duration="9000" />
-      <workItem from="1669344063383" duration="621000" />
-      <workItem from="1669831369540" duration="2966000" />
-      <workItem from="1669917257699" duration="818000" />
-      <workItem from="1669952107676" duration="11696000" />
-      <workItem from="1669974883151" duration="11877000" />
-      <workItem from="1669988096342" duration="1422000" />
-      <workItem from="1669997631266" duration="10622000" />
-      <workItem from="1670050818829" duration="2444000" />
-      <workItem from="1670072807247" duration="2974000" />
-      <workItem from="1670077702441" duration="1729000" />
-      <workItem from="1670088639586" duration="5512000" />
+      <updated>1670095642473</updated>
+      <workItem from="1670095643725" duration="926000" />
+      <workItem from="1670096587956" duration="562000" />
+      <workItem from="1670097300787" duration="89000" />
     </task>
     <servers />
   </component>
