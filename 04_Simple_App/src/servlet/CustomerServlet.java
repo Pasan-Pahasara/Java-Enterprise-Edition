@@ -22,29 +22,7 @@ import java.sql.SQLException;
 public class CustomerServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String id = req.getParameter("id");
-        String name = req.getParameter("name");
-        String address = req.getParameter("address");
-        double salary = Double.parseDouble(req.getParameter("salary"));
 
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JEPOS", "root", "1234");
-            PreparedStatement pstm = connection.prepareStatement("insert into Customer values(?,?,?,?)");
-            pstm.setObject(1, id);
-            pstm.setObject(2, name);
-            pstm.setObject(3, address);
-            pstm.setObject(4, salary);
-            boolean b = pstm.executeUpdate() > 0;
-
-            PrintWriter writer = resp.getWriter();
-            writer.write("<h1>Customer Added State : " + b + "</h1>");
-
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
     }
 
     @Override
@@ -53,20 +31,30 @@ public class CustomerServlet extends HttpServlet {
         String name = req.getParameter("name");
         String address = req.getParameter("address");
         double salary = Double.parseDouble(req.getParameter("salary"));
+        String option = req.getParameter("option");
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JEPOS", "root", "1234");
-            PreparedStatement pstm = connection.prepareStatement("insert into Customer values(?,?,?,?)");
-            pstm.setObject(1, id);
-            pstm.setObject(2, name);
-            pstm.setObject(3, address);
-            pstm.setObject(4, salary);
-            boolean b = pstm.executeUpdate() > 0;
-
-            PrintWriter writer = resp.getWriter();
-            writer.write("<h1>Customer Added State : " + b + "</h1>");
-
+            if (option.equals("add")) {
+                PreparedStatement pstm = connection.prepareStatement("insert into Customer values(?,?,?,?)");
+                pstm.setObject(1, id);
+                pstm.setObject(2, name);
+                pstm.setObject(3, address);
+                pstm.setObject(4, salary);
+                boolean b = pstm.executeUpdate() > 0;
+            } else if (option.equals("remove")) {
+                PreparedStatement pstm = connection.prepareStatement("delete from Customer where id=?");
+                pstm.setObject(1, id);
+                boolean b = pstm.executeUpdate() > 0;
+            } else if (option.equals("update")) {
+                PreparedStatement pstm = connection.prepareStatement("update Customer set name=?,address=?,salary=? where id=?");
+                pstm.setObject(4, id);
+                pstm.setObject(1, name);
+                pstm.setObject(2, address);
+                pstm.setObject(3, salary);
+                boolean b = pstm.executeUpdate() > 0;
+            }
             resp.sendRedirect("index.jsp");
 
         } catch (ClassNotFoundException e) {

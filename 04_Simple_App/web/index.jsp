@@ -43,7 +43,7 @@ To change this template use File | Settings | File Templates.
         String name = rst.getString("name");
         String address = rst.getString("address");
         double salary = rst.getDouble("salary");
-        allCustomers.add(new CustomerDTO(id,name,address,salary));
+        allCustomers.add(new CustomerDTO(id, name, address, salary));
     }
 %>
 
@@ -130,7 +130,9 @@ To change this template use File | Settings | File Templates.
                     </div>
 
                     <div class="col-1" style="width: max-content">
-                        <button id="btnAllCustomer" class="btn-modern" form="customerForm" formaction="index.jsp">Get All Customers</button>
+                        <button id="btnAllCustomer" class="btn-modern" form="customerForm" formaction="index.jsp">Get
+                            All Customers
+                        </button>
                     </div>
 
                     <div class="col-1" style="width: max-content">
@@ -191,8 +193,8 @@ To change this template use File | Settings | File Templates.
                         </button>
                     </div>
                     <div style="display: inline-block" class="col d-grid gap-2 d-md-flex justify-content-md-end">
-                        <button style="margin-bottom: 8px;margin-top: 8px;" id="btnDeleteCustomer" type="button"
-                                class="btn-modern">
+                        <button style="margin-bottom: 8px;margin-top: 8px;" id="btnDeleteCustomer" form="customerForm"
+                                formaction="customer?option=remove" formmethod="post" class="btn-modern">
                             Delete
                         </button>
                     </div>
@@ -224,12 +226,12 @@ To change this template use File | Settings | File Templates.
                     </div>
                     <div style="display: inline-block" class="me-2">
                         <button style="margin-bottom: 8px;margin-top: 8px;" id="btnCustomer" class="btn-modern"
-                                form="customerForm" formaction="customer" formmethod="post">+New Customer
+                                form="customerForm" formaction="customer?option=add" formmethod="post">+New Customer
                         </button>
                     </div>
                     <div style="display: inline-block" class="me-2">
-                        <button style="margin-bottom: 8px;margin-top: 8px;" id="btnUpdateCustomer" type="button"
-                                class="btn-modern">
+                        <button style="margin-bottom: 8px;margin-top: 8px;" id="btnUpdateCustomer" class="btn-modern"
+                                form="customerForm" formaction="customer?option=update" formmethod="post">
                             Update
                         </button>
                     </div>
@@ -250,6 +252,24 @@ To change this template use File | Settings | File Templates.
 
 <!-- Customer JS -->
 <script src="assets/js/customer.js"></script>
+
+<script>
+    function bindRowClickEvents() {
+        $("#tblCustomer>tr").click(function () {
+            let id = $(this).children(":eq(0)").text();
+            let name = $(this).children(":eq(1)").text();
+            let address = $(this).children(":eq(2)").text();
+            let salary = $(this).children(":eq(3)").text();
+            console.log(id, name, address, salary);
+            //setting table details values to text fields
+            $('#txtCustomerID').val(id);
+            $('#txtCustomerName').val(name);
+            $('#txtCustomerAddress').val(address);
+            $('#txtCustomerSalary').val(salary);
+        });
+    }
+    bindRowClickEvents();
+</script>
 </body>
 </html>
 
