@@ -16,7 +16,13 @@ import java.io.PrintWriter;
 public class CustomerServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println("Customer Saved");
+        String id = req.getParameter("id");
+        String name = req.getParameter("name");
+        String address = req.getParameter("address");
+        String salary = req.getParameter("salary");
+        System.out.println(id+" "+name+" "+address+" "+salary);
         PrintWriter writer = resp.getWriter();
-        writer.write("Response Generated");
+        writer.write("<h1>hello there</h1>");
     }
 }

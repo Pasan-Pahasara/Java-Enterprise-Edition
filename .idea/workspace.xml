@@ -6,10 +6,15 @@
       <artifact name="App_03" />
     </artifacts-to-build>
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="e8c7a6c3-241a-4e22-b1b4-8951a39ac884" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/04_Simple_App/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_Simple_App/web/assets/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/04_Simple_App/web/assets/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_Simple_App/web/assets/js/customer.js" beforeDir="false" afterPath="$PROJECT_DIR$/04_Simple_App/web/assets/js/customer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_Simple_App/web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/04_Simple_App/web/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +25,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -42,25 +49,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "D:/IJSE/Second Semester/AAD (Advance API Development)/Java-Enterprise-Edition/02_Simple_App/web",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "inlay.hints"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/IJSE/Second Semester/AAD (Advance API Development)/Java-Enterprise-Edition/04_Simple_App/web/assets/img&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\IJSE\Second Semester\AAD (Advance API Development)\Java-Enterprise-Edition\02_Simple_App\web" />
+      <recent name="D:\IJSE\Second Semester\AAD (Advance API Development)\Java-Enterprise-Edition\04_Simple_App\web\assets\img" />
+      <recent name="D:\IJSE\Second Semester\AAD (Advance API Development)\Java-Enterprise-Edition\04_Simple_App\web\assets\css" />
+      <recent name="D:\IJSE\Second Semester\AAD (Advance API Development)\Java-Enterprise-Edition\04_Simple_App\web\assets" />
+      <recent name="D:\IJSE\Second Semester\AAD (Advance API Development)\Java-Enterprise-Edition\04_Simple_App\web\assets\js" />
+      <recent name="D:\IJSE\Second Semester\AAD (Advance API Development)\Java-Enterprise-Edition\04_Simple_App\web\assets\jQuery" />
     </key>
   </component>
   <component name="RunManager">
@@ -166,7 +178,18 @@
       <workItem from="1669068942304" duration="242000" />
       <workItem from="1669120195302" duration="165000" />
       <workItem from="1669138384137" duration="71000" />
-      <workItem from="1669138473860" duration="2160000" />
+      <workItem from="1669138473860" duration="2615000" />
+      <workItem from="1669148605492" duration="583000" />
+      <workItem from="1669177093378" duration="62000" />
+      <workItem from="1669181210944" duration="9000" />
+      <workItem from="1669344063383" duration="621000" />
+      <workItem from="1669831369540" duration="2966000" />
+      <workItem from="1669917257699" duration="818000" />
+      <workItem from="1669952107676" duration="11696000" />
+      <workItem from="1669974883151" duration="11877000" />
+      <workItem from="1669988096342" duration="1422000" />
+      <workItem from="1669997631266" duration="10622000" />
+      <workItem from="1670050818829" duration="2444000" />
     </task>
     <servers />
   </component>
