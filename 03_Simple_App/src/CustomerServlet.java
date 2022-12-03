@@ -22,7 +22,16 @@ public class CustomerServlet extends HttpServlet {
         String address = req.getParameter("address");
         String salary = req.getParameter("salary");
         System.out.println(id+" "+name+" "+address+" "+salary);
+
         PrintWriter writer = resp.getWriter();
-        writer.write("<h1>hello there</h1>");
+        writer.write("<h1>Saved Customer</h1>");
+        writer.write("<table border='1' border-color='#000000' width='50%'>");
+        writer.write("<thead bgcolor='#A67D7D'>");
+        writer.write("<tr><th>ID</th><th>Name</th><th>Age</th><th>Address</th></tr>");
+        writer.write("</thead>");
+        writer.write("<tbody>");
+        writer.write("<tr><td>"+id+"</td><td>"+name+"</td><td>"+address+"</td><td>"+salary+"</td></tr>");
+        writer.write("</tbody>");
+        writer.write("</table>");
     }
 }
