@@ -33,7 +33,7 @@ To change this template use File | Settings | File Templates.
 //    allCustomers.add(new CustomerDTO("C003", "Nimesh", "Kaluthara", 40000));
 //    allCustomers.add(new CustomerDTO("C004", "Maneesha", "Hikkaduwa", 51000));
 
-    //    initialize database connection
+    //initialize database connection
     Class.forName("com.mysql.jdbc.Driver");
     Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JEPOS", "root", "1234");
     PreparedStatement pstm = connection.prepareStatement("select * from Customer");
@@ -130,7 +130,7 @@ To change this template use File | Settings | File Templates.
                     </div>
 
                     <div class="col-1" style="width: max-content">
-                        <button id="btnAllCustomer" type="button" class="btn-modern">Get All Customers</button>
+                        <button id="btnAllCustomer" class="btn-modern" form="customerForm" formaction="index.jsp">Get All Customers</button>
                     </div>
 
                     <div class="col-1" style="width: max-content">
