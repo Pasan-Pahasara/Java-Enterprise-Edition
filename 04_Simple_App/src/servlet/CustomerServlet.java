@@ -1,5 +1,7 @@
 package servlet;
 
+import dto.CustomerDTO;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -7,10 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
 
 /**
  * @author : Pasan Pahasara
@@ -22,7 +22,26 @@ import java.sql.SQLException;
 public class CustomerServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        ArrayList<CustomerDTO> allCustomers = new ArrayList<>();
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JEPOS", "root", "1234");
+            PreparedStatement pstm = connection.prepareStatement("select * from Customer");
+            ResultSet rst = pstm.executeQuery();
+            while (rst.next()) {
+                String id = rst.getString("id");
+                String name = rst.getString("name");
+                String address = rst.getString("address");
+                double salary = rst.getDouble("salary");
+                allCustomers.add(new CustomerDTO(id, name, address, salary));
+            }
+            req.setAttribute("customers",allCustomers);
+            req.getRequestDispatcher("index.jsp").forward(req,resp);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
@@ -55,7 +74,7 @@ public class CustomerServlet extends HttpServlet {
                 pstm.setObject(3, salary);
                 boolean b = pstm.executeUpdate() > 0;
             }
-            resp.sendRedirect("index.jsp");
+            resp.sendRedirect("customer");
 
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);

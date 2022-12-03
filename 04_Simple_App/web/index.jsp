@@ -27,24 +27,26 @@ To change this template use File | Settings | File Templates.
 <body class="container-fluid">
 
 <%
-    ArrayList<CustomerDTO> allCustomers = new ArrayList<>();
+    ArrayList<CustomerDTO> allCustomers = (ArrayList<CustomerDTO>) request.getAttribute("customers");
+
+//    ArrayList<CustomerDTO> allCustomers = new ArrayList<>();
 //    allCustomers.add(new CustomerDTO("C001", "Pahasara", "Galle", 10000));
 //    allCustomers.add(new CustomerDTO("C002", "Sadun", "Panadura", 30000));
 //    allCustomers.add(new CustomerDTO("C003", "Nimesh", "Kaluthara", 40000));
 //    allCustomers.add(new CustomerDTO("C004", "Maneesha", "Hikkaduwa", 51000));
 
-    //initialize database connection
-    Class.forName("com.mysql.jdbc.Driver");
-    Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JEPOS", "root", "1234");
-    PreparedStatement pstm = connection.prepareStatement("select * from Customer");
-    ResultSet rst = pstm.executeQuery();
-    while (rst.next()) {
-        String id = rst.getString("id");
-        String name = rst.getString("name");
-        String address = rst.getString("address");
-        double salary = rst.getDouble("salary");
-        allCustomers.add(new CustomerDTO(id, name, address, salary));
-    }
+//    //initialize database connection
+//    Class.forName("com.mysql.jdbc.Driver");
+//    Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JEPOS", "root", "1234");
+//    PreparedStatement pstm = connection.prepareStatement("select * from Customer");
+//    ResultSet rst = pstm.executeQuery();
+//    while (rst.next()) {
+//        String id = rst.getString("id");
+//        String name = rst.getString("name");
+//        String address = rst.getString("address");
+//        double salary = rst.getDouble("salary");
+//        allCustomers.add(new CustomerDTO(id, name, address, salary));
+//    }
 %>
 
 <header id="headerBar" class="row">
@@ -130,7 +132,7 @@ To change this template use File | Settings | File Templates.
                     </div>
 
                     <div class="col-1" style="width: max-content">
-                        <button id="btnAllCustomer" class="btn-modern" form="customerForm" formaction="index.jsp">Get
+                        <button id="btnAllCustomer" class="btn-modern" form="customerForm" formaction="customer">Get
                             All Customers
                         </button>
                     </div>
@@ -163,7 +165,8 @@ To change this template use File | Settings | File Templates.
                         <tbody id="tblCustomer">
                         <!--Table data row-->
                         <%
-                            for (CustomerDTO customer : allCustomers) {
+                            if (allCustomers != null) {
+                                for (CustomerDTO customer : allCustomers) {
                         %>
                         <tr>
                             <td><%=customer.getId()%>
@@ -176,6 +179,7 @@ To change this template use File | Settings | File Templates.
                             </td>
                         </tr>
                         <%
+                                }
                             }
                         %>
                         </tbody>
@@ -268,6 +272,7 @@ To change this template use File | Settings | File Templates.
             $('#txtCustomerSalary').val(salary);
         });
     }
+
     bindRowClickEvents();
 </script>
 </body>
