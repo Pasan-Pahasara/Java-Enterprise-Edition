@@ -15,7 +15,7 @@
 <% %>
 <%
     System.out.println("Hello there");
-    String name="Institute of Software Enginnering";
+    String name="Institute of Software Engineering";
     int age=16;
     ArrayList allColors= new ArrayList();
 %>

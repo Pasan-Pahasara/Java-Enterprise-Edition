@@ -1,3 +1,16 @@
+<%@ page import="dto.CustomerDTO" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.sql.DriverManager" %>
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.PreparedStatement" %><%--
+Created by IntelliJ IDEA.
+User: ShEnUx
+Date: 12/3/2022
+Time: 11:25 PM
+To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +25,27 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body class="container-fluid">
+
+<%
+    ArrayList<CustomerDTO> allCustomers = new ArrayList<>();
+//    allCustomers.add(new CustomerDTO("C001", "Pahasara", "Galle", 10000));
+//    allCustomers.add(new CustomerDTO("C002", "Sadun", "Panadura", 30000));
+//    allCustomers.add(new CustomerDTO("C003", "Nimesh", "Kaluthara", 40000));
+//    allCustomers.add(new CustomerDTO("C004", "Maneesha", "Hikkaduwa", 51000));
+
+    //    initialize database connection
+    Class.forName("com.mysql.jdbc.Driver");
+    Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JEPOS", "root", "1234");
+    PreparedStatement pstm = connection.prepareStatement("select * from Customer");
+    ResultSet rst = pstm.executeQuery();
+    while (rst.next()) {
+        String id = rst.getString("id");
+        String name = rst.getString("name");
+        String address = rst.getString("address");
+        double salary = rst.getDouble("salary");
+        allCustomers.add(new CustomerDTO(id,name,address,salary));
+    }
+%>
 
 <header id="headerBar" class="row">
 
@@ -33,7 +67,8 @@
             <div class="collapse navbar-collapse " id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.html"><i class="bi bi-house-fill"></i> Home</a>
+                        <a class="nav-link" aria-current="page" href="index.jsp"><i class="bi bi-house-fill"></i>
+                            Home</a>
                     </li>
 
                     <li class="nav-item">
@@ -111,7 +146,7 @@
             <section>
                 <div class="col-12 d-flex rounded-2 shadow overflow-auto">
                     <!--Customer Table-->
-                    <table id="tblCustomer" class="table table-hover">
+                    <table class="table table-hover">
                         <!--Table head-->
                         <thead class="text-white card-header-tabs table-responsive sticky-top">
                         <!--Table head row-->
@@ -123,32 +158,24 @@
                         </tr>
                         </thead>
                         <!--Table body-->
-                        <tbody>
+                        <tbody id="tblCustomer">
                         <!--Table data row-->
-                        <!--                        <tr>-->
-                        <!--                            <td>C001</td>-->
-                        <!--                            <td>Pasan Pahasara</td>-->
-                        <!--                            <td>Galle</td>-->
-                        <!--                            <td>250000</td>-->
-                        <!--                        </tr>-->
-                        <!--                        <tr>-->
-                        <!--                            <td>C002</td>-->
-                        <!--                            <td>Nimesh Piyumantha</td>-->
-                        <!--                            <td>Galle</td>-->
-                        <!--                            <td>300000</td>-->
-                        <!--                        </tr>-->
-                        <!--                        <tr>-->
-                        <!--                            <td>C003</td>-->
-                        <!--                            <td>Maneesha Gunawardhana</td>-->
-                        <!--                            <td>Panadura</td>-->
-                        <!--                            <td>255000</td>-->
-                        <!--                        </tr>-->
-                        <!--                        <tr>-->
-                        <!--                            <td>C004</td>-->
-                        <!--                            <td>Sadun Iduranga</td>-->
-                        <!--                            <td>Colombo</td>-->
-                        <!--                            <td>125000</td>-->
-                        <!--                        </tr>-->
+                        <%
+                            for (CustomerDTO customer : allCustomers) {
+                        %>
+                        <tr>
+                            <td><%=customer.getId()%>
+                            </td>
+                            <td><%=customer.getName()%>
+                            </td>
+                            <td><%=customer.getAddress()%>
+                            </td>
+                            <td><%=customer.getSalary()%>
+                            </td>
+                        </tr>
+                        <%
+                            }
+                        %>
                         </tbody>
                     </table>
                 </div>
