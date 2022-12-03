@@ -66,6 +66,9 @@ public class CustomerServlet extends HttpServlet {
 
             PrintWriter writer = resp.getWriter();
             writer.write("<h1>Customer Added State : " + b + "</h1>");
+
+            resp.sendRedirect("index.jsp");
+
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         } catch (SQLException e) {
