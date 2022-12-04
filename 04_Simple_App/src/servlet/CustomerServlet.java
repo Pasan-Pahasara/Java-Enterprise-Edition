@@ -63,7 +63,7 @@ public class CustomerServlet extends HttpServlet {
                 pstm.setObject(4, salary);
                 boolean b = pstm.executeUpdate() > 0;
             } else if (option.equals("remove")) {
-                PreparedStatement pstm = connection.prepareStatement("delete from Customer where id=?");
+                PreparedStatement pstm = connection.prepareStatement("DELETE FROM customer WHERE id = ?");
                 pstm.setObject(1, id);
                 boolean b = pstm.executeUpdate() > 0;
             } else if (option.equals("update")) {
