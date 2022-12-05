@@ -7,9 +7,9 @@
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" rel="stylesheet">
     <!-- Bootstrap for Style -->
-    <link rel="stylesheet" href="../../../04_Simple_App/web/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <!-- Custom Style Sheet -->
-    <link rel="stylesheet" href="../../../04_Simple_App/web/assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body class="container-fluid">
 
@@ -20,7 +20,7 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="#" style="font-size: 18px; color: #A87E5A;">
                 <!-- navbar image setup -->
-                <img alt="" src="../../../04_Simple_App/web/assets/img/logo.png"
+                <img alt="" src="assets/img/logo.png"
                      style="width: 70px;height: 58px;position: absolute;left: 0;top: 0;"><span
                     style="font-size: 20px; font-weight: bolder; color: #f0f0f0; margin-left: 46px;">YᑌᗰᗰY</span> treats</a>
             <!--Toggle button-->
@@ -144,8 +144,7 @@
                         </button>
                     </div>
                     <div style="display: inline-block" class="col d-grid gap-2 d-md-flex justify-content-md-end">
-                        <button style="margin-bottom: 8px;margin-top: 8px;" id="btnDeleteItem" form="itemForm"
-                                formaction="customer?option=remove" formmethod="post" class="btn-modern">
+                        <button style="margin-bottom: 8px;margin-top: 8px;" id="btnDeleteItem" class="btn-modern">
                             Delete
                         </button>
                     </div>
@@ -177,12 +176,11 @@
                     </div>
                     <div style="display: inline-block" class="me-2">
                         <button style="margin-bottom: 8px;margin-top: 8px;" id="btnItem" class="btn-modern"
-                                form="itemForm" formaction="customer?option=add" formmethod="post">+New Item
+                                form="itemForm" formaction="db/db.txt" type="button">+New Item
                         </button>
                     </div>
                     <div style="display: inline-block" class="me-2">
-                        <button style="margin-bottom: 8px;margin-top: 8px;" id="btnUpdateItem" class="btn-modern"
-                                form="itemForm" formaction="customer?option=update" formmethod="post">
+                        <button style="margin-bottom: 8px;margin-top: 8px;" id="btnUpdateItem" class="btn-modern">
                             Update
                         </button>
                     </div>
@@ -193,16 +191,16 @@
 </main>
 
 <!-- Bootstrap for JS -->
-<script src="../../../04_Simple_App/web/assets/js/bootstrap.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
 
 <!-- jQuery for JS -->
-<script src="../../../04_Simple_App/web/assets/jQuery/jquery-3.6.1.min.js"></script>
+<script src="assets/jQuery/jquery-3.6.1.min.js"></script>
 
 <!-- Swal CDN link -->
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <!-- Customer JS -->
-<script src="../../../04_Simple_App/web/assets/js/customer.js"></script>
+<script src="assets/js/item.js"></script>
 
 <script>
     function bindRowClickEvents() {
@@ -221,6 +219,25 @@
     }
 
     bindRowClickEvents();
+
+    $("#btnItem").on('click',function () {
+        //initializing XMLHttpRequest Object
+        let httpRequest = new XMLHttpRequest();
+        console.log("First ",httpRequest.readyState);
+
+        //open the request
+        httpRequest.open("get","db/db.txt");
+        console.log("Second ",httpRequest.readyState);
+
+        //send the request
+        httpRequest.send();
+        console.log("Third ",httpRequest.readyState);
+
+        httpRequest.responseText;
+
+        console.log("Response :",httpRequest.responseText);
+        console.log("Fourth ",httpRequest.readyState);
+    });
 </script>
 </body>
 </html>
