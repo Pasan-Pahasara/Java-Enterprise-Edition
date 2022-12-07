@@ -1,0 +1,14 @@
+<items>
+    <item>
+        <code>I001</code>
+        <name>Lux</name>
+        <qty>200</qty>
+        <unitPrice>135</unitPrice>
+    </item>
+    <item>
+        <code>I002</code>
+        <name>Signal</name>
+        <qty>300</qty>
+        <unitPrice>450</unitPrice>
+    </item>
+</items>

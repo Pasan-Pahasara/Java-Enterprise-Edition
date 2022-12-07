@@ -180,13 +180,13 @@ thead {
     transform: translateY(-3px);
 }
 
-#btnAllItem{
+#btnJSON{
     width: 170px;
     border: solid 2px #a55eea;
     color: #a55eea;
 }
 
-#btnAllItem:hover{
+#btnJSON:hover{
     background-color: #a55eea;
     box-shadow: 0px 15px 20px #a074d5;
     color: #fff;
@@ -205,25 +205,25 @@ thead {
     transform: translateY(-3px);
 }
 
-#btnItem{
+#btnText{
     width: auto;
     border: solid 2px #000000;
     color: #000000;
 }
 
-#btnItem:hover{
+#btnText:hover{
     background-color: #000000;
     box-shadow: 0px 15px 20px #646161;
     color: #fff;
     transform: translateY(-3px);
 }
 
-#btnUpdateItem {
+#btnXML {
     border: solid 2px #2EE59D;
     color: #2EE59D;
 }
 
-#btnUpdateItem:hover {
+#btnXML:hover {
     background-color: #2EE59D;
     box-shadow: 0px 15px 20px #59b797;
     color: #fff;

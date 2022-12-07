@@ -98,7 +98,7 @@
                     </div>
 
                     <div class="col-1" style="width: max-content">
-                        <button id="btnAllItem" class="btn-modern" form="itemForm" formaction="item">Get
+                        <button id="btnJSON" class="btn-modern" type="button">Get
                             All Items
                         </button>
                     </div>
@@ -177,13 +177,12 @@
                         <div id="salaryHelp" class="form-text"></div>
                     </div>
                     <div style="display: inline-block" class="me-2">
-                        <button style="margin-bottom: 8px;margin-top: 8px;" id="btnItem" class="btn-modern"
-                                form="itemForm" formaction="db/db.txt" type="button">+New Item
+                        <button style="margin-bottom: 8px;margin-top: 8px;" id="btnText" class="btn-modern" type="button">+Text Req
                         </button>
                     </div>
                     <div style="display: inline-block" class="me-2">
-                        <button style="margin-bottom: 8px;margin-top: 8px;" id="btnUpdateItem" class="btn-modern">
-                            Update
+                        <button style="margin-bottom: 8px;margin-top: 8px;" id="btnXML" class="btn-modern" type="button">
+                            XML Req
                         </button>
                     </div>
                 </form>
@@ -222,7 +221,7 @@
 
     bindRowClickEvents();
 
-    $("#btnItem").on('click', function () {
+    $("#btnText").on('click', function () {
         // //initializing XMLHttpRequest Object
         // let httpRequest = new XMLHttpRequest();
         // console.log("First ",httpRequest.readyState);
@@ -250,15 +249,63 @@
 
         //02. send AJAX request using XMLHTTPRequest Object
 
-        let http = new XMLHttpRequest();
-        http.open("get", "db/db.txt");
-        http.send();
-        http.onreadystatechange = function () {
-            if (http.readyState === 4 && http.status === 200) { // if the request completed
-                console.log("Response", http.responseText);
-                $("#display").text(http.responseText);
+        // let http = new XMLHttpRequest();
+        // http.open("get", "db/db.txt");
+        // http.send();
+        // http.onreadystatechange = function () {
+        //     if (http.readyState === 4 && http.status === 200) { // if the request completed
+        //         console.log("Response", http.responseText);
+        //         $("#display").text(http.responseText);
+        //     }
+        // }
+
+        //03. How to send AJAX request using jQuery
+
+        $.ajax({
+            url: "db/db.txt",
+            async: false,
+            success: function (res) {
+                console.log(res);
+                $("#display").text(res);
             }
-        }
+        });
+    });
+
+    //Send request to db.txt
+    $("#btnJSON").on('click', function () {
+        $("#tblItem").empty();
+        $.ajax({
+            url: 'db/db.txt',
+            success: function (res) {
+                let split = res.split(" ");
+                var row = `<tr><td>${split[0]}</td><td>${split[1]}</td><td>${split[2]}</td><td>${split[3]}</td></tr>`;
+                $("#tblItem").append(row);
+            }
+        });
+    });
+
+    //Send request to XML file
+    $("#btnXML").on('click', function () {
+        $("#tblItem").empty();
+        $.ajax({
+            url: 'db/db.xml',
+            success: function (res) {
+                console.log(res);
+                console.log($(res).children().children());
+
+                let itemCount = $(res).children().children().length;
+                for (let i = 0; i < itemCount; i++) {
+                    let item = $(res).children().children().eq(i);
+                    let code = item.children(":eq(0)").text();
+                    let name = item.children(":eq(1)").text();
+                    let qty = item.children(":eq(2)").text();
+                    let unitPrice = item.children(":eq(3)").text();
+
+                    var row = `<tr><td>${code}</td><td>${name}</td><td>${qty}</td><td>${unitPrice}</td></tr>`;
+                    $("#tblItem").append(row);
+                }
+            }
+        });
     });
 </script>
 </body>
