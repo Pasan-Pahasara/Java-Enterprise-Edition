@@ -7,61 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6874a54-ab63-48b9-a207-592f90e7c0ee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-grid.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-grid.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-grid.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-grid.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-grid.rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-grid.rtl.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-grid.rtl.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-grid.rtl.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-reboot.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-reboot.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-reboot.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-reboot.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-reboot.rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-reboot.rtl.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-reboot.rtl.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-reboot.rtl.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-utilities.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-utilities.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-utilities.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-utilities.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-utilities.rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-utilities.rtl.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-utilities.rtl.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-utilities.rtl.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap.rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap.rtl.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap.rtl.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap.rtl.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/img/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/jQuery/jquery-3.6.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/js/bootstrap.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/js/bootstrap.bundle.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/js/bootstrap.bundle.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/js/bootstrap.bundle.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/js/bootstrap.esm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/js/bootstrap.esm.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/js/bootstrap.esm.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/js/bootstrap.esm.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/js/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/js/bootstrap.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/js/bootstrap.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/js/customer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/js/item.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/js/sql.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/db/db.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/web/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,26 +42,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "D:/IJSE/Second Semester/AAD (Advance API Development)/Java-Enterprise-Edition/Java-Enterprise-Edition/06_AJAX",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Problems",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "fileTemplates"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/IJSE/Second Semester/AAD (Advance API Development)/Java-Enterprise-Edition/Java-Enterprise-Edition/06_AJAX&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;fileTemplates&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\IJSE\Second Semester\AAD (Advance API Development)\Java-Enterprise-Edition\Java-Enterprise-Edition\06_AJAX" />
@@ -324,7 +271,13 @@
       <workItem from="1670172225524" duration="226000" />
       <workItem from="1670173158669" duration="61000" />
       <workItem from="1670175883769" duration="3476000" />
-      <workItem from="1670222664431" duration="3301000" />
+      <workItem from="1670222664431" duration="3597000" />
+      <workItem from="1670244383470" duration="606000" />
+      <workItem from="1670257812222" duration="4000" />
+      <workItem from="1670258984831" duration="898000" />
+      <workItem from="1670410554234" duration="204000" />
+      <workItem from="1670414851314" duration="2337000" />
+      <workItem from="1670433625905" duration="321000" />
     </task>
     <servers />
   </component>

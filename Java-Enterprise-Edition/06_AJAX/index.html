@@ -33,7 +33,8 @@
             <div class="collapse navbar-collapse " id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="../../../04_Simple_App/web/index.jsp"><i class="bi bi-house-fill"></i>
+                        <a class="nav-link" aria-current="page" href="../../../04_Simple_App/web/index.jsp"><i
+                                class="bi bi-house-fill"></i>
                             Home</a>
                     </li>
 
@@ -79,7 +80,8 @@
 <main class="row mx-3">
     <section class="col-12 mb-4">
         <div class="row">
-            <div style="background: linear-gradient(to right, #000000, #b88962);box-shadow: rgb(0 0 0 / 25%) 0 14px 28px, rgb(0 0 0 / 22%) 0 10px 10px!important;"
+            <div id="display"
+                 style="background: linear-gradient(to right, #000000, #b88962);box-shadow: rgb(0 0 0 / 25%) 0 14px 28px, rgb(0 0 0 / 22%) 0 10px 10px!important;"
                  class="p-1 px-3 col rounded-3 fw-bolder bg-secondary text-light fs-3 mt-4 shadow-sm"><i
                     class="fas fa-user-edit me-2"></i>Manage Item
             </div>
@@ -220,23 +222,43 @@
 
     bindRowClickEvents();
 
-    $("#btnItem").on('click',function () {
-        //initializing XMLHttpRequest Object
-        let httpRequest = new XMLHttpRequest();
-        console.log("First ",httpRequest.readyState);
+    $("#btnItem").on('click', function () {
+        // //initializing XMLHttpRequest Object
+        // let httpRequest = new XMLHttpRequest();
+        // console.log("First ",httpRequest.readyState);
+        //
+        // //open the request
+        // httpRequest.open("get","db/db.txt");
+        // console.log("Second ",httpRequest.readyState);
+        //
+        // //send the request
+        // httpRequest.send();
+        // console.log("Third ",httpRequest.readyState);
+        //
+        // httpRequest.responseText;
+        //
+        // console.log("Response :",httpRequest.responseText);
+        // console.log("Fourth ",httpRequest.readyState);
+        //
+        // httpRequest.onreadystatechange=function () {
+        //     console.log(httpRequest.readyState); //2 //3 //4
+        //     console.log("On ready State Change Event Invoked");
+        //     if (httpRequest.readyState==4){
+        //         console.log("Response ",httpRequest.responseText);
+        //     }
+        // }
 
-        //open the request
-        httpRequest.open("get","db/db.txt");
-        console.log("Second ",httpRequest.readyState);
+        //02. send AJAX request using XMLHTTPRequest Object
 
-        //send the request
-        httpRequest.send();
-        console.log("Third ",httpRequest.readyState);
-
-        httpRequest.responseText;
-
-        console.log("Response :",httpRequest.responseText);
-        console.log("Fourth ",httpRequest.readyState);
+        let http = new XMLHttpRequest();
+        http.open("get", "db/db.txt");
+        http.send();
+        http.onreadystatechange = function () {
+            if (http.readyState === 4 && http.status === 200) { // if the request completed
+                console.log("Response", http.responseText);
+                $("#display").text(http.responseText);
+            }
+        }
     });
 </script>
 </body>
