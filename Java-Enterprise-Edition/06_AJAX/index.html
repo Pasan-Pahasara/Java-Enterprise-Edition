@@ -177,11 +177,13 @@
                         <div id="salaryHelp" class="form-text"></div>
                     </div>
                     <div style="display: inline-block" class="me-2">
-                        <button style="margin-bottom: 8px;margin-top: 8px;" id="btnText" class="btn-modern" type="button">+Text Req
+                        <button style="margin-bottom: 8px;margin-top: 8px;" id="btnText" class="btn-modern"
+                                type="button">+Text Req
                         </button>
                     </div>
                     <div style="display: inline-block" class="me-2">
-                        <button style="margin-bottom: 8px;margin-top: 8px;" id="btnXML" class="btn-modern" type="button">
+                        <button style="margin-bottom: 8px;margin-top: 8px;" id="btnXML" class="btn-modern"
+                                type="button">
                             XML Req
                         </button>
                     </div>
@@ -221,58 +223,58 @@
 
     bindRowClickEvents();
 
-    $("#btnText").on('click', function () {
-        // //initializing XMLHttpRequest Object
-        // let httpRequest = new XMLHttpRequest();
-        // console.log("First ",httpRequest.readyState);
-        //
-        // //open the request
-        // httpRequest.open("get","db/db.txt");
-        // console.log("Second ",httpRequest.readyState);
-        //
-        // //send the request
-        // httpRequest.send();
-        // console.log("Third ",httpRequest.readyState);
-        //
-        // httpRequest.responseText;
-        //
-        // console.log("Response :",httpRequest.responseText);
-        // console.log("Fourth ",httpRequest.readyState);
-        //
-        // httpRequest.onreadystatechange=function () {
-        //     console.log(httpRequest.readyState); //2 //3 //4
-        //     console.log("On ready State Change Event Invoked");
-        //     if (httpRequest.readyState==4){
-        //         console.log("Response ",httpRequest.responseText);
-        //     }
-        // }
-
-        //02. send AJAX request using XMLHTTPRequest Object
-
-        // let http = new XMLHttpRequest();
-        // http.open("get", "db/db.txt");
-        // http.send();
-        // http.onreadystatechange = function () {
-        //     if (http.readyState === 4 && http.status === 200) { // if the request completed
-        //         console.log("Response", http.responseText);
-        //         $("#display").text(http.responseText);
-        //     }
-        // }
-
-        //03. How to send AJAX request using jQuery
-
-        $.ajax({
-            url: "db/db.txt",
-            async: false,
-            success: function (res) {
-                console.log(res);
-                $("#display").text(res);
-            }
-        });
-    });
+    // $("#btnText").on('click', function () {
+    //     // //initializing XMLHttpRequest Object
+    //     // let httpRequest = new XMLHttpRequest();
+    //     // console.log("First ",httpRequest.readyState);
+    //     //
+    //     // //open the request
+    //     // httpRequest.open("get","db/db.txt");
+    //     // console.log("Second ",httpRequest.readyState);
+    //     //
+    //     // //send the request
+    //     // httpRequest.send();
+    //     // console.log("Third ",httpRequest.readyState);
+    //     //
+    //     // httpRequest.responseText;
+    //     //
+    //     // console.log("Response :",httpRequest.responseText);
+    //     // console.log("Fourth ",httpRequest.readyState);
+    //     //
+    //     // httpRequest.onreadystatechange=function () {
+    //     //     console.log(httpRequest.readyState); //2 //3 //4
+    //     //     console.log("On ready State Change Event Invoked");
+    //     //     if (httpRequest.readyState==4){
+    //     //         console.log("Response ",httpRequest.responseText);
+    //     //     }
+    //     // }
+    //
+    //     //02. send AJAX request using XMLHTTPRequest Object
+    //
+    //     // let http = new XMLHttpRequest();
+    //     // http.open("get", "db/db.txt");
+    //     // http.send();
+    //     // http.onreadystatechange = function () {
+    //     //     if (http.readyState === 4 && http.status === 200) { // if the request completed
+    //     //         console.log("Response", http.responseText);
+    //     //         $("#display").text(http.responseText);
+    //     //     }
+    //     // }
+    //
+    //     //03. How to send AJAX request using jQuery
+    //
+    //     $.ajax({
+    //         url: "db/db.txt",
+    //         async: false,
+    //         success: function (res) {
+    //             console.log(res);
+    //             $("#display").text(res);
+    //         }
+    //     });
+    // });
 
     //Send request to db.txt
-    $("#btnJSON").on('click', function () {
+    $("#btnText").on('click', function () {
         $("#tblItem").empty();
         $.ajax({
             url: 'db/db.txt',
@@ -302,6 +304,20 @@
                     let unitPrice = item.children(":eq(3)").text();
 
                     var row = `<tr><td>${code}</td><td>${name}</td><td>${qty}</td><td>${unitPrice}</td></tr>`;
+                    $("#tblItem").append(row);
+                }
+            }
+        });
+    });
+
+    //Send request to JSON file
+    $("#btnJSON").on('click', function () {
+        $("#tblItem").empty();
+        $.ajax({
+            url: 'db/db.json',
+            success: function (res) {
+                for (let item of res) {
+                    var row = `<tr><td>${item.code}</td><td>${item.name}</td><td>${item.qty}</td><td>${item.unitPrice}</td></tr>`;
                     $("#tblItem").append(row);
                 }
             }

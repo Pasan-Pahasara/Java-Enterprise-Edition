@@ -7,10 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6874a54-ab63-48b9-a207-592f90e7c0ee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/db/db.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/db/db.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/db/db.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/db/db.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -280,7 +278,7 @@
       <workItem from="1670258984831" duration="898000" />
       <workItem from="1670410554234" duration="204000" />
       <workItem from="1670414851314" duration="2337000" />
-      <workItem from="1670433625905" duration="5909000" />
+      <workItem from="1670433625905" duration="8091000" />
     </task>
     <servers />
   </component>

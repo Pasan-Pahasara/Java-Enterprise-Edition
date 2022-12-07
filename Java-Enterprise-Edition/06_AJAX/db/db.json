@@ -1,0 +1,14 @@
+[
+  {
+    "code": "I001",
+    "name": "Lux",
+    "qty": 120,
+    "unitPrice": 350
+  },
+  {
+    "code": "I002",
+    "name": "Signal",
+    "qty": 100,
+    "unitPrice": 450
+  }
+]
