@@ -1,3 +1,16 @@
+<%@ page import="dto.CustomerDTO" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.sql.DriverManager" %>
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.PreparedStatement" %><%--
+Created by IntelliJ IDEA.
+User: ShEnUx
+Date: 12/3/2022
+Time: 11:25 PM
+To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +25,29 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body class="container-fluid">
+
+<%
+    ArrayList<CustomerDTO> allCustomers = (ArrayList<CustomerDTO>) request.getAttribute("customers");
+
+//    ArrayList<CustomerDTO> allCustomers = new ArrayList<>();
+//    allCustomers.add(new CustomerDTO("C001", "Pahasara", "Galle", 10000));
+//    allCustomers.add(new CustomerDTO("C002", "Sadun", "Panadura", 30000));
+//    allCustomers.add(new CustomerDTO("C003", "Nimesh", "Kaluthara", 40000));
+//    allCustomers.add(new CustomerDTO("C004", "Maneesha", "Hikkaduwa", 51000));
+
+//    //initialize database connection
+//    Class.forName("com.mysql.jdbc.Driver");
+//    Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JEPOS", "root", "1234");
+//    PreparedStatement pstm = connection.prepareStatement("select * from Customer");
+//    ResultSet rst = pstm.executeQuery();
+//    while (rst.next()) {
+//        String id = rst.getString("id");
+//        String name = rst.getString("name");
+//        String address = rst.getString("address");
+//        double salary = rst.getDouble("salary");
+//        allCustomers.add(new CustomerDTO(id, name, address, salary));
+//    }
+%>
 
 <header id="headerBar" class="row">
 
@@ -33,18 +69,17 @@
             <div class="collapse navbar-collapse " id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="../../../04_Simple_App/web/index.jsp"><i
-                                class="bi bi-house-fill"></i>
+                        <a class="nav-link" aria-current="page" href="index.jsp"><i class="bi bi-house-fill"></i>
                             Home</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="CustomerForm.html"><i
+                        <a class="nav-link active" aria-current="page" href="CustomerForm.html"><i
                                 class="bi bi-people-fill"></i> Customers</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="itemForm.html"><i
+                        <a class="nav-link" aria-current="page" href="itemForm.html"><i
                                 class="bi bi-handbag-fill"></i> Items</a>
                     </li>
 
@@ -80,10 +115,9 @@
 <main class="row mx-3">
     <section class="col-12 mb-4">
         <div class="row">
-            <div id="display"
-                 style="background: linear-gradient(to right, #000000, #b88962);box-shadow: rgb(0 0 0 / 25%) 0 14px 28px, rgb(0 0 0 / 22%) 0 10px 10px!important;"
+            <div style="background: linear-gradient(to right, #000000, #b88962);box-shadow: rgb(0 0 0 / 25%) 0 14px 28px, rgb(0 0 0 / 22%) 0 10px 10px!important;"
                  class="p-1 px-3 col rounded-3 fw-bolder bg-secondary text-light fs-3 mt-4 shadow-sm"><i
-                    class="fas fa-user-edit me-2"></i>Manage Item
+                    class="fas fa-user-edit me-2"></i>Manage Customer
             </div>
         </div>
     </section>
@@ -93,49 +127,61 @@
             <section class="col-12 mt-4 mb-5">
                 <form class="row g-3">
                     <div class="col-xl-6 col-lg-12">
-                        <input type="search" class="form-control rounded-pill" id="txtSearchItem"
-                               placeholder="Search Item">
+                        <input type="search" class="form-control rounded-pill" id="txtSearchCustomer"
+                               placeholder="Search Customer">
                     </div>
 
                     <div class="col-1" style="width: max-content">
-                        <button id="btnJSON" class="btn-modern" type="button">Get
-                            All Items
+                        <button id="btnAllCustomer" class="btn-modern" form="customerForm" formaction="customer">Get
+                            All Customers
                         </button>
                     </div>
 
                     <div class="col-1" style="width: max-content">
-                        <button id="btnSearchItem" type="button" class="btn-modern">Search</button>
+                        <button id="btnSearchCustomer" type="button" class="btn-modern">Search</button>
                     </div>
 
                     <div class="col-1" style="width: max-content">
-                        <button id="btnSearchItemClear" type="button" class="btn-modern">Clear</button>
+                        <button id="btnSearchCustomerClear" type="button" class="btn-modern">Clear</button>
                     </div>
                 </form>
             </section>
             <!--            style="height: 25.5rem; overflow: auto"-->
             <section>
                 <div class="col-12 d-flex rounded-2 shadow overflow-auto">
-                    <!--Item Table-->
+                    <!--Customer Table-->
                     <table class="table table-hover">
                         <!--Table head-->
                         <thead class="text-white card-header-tabs table-responsive sticky-top">
                         <!--Table head row-->
                         <tr>
-                            <!--Table headings-->
-                            <th>Item Code</th>
-                            <th>Item Name</th>
-                            <th>Item Qty</th>
-                            <th>Item Price</th>
+                            <th>Customer ID</th> <!--Table heading-->
+                            <th>Customer Name</th>
+                            <th>Address</th>
+                            <th>Salary</th>
                         </tr>
                         </thead>
-                        <tr id="loader" style="display: none;text-align: center">
-                            <td colspan="4">
-                                <h1>Loading..!</h1>
+                        <!--Table body-->
+                        <tbody id="tblCustomer">
+                        <!--Table data row-->
+                        <%
+                            if (allCustomers != null) {
+                                for (CustomerDTO customer : allCustomers) {
+                        %>
+                        <tr>
+                            <td><%=customer.getId()%>
+                            </td>
+                            <td><%=customer.getName()%>
+                            </td>
+                            <td><%=customer.getAddress()%>
+                            </td>
+                            <td><%=customer.getSalary()%>
                             </td>
                         </tr>
-                        <!--Table body-->
-                        <tbody id="tblItem">
-                        <!--Table data row-->
+                        <%
+                                }
+                            }
+                        %>
                         </tbody>
                     </table>
                 </div>
@@ -144,52 +190,53 @@
 
         <!--Customer Manage Form-->
         <section class="col-xl-5 row justify-content-xl-end d-grid gap-2 d-md-flex justify-content-sm-center">
-            <section class="col-8 border item-container mt-3 mb-3">
-                <form id="itemForm">
+            <section class="col-8 border customer-container mt-3 mb-3">
+                <form id="customerForm">
                     <div style="display: inline-block" class="col d-grid gap-2 d-md-flex justify-content-md-end">
                         <button id="btnClear" type="button" class="btn-modern">Clear
                         </button>
                     </div>
                     <div style="display: inline-block" class="col d-grid gap-2 d-md-flex justify-content-md-end">
-                        <button style="margin-bottom: 8px;margin-top: 8px;" id="btnDeleteItem" class="btn-modern">
+                        <button style="margin-bottom: 8px;margin-top: 8px;" id="btnDeleteCustomer" form="customerForm"
+                                formaction="customer?option=remove" formmethod="post" class="btn-modern">
                             Delete
                         </button>
                     </div>
                     <div class="mb-3">
-                        <label for="itemCode" class="form-label">Item Code</label>
-                        <input type="text" class="form-control prevent_tab_key_focus" id="itemCode"
-                               aria-describedby="idHelp" placeholder="Eg :- I00-001" name="id">
+                        <label for="txtCustomerID" class="form-label">Customer ID</label>
+                        <input type="text" class="form-control prevent_tab_key_focus" id="txtCustomerID"
+                               aria-describedby="idHelp" placeholder="Eg :- C00-001" name="id">
                         <div id="idHelp" class="form-text"></div>
                     </div>
                     <div class="mb-3">
-                        <label for="itemName" class="form-label">Item Name</label>
-                        <input type="text" class="form-control prevent_tab_key_focus" id="itemName"
-                               aria-describedby="nameHelp" placeholder="Eg :- Pizza" name="name">
+                        <label for="txtCustomerName" class="form-label">Customer Name</label>
+                        <input type="text" class="form-control prevent_tab_key_focus" id="txtCustomerName"
+                               aria-describedby="nameHelp" placeholder="Eg :- Pahasara" name="name">
                         <div id="nameHelp" class="form-text"></div>
                     </div>
                     <div class="mb-3">
-                        <label for="itemQty" class="form-label">Item Qty</label>
-                        <input type="text" class="form-control prevent_tab_key_focus" id="itemQty"
-                               aria-describedby="addressHelp" placeholder="Eg :- 100"
+                        <label for="txtCustomerAddress" class="form-label">Address</label>
+                        <input type="text" class="form-control prevent_tab_key_focus" id="txtCustomerAddress"
+                               aria-describedby="addressHelp" placeholder="Eg :- N0/02, Godahena Watta, Galle"
                                name="address">
                         <div id="addressHelp" class="form-text"></div>
                     </div>
                     <div class="mb-3">
-                        <label for="itemPrice" class="form-label">Unit Price</label>
-                        <input type="text" class="form-control prevent_tab_key_focus" id="itemPrice"
+                        <label for="txtCustomerSalary" class="form-label">Salary</label>
+                        <input type="text" class="form-control prevent_tab_key_focus" id="txtCustomerSalary"
                                aria-describedby="salaryHelp"
                                placeholder="Eg :- 200 or 250.00" name="salary">
                         <div id="salaryHelp" class="form-text"></div>
                     </div>
                     <div style="display: inline-block" class="me-2">
-                        <button style="margin-bottom: 8px;margin-top: 8px;" id="btnText" class="btn-modern"
-                                type="button">+Text Req
+                        <button style="margin-bottom: 8px;margin-top: 8px;" id="btnCustomer" class="btn-modern"
+                                form="customerForm" formaction="customer?option=add" formmethod="post">+New Customer
                         </button>
                     </div>
                     <div style="display: inline-block" class="me-2">
-                        <button style="margin-bottom: 8px;margin-top: 8px;" id="btnXML" class="btn-modern"
-                                type="button">
-                            XML Req
+                        <button style="margin-bottom: 8px;margin-top: 8px;" id="btnUpdateCustomer" class="btn-modern"
+                                form="customerForm" formaction="customer?option=update" formmethod="post">
+                            Update
                         </button>
                     </div>
                 </form>
@@ -208,7 +255,7 @@
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <!-- Customer JS -->
-<script src="assets/js/item.js"></script>
+<script src="assets/js/customer.js"></script>
 
 <script>
     function bindRowClickEvents() {
@@ -227,109 +274,6 @@
     }
 
     bindRowClickEvents();
-
-    // $("#btnText").on('click', function () {
-    //     // //initializing XMLHttpRequest Object
-    //     // let httpRequest = new XMLHttpRequest();
-    //     // console.log("First ",httpRequest.readyState);
-    //     //
-    //     // //open the request
-    //     // httpRequest.open("get","db/db.txt");
-    //     // console.log("Second ",httpRequest.readyState);
-    //     //
-    //     // //send the request
-    //     // httpRequest.send();
-    //     // console.log("Third ",httpRequest.readyState);
-    //     //
-    //     // httpRequest.responseText;
-    //     //
-    //     // console.log("Response :",httpRequest.responseText);
-    //     // console.log("Fourth ",httpRequest.readyState);
-    //     //
-    //     // httpRequest.onreadystatechange=function () {
-    //     //     console.log(httpRequest.readyState); //2 //3 //4
-    //     //     console.log("On ready State Change Event Invoked");
-    //     //     if (httpRequest.readyState==4){
-    //     //         console.log("Response ",httpRequest.responseText);
-    //     //     }
-    //     // }
-    //
-    //     //02. send AJAX request using XMLHTTPRequest Object
-    //
-    //     // let http = new XMLHttpRequest();
-    //     // http.open("get", "db/db.txt");
-    //     // http.send();
-    //     // http.onreadystatechange = function () {
-    //     //     if (http.readyState === 4 && http.status === 200) { // if the request completed
-    //     //         console.log("Response", http.responseText);
-    //     //         $("#display").text(http.responseText);
-    //     //     }
-    //     // }
-    //
-    //     //03. How to send AJAX request using jQuery
-    //
-    //     $.ajax({
-    //         url: "db/db.txt",
-    //         async: false,
-    //         success: function (res) {
-    //             console.log(res);
-    //             $("#display").text(res);
-    //         }
-    //     });
-    // });
-
-    //Send request to db.txt
-    $("#btnText").on('click', function () {
-        $("#tblItem").empty();
-        $.ajax({
-            url: 'db/db.txt',
-            success: function (res) {
-                let split = res.split(" ");
-                var row = `<tr><td>${split[0]}</td><td>${split[1]}</td><td>${split[2]}</td><td>${split[3]}</td></tr>`;
-                $("#tblItem").append(row);
-            }
-        });
-    });
-
-    //Send request to XML file
-    $("#btnXML").on('click', function () {
-        $("#loader").css('display','inline-block');
-        $("#tblItem").empty();
-        $.ajax({
-            url: 'db/db.xml',
-            success: function (res) {
-                console.log(res);
-                $("#loader").css('display','none')
-                console.log($(res).children().children());
-
-                let itemCount = $(res).children().children().length;
-                for (let i = 0; i < itemCount; i++) {
-                    let item = $(res).children().children().eq(i);
-                    let code = item.children(":eq(0)").text();
-                    let name = item.children(":eq(1)").text();
-                    let qty = item.children(":eq(2)").text();
-                    let unitPrice = item.children(":eq(3)").text();
-
-                    var row = `<tr><td>${code}</td><td>${name}</td><td>${qty}</td><td>${unitPrice}</td></tr>`;
-                    $("#tblItem").append(row);
-                }
-            }
-        });
-    });
-
-    //Send request to JSON file
-    $("#btnJSON").on('click', function () {
-        $("#tblItem").empty();
-        $.ajax({
-            url: 'db/db.json',
-            success: function (res) {
-                for (let item of res) {
-                    var row = `<tr><td>${item.code}</td><td>${item.name}</td><td>${item.qty}</td><td>${item.unitPrice}</td></tr>`;
-                    $("#tblItem").append(row);
-                }
-            }
-        });
-    });
 </script>
 </body>
 </html>
