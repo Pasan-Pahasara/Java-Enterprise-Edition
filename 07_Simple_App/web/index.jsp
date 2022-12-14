@@ -259,81 +259,78 @@ To change this template use File | Settings | File Templates.
 
 <script>
 
-    // //load all customers from the database
-    // getAllCustomers();
-
-
-    bindRowClickEvents();
+    //load all customers from the database
+    getAllCustomers();
 
     //Button Events
     //Add Customer
-    $("#btnCustomer").on('click',function(){
-        let formData= $("#customerForm").serialize();
+    $("#btnCustomer").on('click', function () {
+        let formData = $("#customerForm").serialize();
         $.ajax({
-            url:"customer?option=add",
-            method:"post",
-            data:formData,
-            success:function(res){
-                // getAllCustomers();
+            url: "customer?option=add",
+            method: "post",
+            data: formData,
+            success: function (res) {
+                getAllCustomers();
             }
         });
-
     });
 
     // //Delete Customer
-    $("#btnDeleteCustomer").on('click',function(){
+    $("#btnDeleteCustomer").on('click', function () {
         let id = $("#txtCustomerID").val();
         $.ajax({
-            url:"customer?id="+id+"&option=remove",
-            method:"post",
-            success:function (resp){
-                // getAllCustomers();
+            url: "customer?id=" + id + "&option=remove",
+            method: "post",
+            success: function (resp) {
+                getAllCustomers();
             }
         });
     });
 
     //Update Customer
-    $("#btnUpdateCustomer").on('click',function (){
-        let formData= $("#customerForm").serialize();
+    $("#btnUpdateCustomer").on('click', function () {
+        let formData = $("#customerForm").serialize();
         $.ajax({
-            url:"customer?option=update",
-            method:"post",
-            data:formData,
-            success:function(res){
-                // getAllCustomers();
+            url: "customer?option=update",
+            method: "post",
+            data: formData,
+            success: function (res) {
+                getAllCustomers();
             }
         });
     });
 
     //Get All Customer
-    // $("#btnAllCustomer").on('click',function (){
-    //     getAllCustomers();
-    // });
+    $("#btnAllCustomer").on('click', function () {
+        getAllCustomers();
+    });
 
-    // //Get all Customer Function
-    // function getAllCustomers(){
-    //     $("#tblCustomer").empty();
-    //     $.ajax({
-    //         url:"customer",
-    //         success:function(res){
-    //             for (let c of res) {
-    //                 let cusID=c.id;
-    //                 let cusName=c.name;
-    //                 let cusAddress=c.address;
-    //                 let cusSalary=c.salary;
-    //
-    //                 let row="<tr><td>"+cusID+"</td><td>"+cusName+"</td><td>"+cusAddress+"</td><td>"+cusSalary+"</td></tr>";
-    //                 $("#tblCustomer").append(row);
-    //             }
-    //             bindRowClickEvents();
-    //             setTextFieldValues("","","","");
-    //         }
-    //     });
-    // }
+    //Get all Customer Function
+    function getAllCustomers() {
+        $("#tblCustomer").empty();
+        $.ajax({
+            url: "customer",
+            success: function (res) {
+                console.log(res);
+                for (let c of res) {
+                    let cusID = c.id;
+                    let cusName = c.name;
+                    let cusAddress = c.address;
+                    let cusSalary = c.salary;
+
+                    var row = "<tr><td>" + cusID + "</td><td>" + cusName + "</td><td>" + cusAddress + "</td><td>" + cusSalary + "</td></tr>";
+                    $("#tblCustomer").append(row);
+                }
+                bindRowClickEvents();
+                setTextFieldValues("","","","");
+            }
+        });
+    }
 
     //Bind events for the table rows function
     function bindRowClickEvents() {
-        $("#tblCustomer>tr").on('click',function () {
+        $("#tblCustomer>tr").on('click', function () {
             let id = $(this).children(":eq(0)").text();
             let name = $(this).children(":eq(1)").text();
             let address = $(this).children(":eq(2)").text();
@@ -356,78 +353,6 @@ To change this template use File | Settings | File Templates.
         $("#txtCustomerAddress").val(address);
         $("#txtCustomerSalary").val(salary);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //////////////////////////////
-    // function bindRowClickEvents() {
-    //     $("#tblCustomer>tr").click(function () {
-    //         let id = $(this).children(":eq(0)").text();
-    //         let name = $(this).children(":eq(1)").text();
-    //         let address = $(this).children(":eq(2)").text();
-    //         let salary = $(this).children(":eq(3)").text();
-    //         console.log(id, name, address, salary);
-    //         //setting table details values to text fields
-    //         $('#txtCustomerID').val(id);
-    //         $('#txtCustomerName').val(name);
-    //         $('#txtCustomerAddress').val(address);
-    //         $('#txtCustomerSalary').val(salary);
-    //     });
-    // }
-    //
-    // bindRowClickEvents();
-    //
-    // $("#btnCustomer").on('click', function () {
-    //     let formData = $("#customerForm").serialize();
-    //     $.ajax({
-    //         url: "customer?option=add",
-    //         method: "post",
-    //         data: formData,
-    //         success: function (res) {
-    //
-    //         }
-    //     });
-    // });
-    //
-    $("#btnAllCustomer").on('click', function () {
-        // $("#tblCustomer").empty();
-        $.ajax({
-            url: "customer",
-            success: function (res) {
-                console.log(res);
-                // for (let c of res) {
-                //     let cusID = c.id;
-                //     let cusName = c.name;
-                //     let cusAddress = c.address;
-                //     let cusSalary = c.salary;
-                //
-                //     var row ="<tr><td>"+cusID+"</td><td>"+cusName+"</td><td>"+cusAddress+"</td><td>"+cusSalary+"</td></tr>";
-                //     $("#tblCustomer").append(row);
-                // }
-            }
-        });
-    });
-
 
 </script>
 </body>
