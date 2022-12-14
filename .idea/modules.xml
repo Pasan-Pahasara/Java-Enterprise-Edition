@@ -7,8 +7,9 @@
       <module fileurl="file://$PROJECT_DIR$/03_Simple_App/03_Simple_App.iml" filepath="$PROJECT_DIR$/03_Simple_App/03_Simple_App.iml" />
       <module fileurl="file://$PROJECT_DIR$/04_Simple_App/04_Simple_App.iml" filepath="$PROJECT_DIR$/04_Simple_App/04_Simple_App.iml" />
       <module fileurl="file://$PROJECT_DIR$/05_Mapping-Spec/05_Mapping-Spec.iml" filepath="$PROJECT_DIR$/05_Mapping-Spec/05_Mapping-Spec.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/06_AJAX.iml" filepath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/06_AJAX.iml" />
+      <module fileurl="file://$PROJECT_DIR$/06_AJAX/06_AJAX.iml" filepath="$PROJECT_DIR$/06_AJAX/06_AJAX.iml" />
       <module fileurl="file://$PROJECT_DIR$/07_Simple_App/07_Simple_App.iml" filepath="$PROJECT_DIR$/07_Simple_App/07_Simple_App.iml" />
+      <module fileurl="file://$PROJECT_DIR$/08_JSON/08_JSON.iml" filepath="$PROJECT_DIR$/08_JSON/08_JSON.iml" />
     </modules>
   </component>
 </project>

@@ -2,28 +2,100 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="App_04" />
+      <artifact name="App_07" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e6874a54-ab63-48b9-a207-592f90e7c0ee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/07_Simple_App/src/Main.java" afterDir="false" />
+    <list default="true" id="41253c15-b786-4419-9f58-0177a7a12f3b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/App_08.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/javax_json_1_1_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/javax_json_api_1_1_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/08_JSON/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/08_JSON/web/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javax.json-1.1.4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javax.json-api-1.1.4.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Java-Enterprise-Edition.iml" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/06_AJAX.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/App_04.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/App_04.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/App_05.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/App_05.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/App_06.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/App_07.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/App_07.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d158891a-f92c-419e-b893-c9648ff95df9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d158891a-f92c-419e-b893-c9648ff95df9/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d158891a-f92c-419e-b893-c9648ff95df9/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d158891a-f92c-419e-b893-c9648ff95df9/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d158891a-f92c-419e-b893-c9648ff95df9/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_Simple_App/04_Simple_App.iml" beforeDir="false" afterPath="$PROJECT_DIR$/04_Simple_App/04_Simple_App.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_Mapping-Spec/05_Mapping-Spec.iml" beforeDir="false" afterPath="$PROJECT_DIR$/05_Mapping-Spec/05_Mapping-Spec.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/07_Simple_App/src/servlet/CustomerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/07_Simple_App/src/servlet/CustomerServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/07_Simple_App/src/servlet/EmptyStringServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/07_Simple_App/src/servlet/ItemServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/07_Simple_App/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/07_Simple_App/web/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/06_AJAX.iml" beforeDir="false" afterPath="$PROJECT_DIR$/08_JSON/08_JSON.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-grid.css" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/css/bootstrap-grid.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-grid.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/css/bootstrap-grid.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-grid.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/css/bootstrap-grid.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-grid.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/css/bootstrap-grid.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-grid.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/css/bootstrap-grid.rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-grid.rtl.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/css/bootstrap-grid.rtl.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-grid.rtl.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/css/bootstrap-grid.rtl.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-grid.rtl.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/css/bootstrap-grid.rtl.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-reboot.css" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/css/bootstrap-reboot.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-reboot.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/css/bootstrap-reboot.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-reboot.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-reboot.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/css/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-reboot.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/css/bootstrap-reboot.rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-reboot.rtl.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/css/bootstrap-reboot.rtl.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-reboot.rtl.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/css/bootstrap-reboot.rtl.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-reboot.rtl.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/css/bootstrap-reboot.rtl.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-utilities.css" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/css/bootstrap-utilities.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-utilities.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/css/bootstrap-utilities.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-utilities.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/css/bootstrap-utilities.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-utilities.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/css/bootstrap-utilities.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-utilities.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/css/bootstrap-utilities.rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-utilities.rtl.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/css/bootstrap-utilities.rtl.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-utilities.rtl.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/css/bootstrap-utilities.rtl.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap-utilities.rtl.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/css/bootstrap-utilities.rtl.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/css/bootstrap.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/css/bootstrap.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/css/bootstrap.rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap.rtl.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/css/bootstrap.rtl.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap.rtl.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/css/bootstrap.rtl.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/bootstrap.rtl.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/css/bootstrap.rtl.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/img/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/img/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/jQuery/jquery-3.6.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/jQuery/jquery-3.6.1.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/js/bootstrap.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/js/bootstrap.bundle.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/js/bootstrap.bundle.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/js/bootstrap.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/js/bootstrap.bundle.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/js/bootstrap.esm.js" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/js/bootstrap.esm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/js/bootstrap.esm.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/js/bootstrap.esm.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/js/bootstrap.esm.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/js/bootstrap.esm.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/js/bootstrap.esm.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/js/bootstrap.esm.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/js/bootstrap.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/js/bootstrap.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/js/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/js/bootstrap.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/js/bootstrap.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/js/customer.js" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/js/customer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/js/item.js" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/js/item.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/assets/js/sql.sql" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/js/sql.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/db/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/db/db.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/db/db.txt" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/db/db.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/db/db.xml" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/db/db.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Enterprise-Edition/06_AJAX/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-        <option value="JavaScript File" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -38,45 +110,38 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2IPufSoJTAyYwHUnPi9CHeWOpqx" />
+  <component name="ProjectId" id="2IfS1tn3Rt0turpus8XNjdX8Uzj" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "D:/IJSE/Second Semester/AAD (Advance API Development)/Java-Enterprise-Edition/Java-Enterprise-Edition/06_AJAX",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "fileTemplates"
-  },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
-    ]
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/IJSE/Second Semester/AAD (Advance API Development)/Java-Enterprise-Edition/lib/javax.json-1.1.4.jar&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\IJSE\Second Semester\AAD (Advance API Development)\Java-Enterprise-Edition\Java-Enterprise-Edition\06_AJAX" />
-      <recent name="D:\IJSE\Second Semester\AAD (Advance API Development)\Java-Enterprise-Edition\04_Simple_App\web" />
-      <recent name="D:\IJSE\Second Semester\AAD (Advance API Development)\Java-Enterprise-Edition\Java-Enterprise-Edition\06_AJAX\web" />
-      <recent name="D:\IJSE\Second Semester\AAD (Advance API Development)\Java-Enterprise-Edition\05_Mapping-Spec\web" />
-      <recent name="D:\IJSE\Second Semester\AAD (Advance API Development)\Java-Enterprise-Edition\05_Mapping-Spec\src\servelet" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\IJSE\Second Semester\AAD (Advance API Development)\Java-Enterprise-Edition\Java-Enterprise-Edition\06_AJAX" />
-    </key>
-  </component>
+}</component>
   <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Java-Enterprise-Edition" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Java-Enterprise-Edition" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tomcat 8.5.83" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.83" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -87,7 +152,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="a57479af-e145-4e25-a4a2-30ec14d62af8" />
+        <option name="BASE_DIRECTORY_NAME" value="a5866730-a2a7-4c9b-ae17-95fa2724b9bc" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -95,7 +160,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="9368" />
+        <option name="DEBUG_PORT" value="5781" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -164,125 +229,23 @@
         </option>
       </method>
     </configuration>
-    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="UPDATING_POLICY" value="restart-server" />
-      <deployment>
-        <artifact name="App_05">
-          <settings>
-            <option name="CONTEXT_PATH" value="/App_05" />
-          </settings>
-        </artifact>
-      </deployment>
-      <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="34867ffe-fc3e-430a-86f2-5acfa19bd642" />
-      </server-settings>
-      <predefined_log_file enabled="true" id="Tomcat" />
-      <predefined_log_file enabled="true" id="Tomcat Catalina" />
-      <predefined_log_file id="Tomcat Manager" />
-      <predefined_log_file id="Tomcat Host Manager" />
-      <predefined_log_file id="Tomcat Localhost Access" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="9368" />
-      </RunnerSettings>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <method v="2">
-        <option name="Make" enabled="true" />
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="App_02" />
-          <artifact name="App_05" />
-          <artifact name="App_04" />
-          <artifact name="App_04" />
-        </option>
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e6874a54-ab63-48b9-a207-592f90e7c0ee" name="Changes" comment="" />
-      <created>1670095642473</created>
+      <changelist id="41253c15-b786-4419-9f58-0177a7a12f3b" name="Changes" comment="" />
+      <created>1670570939019</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1670095642473</updated>
-      <workItem from="1670095643725" duration="926000" />
-      <workItem from="1670096587956" duration="562000" />
-      <workItem from="1670097300787" duration="3096000" />
-      <workItem from="1670132261728" duration="1471000" />
-      <workItem from="1670144602061" duration="1592000" />
-      <workItem from="1670146208172" duration="2947000" />
-      <workItem from="1670160859408" duration="512000" />
-      <workItem from="1670172225524" duration="226000" />
-      <workItem from="1670173158669" duration="61000" />
-      <workItem from="1670175883769" duration="3476000" />
-      <workItem from="1670222664431" duration="3597000" />
-      <workItem from="1670244383470" duration="606000" />
-      <workItem from="1670257812222" duration="4000" />
-      <workItem from="1670258984831" duration="898000" />
-      <workItem from="1670410554234" duration="204000" />
-      <workItem from="1670414851314" duration="2337000" />
-      <workItem from="1670433625905" duration="9098000" />
-      <workItem from="1670484682264" duration="11000" />
-      <workItem from="1670507696135" duration="811000" />
-      <workItem from="1670518683987" duration="2563000" />
+      <updated>1670570939019</updated>
+      <workItem from="1670570941937" duration="183000" />
+      <workItem from="1670571382775" duration="1071000" />
+      <workItem from="1670589337352" duration="1975000" />
+      <workItem from="1670607115098" duration="1264000" />
+      <workItem from="1670664600210" duration="2162000" />
+      <workItem from="1670667038372" duration="1930000" />
+      <workItem from="1670933219802" duration="1086000" />
+      <workItem from="1670997559302" duration="5489000" />
     </task>
     <servers />
   </component>

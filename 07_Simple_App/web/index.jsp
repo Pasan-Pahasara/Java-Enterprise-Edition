@@ -132,7 +132,7 @@ To change this template use File | Settings | File Templates.
                     </div>
 
                     <div class="col-1" style="width: max-content">
-                        <button id="btnAllCustomer" class="btn-modern" form="customerForm" formaction="customer">Get
+                        <button id="btnAllCustomer" class="btn-modern" type="button">Get
                             All Customers
                         </button>
                     </div>
@@ -197,8 +197,8 @@ To change this template use File | Settings | File Templates.
                         </button>
                     </div>
                     <div style="display: inline-block" class="col d-grid gap-2 d-md-flex justify-content-md-end">
-                        <button style="margin-bottom: 8px;margin-top: 8px;" id="btnDeleteCustomer" form="customerForm"
-                                formaction="customer?option=remove" formmethod="post" class="btn-modern">
+                        <button style="margin-bottom: 8px;margin-top: 8px;" id="btnDeleteCustomer" class="btn-modern"
+                                type="button">
                             Delete
                         </button>
                     </div>
@@ -230,12 +230,12 @@ To change this template use File | Settings | File Templates.
                     </div>
                     <div style="display: inline-block" class="me-2">
                         <button style="margin-bottom: 8px;margin-top: 8px;" id="btnCustomer" class="btn-modern"
-                                form="customerForm" formaction="customer?option=add" formmethod="post">+New Customer
+                                type="button">+New Customer
                         </button>
                     </div>
                     <div style="display: inline-block" class="me-2">
                         <button style="margin-bottom: 8px;margin-top: 8px;" id="btnUpdateCustomer" class="btn-modern"
-                                form="customerForm" formaction="customer?option=update" formmethod="post">
+                                type="button">
                             Update
                         </button>
                     </div>
@@ -258,22 +258,177 @@ To change this template use File | Settings | File Templates.
 <script src="assets/js/customer.js"></script>
 
 <script>
+
+    // //load all customers from the database
+    // getAllCustomers();
+
+
+    bindRowClickEvents();
+
+    //Button Events
+    //Add Customer
+    $("#btnCustomer").on('click',function(){
+        let formData= $("#customerForm").serialize();
+        $.ajax({
+            url:"customer?option=add",
+            method:"post",
+            data:formData,
+            success:function(res){
+                // getAllCustomers();
+            }
+        });
+
+    });
+
+    // //Delete Customer
+    $("#btnDeleteCustomer").on('click',function(){
+        let id = $("#txtCustomerID").val();
+        $.ajax({
+            url:"customer?id="+id+"&option=remove",
+            method:"post",
+            success:function (resp){
+                // getAllCustomers();
+            }
+        });
+    });
+
+    //Update Customer
+    $("#btnUpdateCustomer").on('click',function (){
+        let formData= $("#customerForm").serialize();
+        $.ajax({
+            url:"customer?option=update",
+            method:"post",
+            data:formData,
+            success:function(res){
+                // getAllCustomers();
+            }
+        });
+    });
+
+    //Get All Customer
+    // $("#btnAllCustomer").on('click',function (){
+    //     getAllCustomers();
+    // });
+
+    // //Get all Customer Function
+    // function getAllCustomers(){
+    //     $("#tblCustomer").empty();
+    //     $.ajax({
+    //         url:"customer",
+    //         success:function(res){
+    //             for (let c of res) {
+    //                 let cusID=c.id;
+    //                 let cusName=c.name;
+    //                 let cusAddress=c.address;
+    //                 let cusSalary=c.salary;
+    //
+    //                 let row="<tr><td>"+cusID+"</td><td>"+cusName+"</td><td>"+cusAddress+"</td><td>"+cusSalary+"</td></tr>";
+    //                 $("#tblCustomer").append(row);
+    //             }
+    //             bindRowClickEvents();
+    //             setTextFieldValues("","","","");
+    //         }
+    //     });
+    // }
+
+    //Bind events for the table rows function
     function bindRowClickEvents() {
-        $("#tblCustomer>tr").click(function () {
+        $("#tblCustomer>tr").on('click',function () {
             let id = $(this).children(":eq(0)").text();
             let name = $(this).children(":eq(1)").text();
             let address = $(this).children(":eq(2)").text();
             let salary = $(this).children(":eq(3)").text();
-            console.log(id, name, address, salary);
+            // console.log(id, name, address, salary);
+
             //setting table details values to text fields
             $('#txtCustomerID').val(id);
             $('#txtCustomerName').val(name);
             $('#txtCustomerAddress').val(address);
             $('#txtCustomerSalary').val(salary);
+
         });
     }
 
-    bindRowClickEvents();
+    //Set text fields values function
+    function setTextFieldValues(id, name, address, salary) {
+        $("#txtCustomerID").val(id);
+        $("#txtCustomerName").val(name);
+        $("#txtCustomerAddress").val(address);
+        $("#txtCustomerSalary").val(salary);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //////////////////////////////
+    // function bindRowClickEvents() {
+    //     $("#tblCustomer>tr").click(function () {
+    //         let id = $(this).children(":eq(0)").text();
+    //         let name = $(this).children(":eq(1)").text();
+    //         let address = $(this).children(":eq(2)").text();
+    //         let salary = $(this).children(":eq(3)").text();
+    //         console.log(id, name, address, salary);
+    //         //setting table details values to text fields
+    //         $('#txtCustomerID').val(id);
+    //         $('#txtCustomerName').val(name);
+    //         $('#txtCustomerAddress').val(address);
+    //         $('#txtCustomerSalary').val(salary);
+    //     });
+    // }
+    //
+    // bindRowClickEvents();
+    //
+    // $("#btnCustomer").on('click', function () {
+    //     let formData = $("#customerForm").serialize();
+    //     $.ajax({
+    //         url: "customer?option=add",
+    //         method: "post",
+    //         data: formData,
+    //         success: function (res) {
+    //
+    //         }
+    //     });
+    // });
+    //
+    $("#btnAllCustomer").on('click', function () {
+        // $("#tblCustomer").empty();
+        $.ajax({
+            url: "customer",
+            success: function (res) {
+                console.log(res);
+                // for (let c of res) {
+                //     let cusID = c.id;
+                //     let cusName = c.name;
+                //     let cusAddress = c.address;
+                //     let cusSalary = c.salary;
+                //
+                //     var row ="<tr><td>"+cusID+"</td><td>"+cusName+"</td><td>"+cusAddress+"</td><td>"+cusSalary+"</td></tr>";
+                //     $("#tblCustomer").append(row);
+                // }
+            }
+        });
+    });
+
+
 </script>
 </body>
 </html>
