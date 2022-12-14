@@ -267,7 +267,7 @@ To change this template use File | Settings | File Templates.
     $("#btnCustomer").on('click', function () {
         let formData = $("#customerForm").serialize();
         $.ajax({
-            url: "customer?option=add",
+            url: "customer",
             method: "post",
             data: formData,
             success: function (res) {
@@ -276,12 +276,12 @@ To change this template use File | Settings | File Templates.
         });
     });
 
-    // //Delete Customer
+    //Delete Customer
     $("#btnDeleteCustomer").on('click', function () {
         let id = $("#txtCustomerID").val();
         $.ajax({
-            url: "customer?id=" + id + "&option=remove",
-            method: "post",
+            url: "customer?id=" + id,
+            method: "delete",
             success: function (resp) {
                 getAllCustomers();
             }
@@ -290,11 +290,23 @@ To change this template use File | Settings | File Templates.
 
     //Update Customer
     $("#btnUpdateCustomer").on('click', function () {
-        let formData = $("#customerForm").serialize();
+        let cusId = $("#txtCustomerID").val();
+        let cusName = $("#txtCustomerName").val();
+        let cusAddress = $("#txtCustomerAddress").val();
+        let cusSalary = $("#txtCustomerSalary").val();
+
+        var customerOb = {
+            id: cusId,
+            name: cusName,
+            address: cusAddress,
+            salary: cusSalary
+        }
+
         $.ajax({
-            url: "customer?option=update",
-            method: "post",
-            data: formData,
+            url: "customer",
+            method: "put",
+            contentType:"application/json",
+            data: JSON.stringify(customerOb),
             success: function (res) {
                 getAllCustomers();
             }
@@ -323,7 +335,7 @@ To change this template use File | Settings | File Templates.
                     $("#tblCustomer").append(row);
                 }
                 bindRowClickEvents();
-                setTextFieldValues("","","","");
+                setTextFieldValues("", "", "", "");
             }
         });
     }
@@ -353,7 +365,7 @@ To change this template use File | Settings | File Templates.
         $("#txtCustomerAddress").val(address);
         $("#txtCustomerSalary").val(salary);
     }
-    
+
 </script>
 </body>
 </html>
