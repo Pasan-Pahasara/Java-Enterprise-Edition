@@ -7,8 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="41253c15-b786-4419-9f58-0177a7a12f3b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/App_08.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/App_08.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/07_Simple_App/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/07_Simple_App/web/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/08_JSON/08_JSON.iml" beforeDir="false" afterPath="$PROJECT_DIR$/08_JSON/08_JSON.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,18 +36,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/IJSE/Second Semester/AAD (Advance API Development)/Java-Enterprise-Edition/lib/javax.json-1.1.4.jar&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/IJSE/Second Semester/AAD (Advance API Development)/Java-Enterprise-Edition/lib/javax.json-1.1.4.jar",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Java-Enterprise-Edition" />
@@ -63,9 +65,9 @@
     <configuration name="Tomcat 8.5.83" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.83" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="App_07">
+        <artifact name="App_08">
           <settings>
-            <option name="CONTEXT_PATH" value="/App_07" />
+            <option name="CONTEXT_PATH" value="/App_08" />
           </settings>
         </artifact>
       </deployment>
@@ -143,7 +145,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="App_07" />
+          <artifact name="App_08" />
         </option>
       </method>
     </configuration>
@@ -164,6 +166,7 @@
       <workItem from="1670667038372" duration="1930000" />
       <workItem from="1670933219802" duration="1086000" />
       <workItem from="1670997559302" duration="6682000" />
+      <workItem from="1671023630071" duration="1714000" />
     </task>
     <servers />
   </component>
