@@ -16,6 +16,7 @@ To change this template use File | Settings | File Templates.
 <head>
     <meta charset="UTF-8">
     <title>POS System</title>
+    <link rel="icon" href="assets/img/favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" rel="stylesheet">
@@ -56,7 +57,7 @@ To change this template use File | Settings | File Templates.
         <div class="container-fluid">
             <a class="navbar-brand" href="#" style="font-size: 18px; color: #A87E5A;">
                 <!-- navbar image setup -->
-                <img alt="" src="assets/img/logo.png"
+                <img alt="" src="assets/img/favicon.png"
                      style="width: 70px;height: 58px;position: absolute;left: 0;top: 0;"><span
                     style="font-size: 20px; font-weight: bolder; color: #f0f0f0; margin-left: 46px;">YᑌᗰᗰY</span> treats</a>
             <!--Toggle button-->
@@ -270,8 +271,16 @@ To change this template use File | Settings | File Templates.
             url: "customer",
             method: "post",
             data: formData,
-            success: function (res) {
+            dataType: "json", //මේ විදහට string එකක් browser එකට JSON එකක් විදිහට introduced කරන්න පුලුවන් data type එකෙන් response එකට විතරක් use කරන්න පුලුවන්. ඒකෙන් කරන්නේ directly response object එක JSON.parse එකට දාලා parse කරලා දෙන එක. (Response Header එකක් දාන්න පුලුවන් contentType කියලා ඊට අමතරව)
+            success: function (res) { //valid json එකක් ආවේ නැත්නම් run වෙන්නේ නෑ.
+                // invoked if the response status code is in 200 range
                 getAllCustomers();
+                alert(res.message);
+            },
+            error: function (error) {
+                // invoked if status code range is 500 range or 400 range
+                let message = JSON.parse(error.responseText).message;//error object එකේ තියෙන responseText
+                alert(message);
             }
         });
     });
@@ -283,7 +292,14 @@ To change this template use File | Settings | File Templates.
             url: "customer?id=" + id,
             method: "delete",
             success: function (resp) {
+                // invoked if the response status code is in 200 range
                 getAllCustomers();
+                alert(resp.message);
+            },
+            error: function (error) {
+                // invoked if status code range is 500 range or 400 range
+                let message = JSON.parse(error.responseText).message;
+                alert(message);
             }
         });
     });
@@ -305,10 +321,17 @@ To change this template use File | Settings | File Templates.
         $.ajax({
             url: "customer",
             method: "put",
-            contentType:"application/json",
+            contentType: "application/json",
             data: JSON.stringify(customerOb),
             success: function (res) {
+                // invoked if the response status code is in 200 range
                 getAllCustomers();
+                alert(res.message);
+            },
+            error: function (error) {
+                // invoked if status code range is 500 range or 400 range
+                let message = JSON.parse(error.responseText).message;
+                alert(message);
             }
         });
     });
@@ -336,6 +359,10 @@ To change this template use File | Settings | File Templates.
                 }
                 bindRowClickEvents();
                 setTextFieldValues("", "", "", "");
+            },
+            error: function (error) {
+                let message = JSON.parse(error.responseText).message;
+                alert(message);
             }
         });
     }

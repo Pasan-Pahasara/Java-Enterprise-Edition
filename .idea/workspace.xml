@@ -7,14 +7,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="41253c15-b786-4419-9f58-0177a7a12f3b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_Simple_App/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/04_Simple_App/web/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/07_Simple_App/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/07_Simple_App/web/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/08_JSON/src/servlet/CustomerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/08_JSON/src/servlet/CustomerServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/08_JSON/web/assets/img/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/08_JSON/web/assets/img/favicon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/08_JSON/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/08_JSON/web/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -37,20 +51,32 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/IJSE/Second Semester/AAD (Advance API Development)/Java-Enterprise-Edition/08_JSON/src&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/IJSE/Second Semester/AAD (Advance API Development)/Java-Enterprise-Edition/POS_Front_End&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IJSE\Second Semester\AAD (Advance API Development)\Java-Enterprise-Edition\POS_Front_End" />
       <recent name="D:\IJSE\Second Semester\AAD (Advance API Development)\Java-Enterprise-Edition\08_JSON\src" />
       <recent name="D:\IJSE\Second Semester\AAD (Advance API Development)\Java-Enterprise-Edition\08_JSON\web" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="filters" />
     </key>
   </component>
   <component name="RunManager">
@@ -173,7 +199,15 @@
       <workItem from="1670997559302" duration="6682000" />
       <workItem from="1671023630071" duration="3068000" />
       <workItem from="1671031292488" duration="1007000" />
-      <workItem from="1671035519279" duration="8287000" />
+      <workItem from="1671035519279" duration="10310000" />
+      <workItem from="1671049968562" duration="211000" />
+      <workItem from="1671083258415" duration="406000" />
+      <workItem from="1671124723666" duration="2145000" />
+      <workItem from="1671159147822" duration="282000" />
+      <workItem from="1671159440040" duration="11261000" />
+      <workItem from="1671176186428" duration="5053000" />
+      <workItem from="1671283104709" duration="3646000" />
+      <workItem from="1671298298173" duration="5606000" />
     </task>
     <servers />
   </component>
