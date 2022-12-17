@@ -146,8 +146,29 @@ public class CustomerServlet extends HttpServlet {
             pstm.setObject(2, customer.getString("address"));
             pstm.setObject(3, customer.getString("salary"));
             boolean b = pstm.executeUpdate() > 0;
+            if (b) {
+                JsonObjectBuilder rjo = Json.createObjectBuilder();
+                rjo.add("state", "Ok");
+                rjo.add("message", "Successfully Updated..!");
+                rjo.add("data", "");//මේක පාවිච්චි කරන්නෑ හැබැයි convention එකක් විදිහට යවනවා.
+                resp.getWriter().print(rjo.build());//response Object එකේ තියෙන writer එකේ තියෙන print කියන method JsonObject එක build කරලා දානවා.
+            } else {
+                throw new RuntimeException("Wrong ID, Please Check The ID..!");
+            }
+        } catch (RuntimeException e) {//Throw කරපු exception එක අල්ලගන්නවා.
+            JsonObjectBuilder rjoError = Json.createObjectBuilder();
+            rjoError.add("state", "Error");
+            rjoError.add("message", e.getLocalizedMessage());//අල්ලගත්ත Exception එකෙන් එන message එක ගන්නවා (getMessage() එකෙන් ගන්නත් පුලුවන්)
+            rjoError.add("data", "");
+            resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);//status code 500 alternative
+            resp.getWriter().print(rjoError.build());
         } catch (ClassNotFoundException | SQLException e) {
-            throw new RuntimeException(e);
+            JsonObjectBuilder rjoError = Json.createObjectBuilder();
+            rjoError.add("state", "Error");
+            rjoError.add("message", e.getLocalizedMessage());//Exception එකෙන් එන message එක ගන්නවා (getMessage() එකෙන් ගන්නත් පුලුවන්)
+            rjoError.add("data", "");
+            resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);//status code 500 alternative
+            resp.getWriter().print(rjoError.build());
         }
     }
 }

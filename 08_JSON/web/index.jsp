@@ -323,6 +323,7 @@ To change this template use File | Settings | File Templates.
             method: "put",
             contentType: "application/json",
             data: JSON.stringify(customerOb),
+            dataType: "json",
             success: function (res) {
                 // invoked if the response status code is in 200 range
                 getAllCustomers();

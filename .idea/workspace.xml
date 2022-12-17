@@ -7,15 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="41253c15-b786-4419-9f58-0177a7a12f3b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04_Simple_App/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/04_Simple_App/web/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/07_Simple_App/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/07_Simple_App/web/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/08_JSON/src/servlet/CustomerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/08_JSON/src/servlet/CustomerServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/08_JSON/web/assets/img/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/08_JSON/web/assets/img/favicon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/08_JSON/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/08_JSON/web/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,7 +200,7 @@
       <workItem from="1671159440040" duration="11261000" />
       <workItem from="1671176186428" duration="5053000" />
       <workItem from="1671283104709" duration="3646000" />
-      <workItem from="1671298298173" duration="5606000" />
+      <workItem from="1671298298173" duration="6626000" />
     </task>
     <servers />
   </component>
