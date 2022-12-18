@@ -10,6 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/06_AJAX/06_AJAX.iml" filepath="$PROJECT_DIR$/06_AJAX/06_AJAX.iml" />
       <module fileurl="file://$PROJECT_DIR$/07_Simple_App/07_Simple_App.iml" filepath="$PROJECT_DIR$/07_Simple_App/07_Simple_App.iml" />
       <module fileurl="file://$PROJECT_DIR$/08_JSON/08_JSON.iml" filepath="$PROJECT_DIR$/08_JSON/08_JSON.iml" />
+      <module fileurl="file://$PROJECT_DIR$/POS_Front_End/POS_Front_End.iml" filepath="$PROJECT_DIR$/POS_Front_End/POS_Front_End.iml" />
     </modules>
   </component>
 </project>

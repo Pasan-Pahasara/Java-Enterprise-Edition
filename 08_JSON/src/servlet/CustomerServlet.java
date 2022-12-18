@@ -37,6 +37,7 @@ public class CustomerServlet extends HttpServlet {
                 allCustomers.add(customer.build());
             }
             resp.addHeader("Content-Type", "application/json");
+            resp.addHeader("Access-Control-Allow-Origin", "*");
             JsonObjectBuilder load = Json.createObjectBuilder();
             load.add("state", "Ok");
             load.add("message", "Successfully Loaded..!");
@@ -61,7 +62,7 @@ public class CustomerServlet extends HttpServlet {
         String name = req.getParameter("name");
         String address = req.getParameter("address");
         String salary = req.getParameter("salary");
-
+        resp.addHeader("Access-Control-Allow-Origin", "*");
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -107,6 +108,7 @@ public class CustomerServlet extends HttpServlet {
         String id = req.getParameter("id");
         System.out.println(id);
         resp.setContentType("application/json");
+        resp.addHeader("Access-Control-Allow-Origin", "*");
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -128,7 +130,7 @@ public class CustomerServlet extends HttpServlet {
             rjoError.add("state", "Error");
             rjoError.add("message", e.getLocalizedMessage());//අල්ලගත්ත Exception එකෙන් එන message එක ගන්නවා (getMessage() එකෙන් ගන්නත් පුලුවන්)
             rjoError.add("data", "");
-            resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);//status code 500 alternative
+            resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);//status code 400 alternative
             resp.getWriter().print(rjoError.build());
         } catch (ClassNotFoundException | SQLException e) {
             JsonObjectBuilder rjoError = Json.createObjectBuilder();
@@ -145,6 +147,7 @@ public class CustomerServlet extends HttpServlet {
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         JsonObject customer = Json.createReader(req.getReader()).readObject();
+        resp.addHeader("Access-Control-Allow-Origin", "*");
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -179,5 +182,18 @@ public class CustomerServlet extends HttpServlet {
             resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);//status code 500 alternative
             resp.getWriter().print(rjoError.build());
         }
+    }
+
+    @Override
+    /**
+     * Delete කරන එකක risk එකක් තීනවා. ඒක නිසා මුලින් ඇත්තටම actual request (real request) එක යවන්නෑ.
+     * ඒ වෙනුව්ට preflight request එකක් යවනවා. (යවලා බලනවා මේ server එකෙන් delete accepts කරනවද නැත්ද කියලා.)
+     * ඒවා යන්නේ OPTIONS කියන HTTP method එකෙන්.
+     * OPTIONS කියන HTTP method එක හදලා තියෙන්නේම preflight request වලට response generate කරන්න.
+     * */
+    protected void doOptions(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.addHeader("Access-Control-Allow-Origin", "*"); //Access-Control-Allow-Origin Header එක add කරනවා
+        resp.addHeader("Access-Control-Allow-Methods", "DELETE,PUT"); //Access-Control-Allow-Methods Header එක add කරනවා type එක DELETE,PUT(Update) කියලා
+        resp.addHeader("Access-Control-Allow-Headers", "Content-Type"); //Access-Control-Allow-Headers Header එක add කරනවා type එක Content-Type කියලා (Update එකට use කරනවා).
     }
 }

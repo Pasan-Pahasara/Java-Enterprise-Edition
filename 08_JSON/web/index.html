@@ -1,16 +1,7 @@
-<%@ page import="dto.CustomerDTO" %>
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="java.sql.ResultSet" %>
-<%@ page import="java.sql.DriverManager" %>
-<%@ page import="java.sql.Connection" %>
-<%@ page import="java.sql.PreparedStatement" %><%--
-Created by IntelliJ IDEA.
-User: ShEnUx
-Date: 12/3/2022
-Time: 11:25 PM
-To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!--Created by IntelliJ IDEA.-->
+<!--User: ShEnUx-->
+<!--Date: 12/3/2022-->
+<!--Time: 11:25 PM-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,30 +17,6 @@ To change this template use File | Settings | File Templates.
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body class="container-fluid">
-
-<%
-    ArrayList<CustomerDTO> allCustomers = (ArrayList<CustomerDTO>) request.getAttribute("customers");
-
-//    ArrayList<CustomerDTO> allCustomers = new ArrayList<>();
-//    allCustomers.add(new CustomerDTO("C001", "Pahasara", "Galle", 10000));
-//    allCustomers.add(new CustomerDTO("C002", "Sadun", "Panadura", 30000));
-//    allCustomers.add(new CustomerDTO("C003", "Nimesh", "Kaluthara", 40000));
-//    allCustomers.add(new CustomerDTO("C004", "Maneesha", "Hikkaduwa", 51000));
-
-//    //initialize database connection
-//    Class.forName("com.mysql.jdbc.Driver");
-//    Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JEPOS", "root", "1234");
-//    PreparedStatement pstm = connection.prepareStatement("select * from Customer");
-//    ResultSet rst = pstm.executeQuery();
-//    while (rst.next()) {
-//        String id = rst.getString("id");
-//        String name = rst.getString("name");
-//        String address = rst.getString("address");
-//        double salary = rst.getDouble("salary");
-//        allCustomers.add(new CustomerDTO(id, name, address, salary));
-//    }
-%>
-
 <header id="headerBar" class="row">
 
     <nav class="navbar navbar-expand-lg border-bottom shadow-lg sticky-top navbar-dark"
@@ -70,7 +37,7 @@ To change this template use File | Settings | File Templates.
             <div class="collapse navbar-collapse " id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.jsp"><i class="bi bi-house-fill"></i>
+                        <a class="nav-link" aria-current="page" href="index.html"><i class="bi bi-house-fill"></i>
                             Home</a>
                     </li>
 
@@ -165,24 +132,6 @@ To change this template use File | Settings | File Templates.
                         <!--Table body-->
                         <tbody id="tblCustomer">
                         <!--Table data row-->
-                        <%
-                            if (allCustomers != null) {
-                                for (CustomerDTO customer : allCustomers) {
-                        %>
-                        <tr>
-                            <td><%=customer.getId()%>
-                            </td>
-                            <td><%=customer.getName()%>
-                            </td>
-                            <td><%=customer.getAddress()%>
-                            </td>
-                            <td><%=customer.getSalary()%>
-                            </td>
-                        </tr>
-                        <%
-                                }
-                            }
-                        %>
                         </tbody>
                     </table>
                 </div>

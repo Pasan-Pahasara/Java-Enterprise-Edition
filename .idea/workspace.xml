@@ -7,9 +7,61 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="41253c15-b786-4419-9f58-0177a7a12f3b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/POS_Front_End.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/css/bootstrap-grid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/css/bootstrap-grid.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/css/bootstrap-grid.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/css/bootstrap-grid.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/css/bootstrap-grid.rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/css/bootstrap-grid.rtl.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/css/bootstrap-grid.rtl.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/css/bootstrap-grid.rtl.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/css/bootstrap-reboot.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/css/bootstrap-reboot.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/css/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/css/bootstrap-reboot.rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/css/bootstrap-reboot.rtl.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/css/bootstrap-reboot.rtl.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/css/bootstrap-reboot.rtl.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/css/bootstrap-utilities.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/css/bootstrap-utilities.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/css/bootstrap-utilities.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/css/bootstrap-utilities.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/css/bootstrap-utilities.rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/css/bootstrap-utilities.rtl.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/css/bootstrap-utilities.rtl.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/css/bootstrap-utilities.rtl.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/css/bootstrap.rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/css/bootstrap.rtl.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/css/bootstrap.rtl.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/css/bootstrap.rtl.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/css/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/img/favicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/jQuery/jquery-3.6.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/js/bootstrap.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/js/bootstrap.bundle.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/js/bootstrap.esm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/js/bootstrap.esm.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/js/bootstrap.esm.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/js/bootstrap.esm.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/js/bootstrap.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/js/bootstrap.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/js/customer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/assets/js/sql.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/POS_Front_End/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/08_JSON/src/servlet/CustomerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/08_JSON/src/servlet/CustomerServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/08_JSON/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/08_JSON/web/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/08_JSON/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/08_JSON/web/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +73,7 @@
       <list>
         <option value="HTML File" />
         <option value="Class" />
+        <option value="package.json" />
       </list>
     </option>
   </component>
@@ -53,7 +106,7 @@
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/IJSE/Second Semester/AAD (Advance API Development)/Java-Enterprise-Edition/POS_Front_End&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   },
@@ -202,7 +255,10 @@
       <workItem from="1671176186428" duration="5053000" />
       <workItem from="1671283104709" duration="3646000" />
       <workItem from="1671298298173" duration="7565000" />
-      <workItem from="1671335223536" duration="945000" />
+      <workItem from="1671335223536" duration="8134000" />
+      <workItem from="1671347395892" duration="2309000" />
+      <workItem from="1671353044877" duration="2424000" />
+      <workItem from="1671362636970" duration="3232000" />
     </task>
     <servers />
   </component>
