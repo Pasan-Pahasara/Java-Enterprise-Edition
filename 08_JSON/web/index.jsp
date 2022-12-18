@@ -349,7 +349,7 @@ To change this template use File | Settings | File Templates.
             url: "customer",
             success: function (res) {
                 console.log(res);
-                for (let c of res) {
+                for (let c of res.data) {
                     let cusID = c.id;
                     let cusName = c.name;
                     let cusAddress = c.address;
