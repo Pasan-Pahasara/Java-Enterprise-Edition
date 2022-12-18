@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>POS System | Item Form</title>
+    <link rel="icon" href="assets/img/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Bootstrap for Style -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="container-fluid">
+
+<header id="headerBar" class="row">
+
+    <nav class="navbar navbar-expand-lg border-bottom shadow-lg sticky-top navbar-dark"
+         style="background-color: #232121">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" style="font-size: 18px; color: #A87E5A;">
+                <!-- navbar image setup -->
+                <img alt="" src="assets/img/favicon.png"
+                     style="width: 70px;height: 58px;position: absolute;left: 0;top: 0;"><span
+                    style="font-size: 20px; font-weight: bolder; color: #f0f0f0; margin-left: 46px;">YᑌᗰᗰY</span> treats</a>
+            <!--Toggle button-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="../../../04_Simple_App/web/index.jsp"><i
+                                class="bi bi-house-fill"></i>
+                            Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="CustomerForm.html"><i
+                                class="bi bi-people-fill"></i> Customers</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="itemForm.html"><i
+                                class="bi bi-handbag-fill"></i> Items</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="oderForm.html"><i
+                                class="bi bi-cart-check-fill"></i> Orders</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#"><i class="bi bi-card-checklist"></i> Orders
+                            Details</a>
+                    </li>
+
+                </ul>
+                <ul class="navbar-nav me-6 mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#"><i class="bi bi-person-plus-fill"></i>
+                            Sign Up</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#"><i class="bi bi-box-arrow-right"></i>
+                            Log Out</a>
+                    </li>
+                </ul>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+</header>
+
+<main class="row mx-3">
+    <section class="col-12 mb-4">
+        <div class="row">
+            <div id="display"
+                 style="background: linear-gradient(to right, #000000, #b88962);box-shadow: rgb(0 0 0 / 25%) 0 14px 28px, rgb(0 0 0 / 22%) 0 10px 10px!important;"
+                 class="p-1 px-3 col rounded-3 fw-bolder bg-secondary text-light fs-3 mt-4 shadow-sm"><i
+                    class="fas fa-user-edit me-2"></i>Manage Item
+            </div>
+        </div>
+    </section>
+
+    <section class="col-12 row">
+        <section class="col-xl-7 ps-4">
+            <section class="col-12 mt-4 mb-5">
+                <form class="row g-3">
+                    <div class="col-xl-6 col-lg-12">
+                        <input type="search" class="form-control rounded-pill" id="txtSearchItem"
+                               placeholder="Search Item">
+                    </div>
+
+                    <div class="col-1" style="width: max-content">
+                        <button id="btnAllItem" class="btn-modern" type="button">Get
+                            All Items
+                        </button>
+                    </div>
+
+                    <div class="col-1" style="width: max-content">
+                        <button id="btnSearchItem" type="button" class="btn-modern">Search</button>
+                    </div>
+
+                    <div class="col-1" style="width: max-content">
+                        <button id="btnSearchItemClear" type="button" class="btn-modern">Clear</button>
+                    </div>
+                </form>
+            </section>
+            <!--            style="height: 25.5rem; overflow: auto"-->
+            <section>
+                <div class="col-12 d-flex rounded-2 shadow overflow-auto">
+                    <!--Item Table-->
+                    <table class="table table-hover">
+                        <!--Table head-->
+                        <thead class="text-white card-header-tabs table-responsive sticky-top">
+                        <!--Table head row-->
+                        <tr>
+                            <!--Table headings-->
+                            <th>Item Code</th>
+                            <th>Item Name</th>
+                            <th>Item Qty</th>
+                            <th>Item Price</th>
+                        </tr>
+                        </thead>
+                        <tr id="loader" style="display: none;text-align: center">
+                            <td colspan="4">
+                                <h1>Loading..!</h1>
+                            </td>
+                        </tr>
+                        <!--Table body-->
+                        <tbody id="tblItem">
+                        <!--Table data row-->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </section>
+
+        <!--Customer Manage Form-->
+        <section class="col-xl-5 row justify-content-xl-end d-grid gap-2 d-md-flex justify-content-sm-center">
+            <section class="col-8 border item-container mt-3 mb-3">
+                <form id="itemForm">
+                    <div style="display: inline-block" class="col d-grid gap-2 d-md-flex justify-content-md-end">
+                        <button id="btnClear" type="button" class="btn-modern">Clear
+                        </button>
+                    </div>
+                    <div style="display: inline-block" class="col d-grid gap-2 d-md-flex justify-content-md-end">
+                        <button style="margin-bottom: 8px;margin-top: 8px;" id="btnDeleteItem" class="btn-modern">
+                            Delete
+                        </button>
+                    </div>
+                    <div class="mb-3">
+                        <label for="txtItemCode" class="form-label">Item Code</label>
+                        <input type="text" class="form-control prevent_tab_key_focus" id="txtItemCode"
+                               aria-describedby="idHelp" placeholder="Eg :- I00-001" name="code">
+                        <div id="idHelp" class="form-text"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="txtItemName" class="form-label">Item Name</label>
+                        <input type="text" class="form-control prevent_tab_key_focus" id="txtItemName"
+                               aria-describedby="nameHelp" placeholder="Eg :- Pizza" name="description">
+                        <div id="nameHelp" class="form-text"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="txtItemQty" class="form-label">Item Qty</label>
+                        <input type="text" class="form-control prevent_tab_key_focus" id="txtItemQty"
+                               aria-describedby="addressHelp" placeholder="Eg :- 100"
+                               name="qtyOnHand">
+                        <div id="addressHelp" class="form-text"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="txtItemPrice" class="form-label">Unit Price</label>
+                        <input type="text" class="form-control prevent_tab_key_focus" id="txtItemPrice"
+                               aria-describedby="salaryHelp"
+                               placeholder="Eg :- 200 or 250.00" name="unitPrice">
+                        <div id="salaryHelp" class="form-text"></div>
+                    </div>
+                    <div style="display: inline-block" class="me-2">
+                        <button style="margin-bottom: 8px;margin-top: 8px;" id="btnItem" class="btn-modern"
+                                type="button">+New Item
+                        </button>
+                    </div>
+                    <div style="display: inline-block" class="me-2">
+                        <button style="margin-bottom: 8px;margin-top: 8px;" id="btnUpdateItem" class="btn-modern"
+                                type="button">
+                            Update
+                        </button>
+                    </div>
+                </form>
+            </section>
+        </section>
+    </section>
+</main>
+
+<!-- Bootstrap for JS -->
+<script src="assets/js/bootstrap.min.js"></script>
+
+<!-- jQuery for JS -->
+<script src="assets/jQuery/jquery-3.6.1.min.js"></script>
+
+<!-- Swal CDN link -->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<!-- Customer JS -->
+<script src="assets/js/item.js"></script>
+
+<script>
+    let baseUrl="http://localhost:8080/App_08/";//Back end එකේ location URL එක.
+
+    //load all items from the database
+    getAllItems();
+
+    //Button Events
+    //Add Item
+    $("#btnItem").on('click', function () {
+        let formData = $("#itemForm").serialize();
+        $.ajax({
+            url: baseUrl+"item",
+            method: "post",
+            data: formData,
+            dataType: "json", //මේ විදහට string එකක් browser එකට JSON එකක් විදිහට introduced කරන්න පුලුවන් data type එකෙන් response එකට විතරක් use කරන්න පුලුවන්. ඒකෙන් කරන්නේ directly response object එක JSON.parse එකට දාලා parse කරලා දෙන එක. (Response Header එකක් දාන්න පුලුවන් contentType කියලා ඊට අමතරව)
+            success: function (res) { //valid json එකක් ආවේ නැත්නම් run වෙන්නේ නෑ.
+                // invoked if the response status code is in 200 range
+                getAllItems();
+                alert(res.message);
+            },
+            error: function (error) {
+                // invoked if status code range is 500 range or 400 range
+                let message = JSON.parse(error.responseText).message;//error object එකේ තියෙන responseText
+                alert(message);
+            }
+        });
+    });
+
+    //Delete item
+    $("#btnDeleteItem").on('click', function () {
+        let code = $("#txtItemCode").val();
+        $.ajax({
+            url: baseUrl+"item?code=" + code,
+            method: "delete",
+            success: function (resp) {
+                // invoked if the response status code is in 200 range
+                getAllItems();
+                alert(resp.message);
+            },
+            error: function (error) {
+                // invoked if status code range is 500 range or 400 range
+                let message = JSON.parse(error.responseText).message;
+                alert(message);
+            }
+        });
+    });
+
+    //Update Item
+    $("#btnUpdateItem").on('click', function () {
+        let itemCode = $("#txtItemCode").val();
+        let itemName = $("#txtItemName").val();
+        let itemQty = $("#txtItemQty").val();
+        let itemPrice = $("#txtItemPrice").val();
+
+        var itemOb = {
+            code: itemCode,
+            description: itemName,
+            qtyOnHand: itemQty,
+            unitPrice: itemPrice
+        }
+
+        $.ajax({
+            url: baseUrl+"item",
+            method: "put",
+            contentType: "application/json",
+            data: JSON.stringify(itemOb),
+            dataType: "json",
+            success: function (res) {
+                // invoked if the response status code is in 200 range
+                getAllItems();
+                alert(res.message);
+            },
+            error: function (error) {
+                // invoked if status code range is 500 range or 400 range
+                let message = JSON.parse(error.responseText).message;
+                alert(message);
+            }
+        });
+    });
+
+    //Get All Item
+    $("#btnAllItem").on('click', function () {
+        getAllItems();
+    });
+
+    //Get all Item Function
+    function getAllItems() {
+        $("#tblItem").empty();
+        $.ajax({
+            url: baseUrl+"item",//දාපු baseUrl එක append කරනවා
+            success: function (res) {
+                console.log(res);
+                for (let t of res.data) {
+                    let itemCode = t.code;
+                    let itemName = t.description;
+                    let itemQty = t.qtyOnHand;
+                    let itemPrice = t.unitPrice;
+
+                    var row = "<tr><td>" + itemCode + "</td><td>" + itemName + "</td><td>" + itemQty + "</td><td>" + itemPrice + "</td></tr>";
+                    $("#tblItem").append(row);
+                }
+                bindRowClickEvents();
+                setTextFieldValues("", "", "", "");
+            },
+            error: function (error) {
+                let message = JSON.parse(error.responseText).message;
+                alert(message);
+            }
+        });
+    }
+
+    //Bind events for the table rows function
+    function bindRowClickEvents() {
+        $("#tblItem>tr").on('click', function () {
+            let code = $(this).children(":eq(0)").text();
+            let name = $(this).children(":eq(1)").text();
+            let qty = $(this).children(":eq(2)").text();
+            let unitPrice = $(this).children(":eq(3)").text();
+            // console.log(code, name, qty, unitPrice);
+
+            //setting table details values to text fields
+            $('#txtItemCode').val(code);
+            $('#txtItemName').val(name);
+            $('#txtItemQty').val(qty);
+            $('#txtItemPrice').val(unitPrice);
+
+        });
+    }
+
+    //Set text fields values function
+    function setTextFieldValues(code, name, qty, unitPrice) {
+        $("#txtItemCode").val(code);
+        $("#txtItemName").val(name);
+        $("#txtItemQty").val(qty);
+        $("#txtItemPrice").val(unitPrice);
+    }
+
+
+
+
+    // function bindRowClickEvents() {
+    //     $("#tblCustomer>tr").click(function () {
+    //         let id = $(this).children(":eq(0)").text();
+    //         let name = $(this).children(":eq(1)").text();
+    //         let address = $(this).children(":eq(2)").text();
+    //         let salary = $(this).children(":eq(3)").text();
+    //         console.log(id, name, address, salary);
+    //         //setting table details values to text fields
+    //         $('#txtCustomerID').val(id);
+    //         $('#txtCustomerName').val(name);
+    //         $('#txtCustomerAddress').val(address);
+    //         $('#txtCustomerSalary').val(salary);
+    //     });
+    // }
+    //
+    // bindRowClickEvents();
+    //
+    // // $("#btnText").on('click', function () {
+    // //     // //initializing XMLHttpRequest Object
+    // //     // let httpRequest = new XMLHttpRequest();
+    // //     // console.log("First ",httpRequest.readyState);
+    // //     //
+    // //     // //open the request
+    // //     // httpRequest.open("get","db/db.txt");
+    // //     // console.log("Second ",httpRequest.readyState);
+    // //     //
+    // //     // //send the request
+    // //     // httpRequest.send();
+    // //     // console.log("Third ",httpRequest.readyState);
+    // //     //
+    // //     // httpRequest.responseText;
+    // //     //
+    // //     // console.log("Response :",httpRequest.responseText);
+    // //     // console.log("Fourth ",httpRequest.readyState);
+    // //     //
+    // //     // httpRequest.onreadystatechange=function () {
+    // //     //     console.log(httpRequest.readyState); //2 //3 //4
+    // //     //     console.log("On ready State Change Event Invoked");
+    // //     //     if (httpRequest.readyState==4){
+    // //     //         console.log("Response ",httpRequest.responseText);
+    // //     //     }
+    // //     // }
+    // //
+    // //     //02. send AJAX request using XMLHTTPRequest Object
+    // //
+    // //     // let http = new XMLHttpRequest();
+    // //     // http.open("get", "db/db.txt");
+    // //     // http.send();
+    // //     // http.onreadystatechange = function () {
+    // //     //     if (http.readyState === 4 && http.status === 200) { // if the request completed
+    // //     //         console.log("Response", http.responseText);
+    // //     //         $("#display").text(http.responseText);
+    // //     //     }
+    // //     // }
+    // //
+    // //     //03. How to send AJAX request using jQuery
+    // //
+    // //     $.ajax({
+    // //         url: "db/db.txt",
+    // //         async: false,
+    // //         success: function (res) {
+    // //             console.log(res);
+    // //             $("#display").text(res);
+    // //         }
+    // //     });
+    // // });
+    //
+    // //Send request to db.txt
+    // $("#btnText").on('click', function () {
+    //     $("#tblItem").empty();
+    //     $.ajax({
+    //         url: 'db/db.txt',
+    //         success: function (res) {
+    //             let split = res.split(" ");
+    //             var row = `<tr><td>${split[0]}</td><td>${split[1]}</td><td>${split[2]}</td><td>${split[3]}</td></tr>`;
+    //             $("#tblItem").append(row);
+    //         }
+    //     });
+    // });
+    //
+    // //Send request to XML file
+    // $("#btnXML").on('click', function () {
+    //     $("#loader").css('display','inline-block');
+    //     $("#tblItem").empty();
+    //     $.ajax({
+    //         url: 'db/db.xml',
+    //         success: function (res) {
+    //             console.log(res);
+    //             $("#loader").css('display','none')
+    //             console.log($(res).children().children());
+    //
+    //             let itemCount = $(res).children().children().length;
+    //             for (let i = 0; i < itemCount; i++) {
+    //                 let item = $(res).children().children().eq(i);
+    //                 let code = item.children(":eq(0)").text();
+    //                 let name = item.children(":eq(1)").text();
+    //                 let qty = item.children(":eq(2)").text();
+    //                 let unitPrice = item.children(":eq(3)").text();
+    //
+    //                 var row = `<tr><td>${code}</td><td>${name}</td><td>${qty}</td><td>${unitPrice}</td></tr>`;
+    //                 $("#tblItem").append(row);
+    //             }
+    //         }
+    //     });
+    // });
+    //
+    // //Send request to JSON file
+    // $("#btnJSON").on('click', function () {
+    //     $("#tblItem").empty();
+    //     $.ajax({
+    //         url: 'db/db.json',
+    //         success: function (res) {
+    //             for (let item of res) {
+    //                 var row = `<tr><td>${item.code}</td><td>${item.name}</td><td>${item.qty}</td><td>${item.unitPrice}</td></tr>`;
+    //                 $("#tblItem").append(row);
+    //             }
+    //         }
+    //     });
+    // });
+</script>
+</body>
+</html>
+
+

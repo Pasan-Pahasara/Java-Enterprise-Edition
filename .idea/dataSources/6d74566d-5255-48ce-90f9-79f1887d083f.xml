@@ -1012,29 +1012,60 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <column id="297" parent="296" name="id">
+    <table id="297" parent="283" name="item">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <column id="298" parent="296" name="id">
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="298" parent="296" name="name">
+    <column id="299" parent="296" name="name">
       <DataType>varchar(45)|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="299" parent="296" name="address">
+    <column id="300" parent="296" name="address">
       <DataType>text|0s</DataType>
       <Position>3</Position>
     </column>
-    <column id="300" parent="296" name="salary">
+    <column id="301" parent="296" name="salary">
       <DataType>double|0s</DataType>
       <Position>4</Position>
     </column>
-    <index id="301" parent="296" name="PRIMARY">
+    <index id="302" parent="296" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="302" parent="296" name="PRIMARY">
+    <key id="303" parent="296" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="304" parent="297" name="code">
+      <DataType>varchar(45)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="305" parent="297" name="description">
+      <DataType>varchar(45)|0s</DataType>
+      <Position>2</Position>
+    </column>
+    <column id="306" parent="297" name="qtyOnHand">
+      <DataType>varchar(10)|0s</DataType>
+      <Position>3</Position>
+    </column>
+    <column id="307" parent="297" name="unitPrice">
+      <DataType>double|0s</DataType>
+      <Position>4</Position>
+    </column>
+    <index id="308" parent="297" name="PRIMARY">
+      <ColNames>code</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="309" parent="297" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
