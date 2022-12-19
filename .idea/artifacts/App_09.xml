@@ -8,6 +8,7 @@
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="lib" />
+          <element id="library" level="project" name="commons-pool2-2.11.1" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="09_Filters/web/Web" />
