@@ -7,8 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="41253c15-b786-4419-9f58-0177a7a12f3b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/09_Filters/src/filters/FilterTwo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/09_Filters/src/filters/FilterOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/09_Filters/src/filters/FilterOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/09_Filters/src/filters/FilterTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/09_Filters/src/filters/FilterTwo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +209,7 @@
       <workItem from="1671362636970" duration="7857000" />
       <workItem from="1671377306088" duration="558000" />
       <workItem from="1671382972049" duration="2215000" />
-      <workItem from="1671418979014" duration="4417000" />
+      <workItem from="1671418979014" duration="5883000" />
     </task>
     <servers />
   </component>

@@ -20,6 +20,12 @@ public class FilterTwo implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         System.out.println("Filter Two Do Filter Method Invoked");
+        String name = servletRequest.getParameter("name");
+        if (name.equals("ijse")) {
+            servletResponse.getWriter().write("<h1>Authenticated User</h1>");
+        } else {
+            servletResponse.getWriter().write("<h1>Non Authenticated User</h1>");
+        }
     }
 
     @Override
