@@ -1,6 +1,6 @@
 package servlet;
 
-import org.apache.commons.dbcp2.BasicDataSource;
+import singleton.DBConnection;
 
 import javax.json.Json;
 import javax.json.JsonArrayBuilder;
@@ -27,16 +27,7 @@ public class CustomerServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
-            //How to configure DBCP pool
-            BasicDataSource dataSource = new BasicDataSource();
-            dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-            dataSource.setUrl("jdbc:mysql://localhost:3306/JEPOS");
-            dataSource.setUsername("root");
-            dataSource.setPassword("1234");
-            dataSource.setMaxTotal(2);//how many connection (ඕන connection ගාන දානවා)
-            dataSource.setInitialSize(2);//how many connection should be initialized from created connection (දාපු connection ගානින් active කරලා තියන්න ඕන connection ගාන)
-
-            Connection connection = dataSource.getConnection();
+            Connection connection = DBConnection.getDbConnection().getConnection();
             PreparedStatement pstm = connection.prepareStatement("select * from Customer");
             ResultSet rst = pstm.executeQuery();
 
@@ -75,8 +66,7 @@ public class CustomerServlet extends HttpServlet {
         String salary = req.getParameter("salary");
 
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JEPOS", "root", "1234");
+            Connection connection = DBConnection.getDbConnection().getConnection();
             PreparedStatement pstm = connection.prepareStatement("insert into Customer values(?,?,?,?)");
             pstm.setObject(1, id);
             pstm.setObject(2, name);
@@ -92,14 +82,6 @@ public class CustomerServlet extends HttpServlet {
                 resp.getWriter().print(responseObject.build());//response Object එකේ තියෙන writer එකේ තියෙන print කියන method JsonObject එක build කරලා දානවා.
             }
 //            resp.setStatus(201);// data created
-        } catch (ClassNotFoundException e) {
-            JsonObjectBuilder error = Json.createObjectBuilder();
-            error.add("state", "Error");
-            error.add("message", e.getLocalizedMessage());//Exception එකෙන් එන message එක ගන්නවා (getMessage() එකෙන් ගන්නත් පුලුවන්)
-            error.add("data", "");
-//            resp.setStatus(500);//status code එක සෙට් කරලා යවනවා (Server error)
-            resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);//status code 500 alternative
-            resp.getWriter().print(error.build());
         } catch (SQLException e) {
             JsonObjectBuilder error = Json.createObjectBuilder();
             error.add("state", "Error");
@@ -119,8 +101,7 @@ public class CustomerServlet extends HttpServlet {
         System.out.println(id);
 
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JEPOS", "root", "1234");
+            Connection connection = DBConnection.getDbConnection().getConnection();
             PreparedStatement pstm = connection.prepareStatement("delete from Customer where id=?");
             pstm.setObject(1, id);
             boolean b = pstm.executeUpdate() > 0;
@@ -140,7 +121,7 @@ public class CustomerServlet extends HttpServlet {
             rjoError.add("data", "");
             resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);//status code 400 alternative
             resp.getWriter().print(rjoError.build());
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch (SQLException e) {
             JsonObjectBuilder rjoError = Json.createObjectBuilder();
             rjoError.add("state", "Error");
             rjoError.add("message", e.getLocalizedMessage());//Exception එකෙන් එන message එක ගන්නවා (getMessage() එකෙන් ගන්නත් පුලුවන්)
@@ -157,8 +138,7 @@ public class CustomerServlet extends HttpServlet {
         JsonObject customer = Json.createReader(req.getReader()).readObject();
 
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JEPOS", "root", "1234");
+            Connection connection = DBConnection.getDbConnection().getConnection();
             PreparedStatement pstm = connection.prepareStatement("update Customer set name=?,address=?,salary=? where id=?");
             pstm.setObject(4, customer.getString("id"));
             pstm.setObject(1, customer.getString("name"));
@@ -181,7 +161,7 @@ public class CustomerServlet extends HttpServlet {
             rjoError.add("data", "");
             resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);//status code 500 alternative
             resp.getWriter().print(rjoError.build());
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch (SQLException e) {
             JsonObjectBuilder rjoError = Json.createObjectBuilder();
             rjoError.add("state", "Error");
             rjoError.add("message", e.getLocalizedMessage());//Exception එකෙන් එන message එක ගන්නවා (getMessage() එකෙන් ගන්නත් පුලුවන්)

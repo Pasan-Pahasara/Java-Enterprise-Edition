@@ -7,24 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9ed5a5e-13b4-4601-8b26-b09f90135bf9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/App_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/commons_pool2_2_11_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_j_8_0_31.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/12_DBCP/12_DBCP.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/12_DBCP/src/dto/CustomerDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/12_DBCP/src/filter/CORSFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/12_DBCP/src/servlet/CustomerServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/12_DBCP/src/servlet/ItemServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/12_DBCP/web/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/12_DBCP/web/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/App_08.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/App_08.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/App_09.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/App_09.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/12_DBCP/src/singleton/DBConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/08_JSON/08_JSON.iml" beforeDir="false" afterPath="$PROJECT_DIR$/08_JSON/08_JSON.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/09_Filters/09_Filters.iml" beforeDir="false" afterPath="$PROJECT_DIR$/09_Filters/09_Filters.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/10_POS_Front_End/customer.html" beforeDir="false" afterPath="$PROJECT_DIR$/10_POS_Front_End/customer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/10_POS_Front_End/item.html" beforeDir="false" afterPath="$PROJECT_DIR$/10_POS_Front_End/item.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/12_DBCP/src/servlet/CustomerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/12_DBCP/src/servlet/CustomerServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +20,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -177,7 +163,7 @@
       <workItem from="1671444885460" duration="3473000" />
       <workItem from="1671449792767" duration="5951000" />
       <workItem from="1671459696288" duration="309000" />
-      <workItem from="1671468942746" duration="384000" />
+      <workItem from="1671468942746" duration="2797000" />
     </task>
     <servers />
   </component>
