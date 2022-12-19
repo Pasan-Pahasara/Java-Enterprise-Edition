@@ -1,5 +1,7 @@
 package servlet;
 
+import singleton.DBConnection;
+
 import javax.json.Json;
 import javax.json.JsonArrayBuilder;
 import javax.json.JsonObject;
@@ -25,8 +27,7 @@ public class ItemServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JEPOS", "root", "1234");
+            Connection connection = DBConnection.getDbConnection().getConnection();
             PreparedStatement pstm = connection.prepareStatement("select * from Item");
             ResultSet rst = pstm.executeQuery();
 
@@ -44,7 +45,7 @@ public class ItemServlet extends HttpServlet {
             load.add("message", "Successfully Loaded..!");
             load.add("data", allItems.build());
             resp.getWriter().print(load.build());
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch (SQLException e) {
             JsonObjectBuilder rjoError = Json.createObjectBuilder();
             rjoError.add("state", "Error");
             rjoError.add("message", e.getLocalizedMessage());
@@ -58,8 +59,7 @@ public class ItemServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JEPOS", "root", "1234");
+            Connection connection = DBConnection.getDbConnection().getConnection();
             PreparedStatement pstm = connection.prepareStatement("insert into Item values(?,?,?,?)");
             pstm.setObject(1, req.getParameter("code"));
             pstm.setObject(2, req.getParameter("description"));
@@ -74,13 +74,6 @@ public class ItemServlet extends HttpServlet {
                 responseObject.add("data", "");
                 resp.getWriter().print(responseObject.build());
             }
-        } catch (ClassNotFoundException e) {
-            JsonObjectBuilder error = Json.createObjectBuilder();
-            error.add("state", "Error");
-            error.add("message", e.getLocalizedMessage());
-            error.add("data", "");
-            resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);//status code 500 alternative
-            resp.getWriter().print(error.build());
         } catch (SQLException e) {
             JsonObjectBuilder error = Json.createObjectBuilder();
             error.add("state", "Error");
@@ -95,8 +88,7 @@ public class ItemServlet extends HttpServlet {
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JEPOS", "root", "1234");
+            Connection connection = DBConnection.getDbConnection().getConnection();
             PreparedStatement pstm = connection.prepareStatement("delete from Item where code=?");
             pstm.setObject(1, req.getParameter("code"));
             boolean b = pstm.executeUpdate() > 0;
@@ -116,7 +108,7 @@ public class ItemServlet extends HttpServlet {
             rjoError.add("data", "");
             resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             resp.getWriter().print(rjoError.build());
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch (SQLException e) {
             JsonObjectBuilder rjoError = Json.createObjectBuilder();
             rjoError.add("state", "Error");
             rjoError.add("message", e.getLocalizedMessage());
@@ -131,8 +123,7 @@ public class ItemServlet extends HttpServlet {
         JsonObject item = Json.createReader(req.getReader()).readObject();
 
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JEPOS", "root", "1234");
+            Connection connection = DBConnection.getDbConnection().getConnection();
             PreparedStatement pstm = connection.prepareStatement("update Item set description=?,qtyOnHand=?,unitPrice=? where code=?");
             pstm.setObject(4, item.getString("code"));
             pstm.setObject(1, item.getString("description"));
@@ -155,7 +146,7 @@ public class ItemServlet extends HttpServlet {
             rjoError.add("data", "");
             resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);//status code 500 alternative
             resp.getWriter().print(rjoError.build());
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch (SQLException e) {
             JsonObjectBuilder rjoError = Json.createObjectBuilder();
             rjoError.add("state", "Error");
             rjoError.add("message", e.getLocalizedMessage());
