@@ -7,32 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="41253c15-b786-4419-9f58-0177a7a12f3b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/09_Filters/src/filters/FilterOne.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/09_Filters/src/filters/FilterTwo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04_Simple_App/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/04_Simple_App/web/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04_Simple_App/web/assets/jQuery/jquery-3.6.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/04_Simple_App/web/assets/jQuery/jquery-3.6.1.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04_Simple_App/web/assets/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/04_Simple_App/web/assets/js/bootstrap.bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04_Simple_App/web/assets/js/bootstrap.esm.js" beforeDir="false" afterPath="$PROJECT_DIR$/04_Simple_App/web/assets/js/bootstrap.esm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04_Simple_App/web/assets/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/04_Simple_App/web/assets/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/06_AJAX/assets/jQuery/jquery-3.6.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/jQuery/jquery-3.6.1.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/06_AJAX/assets/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/js/bootstrap.bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/06_AJAX/assets/js/bootstrap.esm.js" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/js/bootstrap.esm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/06_AJAX/assets/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/06_AJAX/assets/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/07_Simple_App/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/07_Simple_App/web/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/07_Simple_App/web/assets/jQuery/jquery-3.6.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/07_Simple_App/web/assets/jQuery/jquery-3.6.1.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/07_Simple_App/web/assets/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/07_Simple_App/web/assets/js/bootstrap.bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/07_Simple_App/web/assets/js/bootstrap.esm.js" beforeDir="false" afterPath="$PROJECT_DIR$/07_Simple_App/web/assets/js/bootstrap.esm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/07_Simple_App/web/assets/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/07_Simple_App/web/assets/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/08_JSON/web/assets/jQuery/jquery-3.6.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/08_JSON/web/assets/jQuery/jquery-3.6.1.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/08_JSON/web/assets/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/08_JSON/web/assets/js/bootstrap.bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/08_JSON/web/assets/js/bootstrap.esm.js" beforeDir="false" afterPath="$PROJECT_DIR$/08_JSON/web/assets/js/bootstrap.esm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/08_JSON/web/assets/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/08_JSON/web/assets/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/09_Filters/src/A.java" beforeDir="false" afterPath="$PROJECT_DIR$/09_Filters/src/servlet/A.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/09_Filters/src/B.java" beforeDir="false" afterPath="$PROJECT_DIR$/09_Filters/src/servlet/B.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/POS_Front_End/assets/jQuery/jquery-3.6.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/POS_Front_End/assets/jQuery/jquery-3.6.1.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/POS_Front_End/assets/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/POS_Front_End/assets/js/bootstrap.bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/POS_Front_End/assets/js/bootstrap.esm.js" beforeDir="false" afterPath="$PROJECT_DIR$/POS_Front_End/assets/js/bootstrap.esm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/POS_Front_End/assets/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/POS_Front_End/assets/js/bootstrap.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -232,7 +208,7 @@
       <workItem from="1671362636970" duration="7857000" />
       <workItem from="1671377306088" duration="558000" />
       <workItem from="1671382972049" duration="2215000" />
-      <workItem from="1671418979014" duration="3496000" />
+      <workItem from="1671418979014" duration="4417000" />
     </task>
     <servers />
   </component>
