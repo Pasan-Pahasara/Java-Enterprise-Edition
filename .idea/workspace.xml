@@ -7,11 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="41253c15-b786-4419-9f58-0177a7a12f3b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/08_JSON/src/servlet/ItemServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/POS_Front_End/item.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/POS_Front_End/assets/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/POS_Front_End/assets/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/POS_Front_End/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/POS_Front_End/customer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/POS_Front_End/customer.html" beforeDir="false" afterPath="$PROJECT_DIR$/POS_Front_End/customer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/POS_Front_End/item.html" beforeDir="false" afterPath="$PROJECT_DIR$/POS_Front_End/item.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +53,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "D:/IJSE/Second Semester/AAD (Advance API Development)/Java-Enterprise-Edition/POS_Front_End",
+    "last_opened_file_path": "C:/Users/ShEnUx/Videos/important/Java-Enterprise-Edition/JavaEE-59",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
@@ -209,6 +208,9 @@
       <workItem from="1671347395892" duration="2309000" />
       <workItem from="1671353044877" duration="2424000" />
       <workItem from="1671362636970" duration="7857000" />
+      <workItem from="1671377306088" duration="558000" />
+      <workItem from="1671382972049" duration="2215000" />
+      <workItem from="1671418979014" duration="2200000" />
     </task>
     <servers />
   </component>
