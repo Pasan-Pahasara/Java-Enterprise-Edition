@@ -680,7 +680,7 @@
   }
 
   function normalizeDataKey(key) {
-    return key.replace(/[A-Z]/g, chr => `-${chr.toLowerCase()}`);
+    return key.replace(/[servlet.A-Z]/g, chr => `-${chr.toLowerCase()}`);
   }
 
   const Manipulator = {
@@ -866,7 +866,7 @@
     const clickEvent = `click.dismiss${component.EVENT_KEY}`;
     const name = component.NAME;
     EventHandler.on(document, clickEvent, `[data-bs-dismiss="${name}"]`, function (event) {
-      if (['A', 'AREA'].includes(this.tagName)) {
+      if (['servlet.A', 'AREA'].includes(this.tagName)) {
         event.preventDefault();
       }
 
@@ -1949,7 +1949,7 @@
 
   EventHandler.on(document, EVENT_CLICK_DATA_API$4, SELECTOR_DATA_TOGGLE$4, function (event) {
     // preventDefault only for <a> elements (which change the URL) not inside the collapsible element
-    if (event.target.tagName === 'A' || event.delegateTarget && event.delegateTarget.tagName === 'A') {
+    if (event.target.tagName === 'servlet.A' || event.delegateTarget && event.delegateTarget.tagName === 'servlet.A') {
       event.preventDefault();
     }
 
@@ -2818,7 +2818,7 @@
 
   function getClientRectFromMixedType(element, clippingParent, strategy) {
     return clippingParent === viewport ? rectToClientRect(getViewportRect(element, strategy)) : isElement(clippingParent) ? getInnerBoundingClientRect(clippingParent, strategy) : rectToClientRect(getDocumentRect(getDocumentElement(element)));
-  } // A "clipping parent" is an overflowable container with the characteristic of
+  } // servlet.A "clipping parent" is an overflowable container with the characteristic of
   // clipping (or hiding) overflowing elements with a position different from
   // `initial`
 
@@ -4963,7 +4963,7 @@
   EventHandler.on(document, EVENT_CLICK_DATA_API$2, SELECTOR_DATA_TOGGLE$2, function (event) {
     const target = getElementFromSelector(this);
 
-    if (['A', 'AREA'].includes(this.tagName)) {
+    if (['servlet.A', 'AREA'].includes(this.tagName)) {
       event.preventDefault();
     }
 
@@ -5227,7 +5227,7 @@
   EventHandler.on(document, EVENT_CLICK_DATA_API$1, SELECTOR_DATA_TOGGLE$1, function (event) {
     const target = getElementFromSelector(this);
 
-    if (['A', 'AREA'].includes(this.tagName)) {
+    if (['servlet.A', 'AREA'].includes(this.tagName)) {
       event.preventDefault();
     }
 
@@ -5279,14 +5279,14 @@
   const uriAttributes = new Set(['background', 'cite', 'href', 'itemtype', 'longdesc', 'poster', 'src', 'xlink:href']);
   const ARIA_ATTRIBUTE_PATTERN = /^aria-[\w-]*$/i;
   /**
-   * A pattern that recognizes a commonly useful subset of URLs that are safe.
+   * servlet.A pattern that recognizes a commonly useful subset of URLs that are safe.
    *
    * Shout-out to Angular https://github.com/angular/angular/blob/12.2.x/packages/core/src/sanitization/url_sanitizer.ts
    */
 
   const SAFE_URL_PATTERN = /^(?:(?:https?|mailto|ftp|tel|file|sms):|[^#&/:?]*(?:[#/?]|$))/i;
   /**
-   * A pattern that matches safe data URLs. Only matches image, video and audio types.
+   * servlet.A pattern that matches safe data URLs. Only matches image, video and audio types.
    *
    * Shout-out to Angular https://github.com/angular/angular/blob/12.2.x/packages/core/src/sanitization/url_sanitizer.ts
    */
@@ -6821,7 +6821,7 @@
 
 
   EventHandler.on(document, EVENT_CLICK_DATA_API, SELECTOR_DATA_TOGGLE, function (event) {
-    if (['A', 'AREA'].includes(this.tagName)) {
+    if (['servlet.A', 'AREA'].includes(this.tagName)) {
       event.preventDefault();
     }
 

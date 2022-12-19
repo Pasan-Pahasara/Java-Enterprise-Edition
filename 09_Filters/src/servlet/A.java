@@ -1,3 +1,5 @@
+package servlet;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,10 +13,11 @@ import java.io.IOException;
  * @date : 12/19/2022
  * @since : 0.1.0
  **/
-@WebServlet(urlPatterns = "/b")
-public class B extends HttpServlet {
+@WebServlet(urlPatterns = "/a")
+public class A extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("Servlet B Get method Invoked");
+        System.out.println("Servlet servlet.A Get method Invoked");
+        resp.getWriter().write("<h1>A : DO GET Called</h1>");
     }
 }

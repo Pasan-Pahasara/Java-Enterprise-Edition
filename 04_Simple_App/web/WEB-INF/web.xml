@@ -4,13 +4,13 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
-    <servlet.A>
-        <servlet.A-name>a</servlet.A-name>
-        <servlet.A-class>servlet.A.ItemServlet</servlet.A-class>
-    </servlet.A>
+    <servlet.servlet.A>
+        <servlet.servlet.A-name>a</servlet.servlet.A-name>
+        <servlet.servlet.A-class>servlet.servlet.A.ItemServlet</servlet.servlet.A-class>
+    </servlet.servlet.A>
 
-    <servlet.A-mapping>
-        <servlet.A-name>a</servlet.A-name>
+    <servlet.servlet.A-mapping>
+        <servlet.servlet.A-name>a</servlet.servlet.A-name>
         <url-pattern>/item</url-pattern>
-    </servlet.A-mapping>
+    </servlet.servlet.A-mapping>
 </web-app>
