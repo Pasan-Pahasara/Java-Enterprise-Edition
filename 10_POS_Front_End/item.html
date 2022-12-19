@@ -208,11 +208,11 @@
 <!-- Swal CDN link -->
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-<!-- Customer JS -->
-<script src="assets/js/item.js"></script>
+<!-- Item JS -->
+<!--<script src="assets/js/item.js"></script>-->
 
 <script>
-    let baseUrl="http://localhost:8080/App_08/";//Back end එකේ location URL එක.
+    let baseUrl="http://localhost:8080/App_11/";//Back end එකේ location URL එක.
 
     //load all items from the database
     getAllItems();
@@ -347,129 +347,6 @@
         $("#txtItemQty").val(qty);
         $("#txtItemPrice").val(unitPrice);
     }
-
-
-
-
-    // function bindRowClickEvents() {
-    //     $("#tblCustomer>tr").click(function () {
-    //         let id = $(this).children(":eq(0)").text();
-    //         let name = $(this).children(":eq(1)").text();
-    //         let address = $(this).children(":eq(2)").text();
-    //         let salary = $(this).children(":eq(3)").text();
-    //         console.log(id, name, address, salary);
-    //         //setting table details values to text fields
-    //         $('#txtCustomerID').val(id);
-    //         $('#txtCustomerName').val(name);
-    //         $('#txtCustomerAddress').val(address);
-    //         $('#txtCustomerSalary').val(salary);
-    //     });
-    // }
-    //
-    // bindRowClickEvents();
-    //
-    // // $("#btnText").on('click', function () {
-    // //     // //initializing XMLHttpRequest Object
-    // //     // let httpRequest = new XMLHttpRequest();
-    // //     // console.log("First ",httpRequest.readyState);
-    // //     //
-    // //     // //open the request
-    // //     // httpRequest.open("get","db/db.txt");
-    // //     // console.log("Second ",httpRequest.readyState);
-    // //     //
-    // //     // //send the request
-    // //     // httpRequest.send();
-    // //     // console.log("Third ",httpRequest.readyState);
-    // //     //
-    // //     // httpRequest.responseText;
-    // //     //
-    // //     // console.log("Response :",httpRequest.responseText);
-    // //     // console.log("Fourth ",httpRequest.readyState);
-    // //     //
-    // //     // httpRequest.onreadystatechange=function () {
-    // //     //     console.log(httpRequest.readyState); //2 //3 //4
-    // //     //     console.log("On ready State Change Event Invoked");
-    // //     //     if (httpRequest.readyState==4){
-    // //     //         console.log("Response ",httpRequest.responseText);
-    // //     //     }
-    // //     // }
-    // //
-    // //     //02. send AJAX request using XMLHTTPRequest Object
-    // //
-    // //     // let http = new XMLHttpRequest();
-    // //     // http.open("get", "db/db.txt");
-    // //     // http.send();
-    // //     // http.onreadystatechange = function () {
-    // //     //     if (http.readyState === 4 && http.status === 200) { // if the request completed
-    // //     //         console.log("Response", http.responseText);
-    // //     //         $("#display").text(http.responseText);
-    // //     //     }
-    // //     // }
-    // //
-    // //     //03. How to send AJAX request using jQuery
-    // //
-    // //     $.ajax({
-    // //         url: "db/db.txt",
-    // //         async: false,
-    // //         success: function (res) {
-    // //             console.log(res);
-    // //             $("#display").text(res);
-    // //         }
-    // //     });
-    // // });
-    //
-    // //Send request to db.txt
-    // $("#btnText").on('click', function () {
-    //     $("#tblItem").empty();
-    //     $.ajax({
-    //         url: 'db/db.txt',
-    //         success: function (res) {
-    //             let split = res.split(" ");
-    //             var row = `<tr><td>${split[0]}</td><td>${split[1]}</td><td>${split[2]}</td><td>${split[3]}</td></tr>`;
-    //             $("#tblItem").append(row);
-    //         }
-    //     });
-    // });
-    //
-    // //Send request to XML file
-    // $("#btnXML").on('click', function () {
-    //     $("#loader").css('display','inline-block');
-    //     $("#tblItem").empty();
-    //     $.ajax({
-    //         url: 'db/db.xml',
-    //         success: function (res) {
-    //             console.log(res);
-    //             $("#loader").css('display','none')
-    //             console.log($(res).children().children());
-    //
-    //             let itemCount = $(res).children().children().length;
-    //             for (let i = 0; i < itemCount; i++) {
-    //                 let item = $(res).children().children().eq(i);
-    //                 let code = item.children(":eq(0)").text();
-    //                 let name = item.children(":eq(1)").text();
-    //                 let qty = item.children(":eq(2)").text();
-    //                 let unitPrice = item.children(":eq(3)").text();
-    //
-    //                 var row = `<tr><td>${code}</td><td>${name}</td><td>${qty}</td><td>${unitPrice}</td></tr>`;
-    //                 $("#tblItem").append(row);
-    //             }
-    //         }
-    //     });
-    // });
-    //
-    // //Send request to JSON file
-    // $("#btnJSON").on('click', function () {
-    //     $("#tblItem").empty();
-    //     $.ajax({
-    //         url: 'db/db.json',
-    //         success: function (res) {
-    //             for (let item of res) {
-    //                 var row = `<tr><td>${item.code}</td><td>${item.name}</td><td>${item.qty}</td><td>${item.unitPrice}</td></tr>`;
-    //                 $("#tblItem").append(row);
-    //             }
-    //         }
-    //     });
-    // });
 </script>
 </body>
 </html>

@@ -1,0 +1,19 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="App_11">
+    <output-path>$PROJECT_DIR$/out/artifacts/App_11</output-path>
+    <root id="archive" name="App_11.war">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="11_POS_Back_End" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$PROJECT_DIR$/lib/javax.json-1.1.4.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/javax.json-api-1.1.4.jar" />
+          <element id="library" level="project" name="lib" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/mysql-connector-j-8.0.31.jar" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="11_POS_Back_End/web/Web" />
+    </root>
+  </artifact>
+</component>

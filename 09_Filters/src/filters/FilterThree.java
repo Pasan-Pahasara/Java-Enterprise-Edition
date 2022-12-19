@@ -10,7 +10,7 @@ import java.io.IOException;
  * @date : 12/19/2022
  * @since : 0.1.0
  **/
-@WebFilter(urlPatterns = "/b")
+//@WebFilter(urlPatterns = "/b")
 public class FilterThree implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {

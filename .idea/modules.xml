@@ -7,11 +7,11 @@
       <module fileurl="file://$PROJECT_DIR$/03_Simple_App/03_Simple_App.iml" filepath="$PROJECT_DIR$/03_Simple_App/03_Simple_App.iml" />
       <module fileurl="file://$PROJECT_DIR$/04_Simple_App/04_Simple_App.iml" filepath="$PROJECT_DIR$/04_Simple_App/04_Simple_App.iml" />
       <module fileurl="file://$PROJECT_DIR$/05_Mapping-Spec/05_Mapping-Spec.iml" filepath="$PROJECT_DIR$/05_Mapping-Spec/05_Mapping-Spec.iml" />
-      <module fileurl="file://$PROJECT_DIR$/06_AJAX/06_AJAX.iml" filepath="$PROJECT_DIR$/06_AJAX/06_AJAX.iml" />
       <module fileurl="file://$PROJECT_DIR$/07_Simple_App/07_Simple_App.iml" filepath="$PROJECT_DIR$/07_Simple_App/07_Simple_App.iml" />
       <module fileurl="file://$PROJECT_DIR$/08_JSON/08_JSON.iml" filepath="$PROJECT_DIR$/08_JSON/08_JSON.iml" />
       <module fileurl="file://$PROJECT_DIR$/09_Filters/09_Filters.iml" filepath="$PROJECT_DIR$/09_Filters/09_Filters.iml" />
-      <module fileurl="file://$PROJECT_DIR$/POS_Front_End/POS_Front_End.iml" filepath="$PROJECT_DIR$/POS_Front_End/POS_Front_End.iml" />
+      <module fileurl="file://$PROJECT_DIR$/10_POS_Front_End/10_POS_Front_End.iml" filepath="$PROJECT_DIR$/10_POS_Front_End/10_POS_Front_End.iml" />
+      <module fileurl="file://$PROJECT_DIR$/11_POS_Back_End/11_POS_Back_End.iml" filepath="$PROJECT_DIR$/11_POS_Back_End/11_POS_Back_End.iml" />
     </modules>
   </component>
 </project>

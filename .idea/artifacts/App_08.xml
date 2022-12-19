@@ -7,8 +7,7 @@
           <element id="module-output" name="08_JSON" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="javax.json-api-1.1.4" />
-          <element id="library" level="project" name="mysql-connector-j-8.0.31" />
+          <element id="library" level="project" name="lib" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="08_JSON/web/Web" />
