@@ -278,3 +278,31 @@ thead {
     color: rgb(54, 49, 49);
 }
 /*end item*/
+
+/*start placeOrder*/
+#btnPlaceOrder {
+    width: max-content;
+    border: solid 2px #2EE59D;
+    color: #2EE59D;
+}
+
+#btnPlaceOrder:hover {
+    background-color: #2EE59D;
+    box-shadow: 0px 15px 20px #59b797;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+#btnAddCart {
+    width: max-content;
+    border: solid 2px #eccc68;
+    color: #eccc68;
+}
+
+#btnAddCart:hover {
+    background-color: #eccc68;
+    box-shadow: 0px 15px 20px #b29d63;
+    color: #fff;
+    transform: translateY(-3px);
+}
+/*end placeOrder*/

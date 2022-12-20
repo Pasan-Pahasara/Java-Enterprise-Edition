@@ -7,9 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9ed5a5e-13b4-4601-8b26-b09f90135bf9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/12_DBCP/src/singleton/DBConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/10_POS_Front_End/order.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/12_DBCP/src/servlet/CustomerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/12_DBCP/src/servlet/CustomerServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/10_POS_Front_End/assets/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/10_POS_Front_End/assets/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/10_POS_Front_End/customer.html" beforeDir="false" afterPath="$PROJECT_DIR$/10_POS_Front_End/customer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/10_POS_Front_End/item.html" beforeDir="false" afterPath="$PROJECT_DIR$/10_POS_Front_End/item.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +52,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "D:/IJSE/Second Semester/AAD (Advance API Development)/Java-Enterprise-Edition/lib/javax.json-1.1.4.jar",
+    "last_opened_file_path": "D:/IJSE/Second Semester/AAD (Advance API Development)/Java-Enterprise-Edition/10_POS_Front_End",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Problems",
     "project.structure.proportion": "0.15",
@@ -59,6 +61,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IJSE\Second Semester\AAD (Advance API Development)\Java-Enterprise-Edition\10_POS_Front_End" />
       <recent name="D:\IJSE\Second Semester\AAD (Advance API Development)\Java-Enterprise-Edition\12_DBCP\src" />
       <recent name="D:\IJSE\Second Semester\AAD (Advance API Development)\Java-Enterprise-Edition\10_POS_Front_End\assets\jQuery" />
     </key>
@@ -163,7 +166,8 @@
       <workItem from="1671444885460" duration="3473000" />
       <workItem from="1671449792767" duration="5951000" />
       <workItem from="1671459696288" duration="309000" />
-      <workItem from="1671468942746" duration="2797000" />
+      <workItem from="1671468942746" duration="5001000" />
+      <workItem from="1671509462465" duration="3406000" />
     </task>
     <servers />
   </component>
