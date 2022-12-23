@@ -1,6 +1,6 @@
 package servlet;
 
-import singleton.DBConnection;
+import org.apache.commons.dbcp2.BasicDataSource;
 
 import javax.json.Json;
 import javax.json.JsonArrayBuilder;
@@ -26,8 +26,7 @@ public class ItemServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        try {
-            Connection connection = DBConnection.getDbConnection().getConnection();
+        try (Connection connection = ((BasicDataSource) getServletContext().getAttribute("dbcp")).getConnection()){
             PreparedStatement pstm = connection.prepareStatement("select * from Item");
             ResultSet rst = pstm.executeQuery();
 
@@ -58,8 +57,7 @@ public class ItemServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        try {
-            Connection connection = DBConnection.getDbConnection().getConnection();
+        try (Connection connection = ((BasicDataSource) getServletContext().getAttribute("dbcp")).getConnection()){
             PreparedStatement pstm = connection.prepareStatement("insert into Item values(?,?,?,?)");
             pstm.setObject(1, req.getParameter("code"));
             pstm.setObject(2, req.getParameter("description"));
@@ -87,8 +85,7 @@ public class ItemServlet extends HttpServlet {
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        try {
-            Connection connection = DBConnection.getDbConnection().getConnection();
+        try (Connection connection = ((BasicDataSource) getServletContext().getAttribute("dbcp")).getConnection()){
             PreparedStatement pstm = connection.prepareStatement("delete from Item where code=?");
             pstm.setObject(1, req.getParameter("code"));
             boolean b = pstm.executeUpdate() > 0;
@@ -122,8 +119,7 @@ public class ItemServlet extends HttpServlet {
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         JsonObject item = Json.createReader(req.getReader()).readObject();
 
-        try {
-            Connection connection = DBConnection.getDbConnection().getConnection();
+        try (Connection connection = ((BasicDataSource) getServletContext().getAttribute("dbcp")).getConnection()){
             PreparedStatement pstm = connection.prepareStatement("update Item set description=?,qtyOnHand=?,unitPrice=? where code=?");
             pstm.setObject(4, item.getString("code"));
             pstm.setObject(1, item.getString("description"));

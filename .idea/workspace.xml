@@ -8,10 +8,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e9ed5a5e-13b4-4601-8b26-b09f90135bf9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/12_DBCP/src/listeners/MyListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/12_DBCP/src/listeners/MyListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/12_DBCP/src/servlet/CustomerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/12_DBCP/src/servlet/CustomerServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/13_Listeners/src/listeners/MyListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/13_Listeners/src/listeners/MyListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/13_Listeners/src/servlet/ServletA.java" beforeDir="false" afterPath="$PROJECT_DIR$/13_Listeners/src/servlet/ServletA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/12_DBCP/src/servlet/ItemServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/12_DBCP/src/servlet/ItemServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/12_DBCP/src/singleton/DBConnection.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +177,7 @@
       <workItem from="1671718766765" duration="2270000" />
       <workItem from="1671761857720" duration="2443000" />
       <workItem from="1671765171314" duration="1068000" />
-      <workItem from="1671768588715" duration="5379000" />
+      <workItem from="1671768588715" duration="6214000" />
     </task>
     <servers />
   </component>
