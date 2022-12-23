@@ -15,6 +15,7 @@
       <module fileurl="file://$PROJECT_DIR$/11_POS_Back_End/11_POS_Back_End.iml" filepath="$PROJECT_DIR$/11_POS_Back_End/11_POS_Back_End.iml" />
       <module fileurl="file://$PROJECT_DIR$/12_DBCP/12_DBCP.iml" filepath="$PROJECT_DIR$/12_DBCP/12_DBCP.iml" />
       <module fileurl="file://$PROJECT_DIR$/13_Listeners/13_Listeners.iml" filepath="$PROJECT_DIR$/13_Listeners/13_Listeners.iml" />
+      <module fileurl="file://$PROJECT_DIR$/14_Inbuilt_CP/14_Inbuilt_CP.iml" filepath="$PROJECT_DIR$/14_Inbuilt_CP/14_Inbuilt_CP.iml" />
     </modules>
   </component>
 </project>

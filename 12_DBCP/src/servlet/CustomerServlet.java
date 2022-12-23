@@ -26,7 +26,7 @@ public class CustomerServlet extends HttpServlet {
     //Query String
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        try (Connection connection = ((BasicDataSource) getServletContext().getAttribute("dbcp")).getConnection()){
+        try (Connection connection = ((BasicDataSource) getServletContext().getAttribute("dbcp")).getConnection()){//listener එකෙන් passed කරන value එකට අදාල key එක getServletContext().getAttribute() method එකට pass කරනවා. ඒ value එක cast කරනවා BasicDataSource type එකට.
             PreparedStatement pstm = connection.prepareStatement("select * from Customer");
             ResultSet rst = pstm.executeQuery();
 

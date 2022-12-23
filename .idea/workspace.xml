@@ -2,14 +2,17 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="App_12" />
+      <artifact name="App_14" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9ed5a5e-13b4-4601-8b26-b09f90135bf9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/App_14.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/14_Inbuilt_CP/14_Inbuilt_CP.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/14_Inbuilt_CP/web/META-INF/context.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/12_DBCP/src/servlet/ItemServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/12_DBCP/src/servlet/ItemServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/12_DBCP/src/singleton/DBConnection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/12_DBCP/src/servlet/CustomerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/12_DBCP/src/servlet/CustomerServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,9 +53,9 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "D:/IJSE/Second Semester/AAD (Advance API Development)/Java-Enterprise-Edition/10_POS_Front_End",
+    "last_opened_file_path": "D:/IJSE/Second Semester/AAD (Advance API Development)/Java-Enterprise-Edition/14_Inbuilt_CP/web",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Artifacts",
+    "project.structure.last.edited": "Facets",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.lookFeel"
@@ -74,9 +77,9 @@
     <configuration name="Tomcat 8.5.83" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.83" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="App_12">
+        <artifact name="App_14">
           <settings>
-            <option name="CONTEXT_PATH" value="/App_12" />
+            <option name="CONTEXT_PATH" value="/App14" />
           </settings>
         </artifact>
       </deployment>
@@ -154,7 +157,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="App_12" />
+          <artifact name="App_14" />
         </option>
       </method>
     </configuration>
@@ -177,7 +180,8 @@
       <workItem from="1671718766765" duration="2270000" />
       <workItem from="1671761857720" duration="2443000" />
       <workItem from="1671765171314" duration="1068000" />
-      <workItem from="1671768588715" duration="6214000" />
+      <workItem from="1671768588715" duration="8413000" />
+      <workItem from="1671782109640" duration="3252000" />
     </task>
     <servers />
   </component>
