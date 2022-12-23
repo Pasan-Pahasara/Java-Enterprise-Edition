@@ -225,6 +225,7 @@
                 // invoked if the response status code is in 200 range
                 getAllCustomers();
                 alert(res.message);
+                loadAllCustomersForOption()
             },
             error: function (error) {
                 // invoked if status code range is 500 range or 400 range

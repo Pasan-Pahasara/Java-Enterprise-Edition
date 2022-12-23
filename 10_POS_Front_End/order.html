@@ -100,15 +100,17 @@
                 <div class="row mt-1">
                     <div class="col-12 col-md-6 col-lg-4">
                         <label for="orderId" class="form-label mb-1">Order ID :</label>
-                        <input placeholder="Ex : - O-001" class="form-control" disabled id="orderId" type="text">
+                        <input placeholder="Ex : - O-001" class="form-control" disabled id="orderId" type="text"
+                               name="orderId">
                     </div>
                     <div class="col-12 col-md-6 col-lg-4">
                         <label for="orderDate" class="form-label mb-1">Order Date :</label>
-                        <input placeholder="Order Date" class="form-control" id="orderDate" type="date">
+                        <input placeholder="Order Date" class="form-control" id="orderDate" type="date"
+                               name="orderDate">
                     </div>
                     <div class="col-12 col-md-6 col-lg-4">
                         <label for="cusId" class="form-label mb-1">Customer ID :</label>
-                        <select aria-label="Default select example" class="form-select" id="cusId">
+                        <select aria-label="Default select example" class="form-select" id="cusId" name="customerId">
                             <option selected>-Select Customer-</option>
                         </select>
                     </div>
@@ -138,7 +140,7 @@
                 <div class="row mt-1">
                     <div class="col-12 col-md-6 col-lg-4">
                         <label for="cmbCode" class="form-label mb-1">Item Code :</label>
-                        <select aria-label="Default select example" class="form-select" id="cmbCode">
+                        <select aria-label="Default select example" class="form-select" id="cmbCode" name="cmbCode">
                             <option selected>-Select Item-</option>
                         </select>
                     </div>
@@ -256,6 +258,59 @@
 <!-- Swal CDN link -->
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-<script></script>
+<script>
+    let baseUrl = "http://localhost:8080/App_12/";//Back end එකේ location URL එක.
+
+    loadAllCustomersForOption();
+    loadAllItemsForOption();
+
+    // load customer ids'
+    function loadAllCustomersForOption() {
+        $("#cusId").empty();
+        $("#cusId").append(`<option>-Select Customer-</option>`);
+        $.ajax({
+            url: baseUrl + "customer",
+            method: "GET",
+            dataType: "json",
+            success: function (res) {
+                console.log(res);
+
+                for (let i of res.data) {
+                    let id = i.id;
+
+                    $("#cusId").append(`<option>${id}</option>`);
+                }
+            },
+            error: function (error) {
+                let message = JSON.parse(error.responseText).message;
+                alert(message);
+            }
+        });
+    }
+
+    // load item ids'
+    function loadAllItemsForOption() {
+        $("#cmbCode").empty();
+        $("#cmbCode").append(`<option>-Select Items-</option>`);
+        $.ajax({
+            url: baseUrl + "item",
+            method: "GET",
+            dataType: "json",
+            success: function (res) {
+                console.log(res);
+
+                for (let i of res.data) {
+                    let id = i.code;
+
+                    $("#cmbCode").append(`<option>${id}</option>`);
+                }
+            },
+            error: function (error) {
+                let message = JSON.parse(error.responseText).message;
+                alert(message);
+            }
+        });
+    }
+</script>
 </body>
 </html>
