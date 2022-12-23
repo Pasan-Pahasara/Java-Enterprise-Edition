@@ -7,12 +7,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9ed5a5e-13b4-4601-8b26-b09f90135bf9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/App_14.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/14_Inbuilt_CP/14_Inbuilt_CP.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/14_Inbuilt_CP/web/META-INF/context.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/14_Inbuilt_CP/src/dto/CustomerDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/14_Inbuilt_CP/src/filter/CORSFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/14_Inbuilt_CP/src/servlet/CustomerServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/14_Inbuilt_CP/src/servlet/ItemServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/12_DBCP/src/servlet/CustomerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/12_DBCP/src/servlet/CustomerServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/10_POS_Front_End/customer.html" beforeDir="false" afterPath="$PROJECT_DIR$/10_POS_Front_End/customer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/10_POS_Front_End/item.html" beforeDir="false" afterPath="$PROJECT_DIR$/10_POS_Front_End/item.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/10_POS_Front_End/order.html" beforeDir="false" afterPath="$PROJECT_DIR$/10_POS_Front_End/order.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/14_Inbuilt_CP/src/MyServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/14_Inbuilt_CP/src/servlet/MyServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +56,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "D:/IJSE/Second Semester/AAD (Advance API Development)/Java-Enterprise-Edition/14_Inbuilt_CP/web",
+    "last_opened_file_path": "D:/IJSE/Second Semester/AAD (Advance API Development)/Java-Enterprise-Edition/14_Inbuilt_CP/src",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Facets",
     "project.structure.proportion": "0.15",
@@ -68,6 +71,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IJSE\Second Semester\AAD (Advance API Development)\Java-Enterprise-Edition\14_Inbuilt_CP\src" />
       <recent name="D:\IJSE\Second Semester\AAD (Advance API Development)\Java-Enterprise-Edition\10_POS_Front_End" />
       <recent name="D:\IJSE\Second Semester\AAD (Advance API Development)\Java-Enterprise-Edition\12_DBCP\src" />
       <recent name="D:\IJSE\Second Semester\AAD (Advance API Development)\Java-Enterprise-Edition\10_POS_Front_End\assets\jQuery" />
@@ -79,7 +83,7 @@
       <deployment>
         <artifact name="App_14">
           <settings>
-            <option name="CONTEXT_PATH" value="/App14" />
+            <option name="CONTEXT_PATH" value="/App_14" />
           </settings>
         </artifact>
       </deployment>
@@ -181,7 +185,7 @@
       <workItem from="1671761857720" duration="2443000" />
       <workItem from="1671765171314" duration="1068000" />
       <workItem from="1671768588715" duration="8413000" />
-      <workItem from="1671782109640" duration="3252000" />
+      <workItem from="1671782109640" duration="4798000" />
     </task>
     <servers />
   </component>
