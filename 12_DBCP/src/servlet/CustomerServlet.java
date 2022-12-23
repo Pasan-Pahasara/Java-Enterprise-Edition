@@ -1,7 +1,6 @@
 package servlet;
 
 import org.apache.commons.dbcp2.BasicDataSource;
-import singleton.DBConnection;
 
 import javax.json.Json;
 import javax.json.JsonArrayBuilder;
@@ -28,7 +27,6 @@ public class CustomerServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try (Connection connection = ((BasicDataSource) getServletContext().getAttribute("dbcp")).getConnection()){
-//            Connection connection = DBConnection.getDbConnection().getConnection();
             PreparedStatement pstm = connection.prepareStatement("select * from Customer");
             ResultSet rst = pstm.executeQuery();
 
@@ -67,7 +65,6 @@ public class CustomerServlet extends HttpServlet {
         String salary = req.getParameter("salary");
 
         try (Connection connection = ((BasicDataSource) getServletContext().getAttribute("dbcp")).getConnection()){
-//            Connection connection = DBConnection.getDbConnection().getConnection();
             PreparedStatement pstm = connection.prepareStatement("insert into Customer values(?,?,?,?)");
             pstm.setObject(1, id);
             pstm.setObject(2, name);
@@ -102,7 +99,6 @@ public class CustomerServlet extends HttpServlet {
         System.out.println(id);
 
         try (Connection connection = ((BasicDataSource) getServletContext().getAttribute("dbcp")).getConnection()){
-//            Connection connection = DBConnection.getDbConnection().getConnection();
             PreparedStatement pstm = connection.prepareStatement("delete from Customer where id=?");
             pstm.setObject(1, id);
             boolean b = pstm.executeUpdate() > 0;
@@ -139,7 +135,6 @@ public class CustomerServlet extends HttpServlet {
         JsonObject customer = Json.createReader(req.getReader()).readObject();
 
         try (Connection connection = ((BasicDataSource) getServletContext().getAttribute("dbcp")).getConnection()){
-//            Connection connection = DBConnection.getDbConnection().getConnection();
             PreparedStatement pstm = connection.prepareStatement("update Customer set name=?,address=?,salary=? where id=?");
             pstm.setObject(4, customer.getString("id"));
             pstm.setObject(1, customer.getString("name"));
