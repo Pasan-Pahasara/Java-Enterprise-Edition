@@ -7,6 +7,12 @@
         <element id="directory" name="classes">
           <element id="module-output" name="07_Simple_App" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="javax.json-api-1.1.4" />
+          <element id="library" level="project" name="commons-pool2-2.11.1" />
+          <element id="library" level="project" name="lib" />
+          <element id="library" level="project" name="mysql-connector-j-8.0.31" />
+        </element>
       </element>
     </root>
   </artifact>

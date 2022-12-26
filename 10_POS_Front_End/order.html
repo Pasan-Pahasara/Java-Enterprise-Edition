@@ -34,7 +34,7 @@
             <div class="collapse navbar-collapse " id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="../../../04_Simple_App/web/index.jsp"><i
+                        <a class="nav-link" aria-current="page" href="#"><i
                                 class="bi bi-house-fill"></i>
                             Home</a>
                     </li>
@@ -55,7 +55,8 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#"><i class="bi bi-card-checklist"></i> Orders
+                        <a class="nav-link" aria-current="page" href="./orderDetails.html"><i
+                                class="bi bi-card-checklist"></i> Orders
                             Details</a>
                     </li>
 
@@ -110,8 +111,8 @@
                     </div>
                     <div class="col-12 col-md-6 col-lg-4">
                         <label for="cusId" class="form-label mb-1">Customer ID :</label>
-                        <select aria-label="Default select example" class="form-select" id="cusId" name="customerId">
-                            <option selected>-Select Customer-</option>
+                        <select aria-label="Default select example" class="form-select" id="cusId">
+                            <!--                            <option selected>-Select Customer-</option>-->
                         </select>
                     </div>
                 </div>
@@ -141,7 +142,7 @@
                     <div class="col-12 col-md-6 col-lg-4">
                         <label for="cmbCode" class="form-label mb-1">Item Code :</label>
                         <select aria-label="Default select example" class="form-select" id="cmbCode" name="cmbCode">
-                            <option selected>-Select Item-</option>
+                            <!--                            <option selected>-Select Item-</option>-->
                         </select>
                     </div>
                     <div class="col-12 col-md-6 col-lg-4">
@@ -216,7 +217,8 @@
                 <div class="row mt-0">
                     <div class="col-12 col-md-6 col-lg-6">
                         <label for="discount" class="form-label mb-1">Discount</label>
-                        <input placeholder="0" class="form-control" id="discount" type="number" role="spinbutton">
+                        <input placeholder="0" class="form-control" disabled id="discount" type="number"
+                               role="spinbutton">
                     </div>
                     <div class="col-12 col-md-6 col-lg-6">
                         <label for="subTotal" class="form-label mb-1">Sub Total (Rs.)</label>
@@ -226,12 +228,16 @@
                 <div class="row mt-1">
                     <div class="col-12 col-md-6 col-lg-6">
                         <label for="cash" class="form-label mb-1">Cash (Rs.)</label>
-                        <input placeholder="Rs: 0.00/=" class="form-control" id="cash" type="text">
-                        <strong class="control-error text-danger" id="lblCheckSubtotal"></strong>
+                        <input placeholder="Rs: 0.00/=" class="form-control" disabled id="cash" type="text">
                     </div>
                     <div class="col-12 col-md-6 col-lg-6">
                         <label for="balance" class="form-label mb-1">Balance (Rs.)</label>
                         <input placeholder="Rs: 0.00/=" class="form-control" disabled id="balance" type="text">
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-12 col-md-12 col-lg-12">
+                        <strong class="control-error text-danger" id="lblCheckSubtotal"></strong>
                     </div>
                 </div>
             </div>
@@ -259,18 +265,62 @@
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>
-    let baseUrl="http://localhost:8080/App_14/";//Back end එකේ location URL එක.
+    let baseUrl = "http://localhost:8080/App_11/";//Back end එකේ location URL එක.
 
+    // disable cart button and place order button
+    $("#btnAddCart").attr('disabled', true);
+    $("#btnPlaceOrder").attr('disabled', true);
+
+    // load all items from the database
     loadAllCustomersForOption();
     loadAllItemsForOption();
+    setDates();
+    searchCustomer();
+    generateOrderID();
 
-    // load customer ids'
+    let total = 0;
+    let discount = 0;
+    let subTotal = 0;
+    let tempTot = 0;
+
+    // generateOrderID
+    function generateOrderID() {
+        $("#orderId").val("ORD-001");
+        let res = searchOrder();
+
+        let tempId = parseInt(res.split("-")[1]);
+        tempId = tempId + 1;
+        if (tempId <= 9) {
+            $("#orderId").val("ORD-00" + tempId);
+        } else if (tempId <= 99) {
+            $("#orderId").val("ORD-0" + tempId);
+        } else {
+            $("#orderId").val("ORD-" + tempId);
+        }
+    }
+
+    // order search function
+    function searchOrder() {
+        let orderId = "";
+        $.ajax({
+            url: baseUrl + "purchase?option=GenerateOrderID",
+            dataType: "json",
+            method: "GET",
+            async: false,
+            success: function (resp) {
+                orderId = resp.orderId;
+            }
+        });
+        return orderId;
+    }
+
+    // load customers'
     function loadAllCustomersForOption() {
         $("#cusId").empty();
-        $("#cusId").append(`<option>-Select Customer-</option>`);
+        $("#cusId").append(`<option disabled selected hidden>- Select Customer -</option>`);
+
         $.ajax({
             url: baseUrl + "customer",
-            method: "GET",
             dataType: "json",
             success: function (res) {
                 console.log(res);
@@ -278,7 +328,7 @@
                 for (let i of res.data) {
                     let id = i.id;
 
-                    $("#cusId").append(`<option>${id}</option>`);
+                    $("#cusId").append(`<option value="${id}">${id}</option>`);
                 }
             },
             error: function (error) {
@@ -288,21 +338,18 @@
         });
     }
 
-    // load item ids'
+    // load items'
     function loadAllItemsForOption() {
         $("#cmbCode").empty();
-        $("#cmbCode").append(`<option>-Select Items-</option>`);
+        $("#cmbCode").append(`<option disabled selected hidden>- Select Items -</option>`);
         $.ajax({
             url: baseUrl + "item",
-            method: "GET",
-            dataType: "json",
             success: function (res) {
                 console.log(res);
 
                 for (let i of res.data) {
                     let id = i.code;
-
-                    $("#cmbCode").append(`<option>${id}</option>`);
+                    $("#cmbCode").append(`<option value="${id}">${id}</option>`);
                 }
             },
             error: function (error) {
@@ -311,6 +358,176 @@
             }
         });
     }
+
+    // setDate
+    function setDates() {
+        let date = new Date().toJSON().split("T")[0];
+        $("#orderDate").val(date);
+    }
+
+    // customer search function
+    function searchCustomer(id) {
+        let response = "";
+        $.ajax({
+            url: baseUrl + "customer",
+            dataType: "json",
+            async: false,
+            success: function (resp) {
+                response = resp.data.filter((c) => {
+                    return c.id === id;
+                });
+            }
+        });
+        return response;
+    }
+
+    // item search function
+    function searchItem(code) {
+        let response = "";
+        $.ajax({
+            url: baseUrl + "item",
+            dataType: "json",
+            async: false,
+            success: function (resp) {
+                response = resp.data.filter((i) => {
+                    return i.code === code;
+                });
+            }
+        });
+        return response;
+    }
+
+    // customer set values
+    $("#cusId").change(function () {
+        let id = $("#cusId").val();
+        $("#cusId").val(id);
+        let res = searchCustomer(id);
+        if (res.length > 0) {
+            $("#cusName").val(res[0].name);
+            $("#cusAddress").val(res[0].salary);
+            $("#cusSalary").val(res[0].address);
+        }
+    });
+
+    // item set values
+    $("#cmbCode").change(function () {
+        let code = $("#cmbCode").val();
+        $("#cmbCode").val(code);
+        let res = searchItem(code);
+        if (res.length > 0) {
+            $("#iName").val(res[0].description);
+            $("#iPrice").val(res[0].unitPrice);
+            $("#iQtyOnHand").val(res[0].qtyOnHand);
+        }
+    });
+
+    // added details to the Cart
+    $("#btnAddCart").on('click', function () {
+        let code = $("#cmbCode").val();
+        let description = $("#iName").val();
+        let itemPrice = $("#iPrice").val();
+        let buyQty = $("#buyQty").val();
+        total = parseFloat(itemPrice) * parseFloat(buyQty);
+        tempTot += total;
+        $("#tableAddCart").append(`<tr><td>${code}</td><td>${description}</td><td>${itemPrice}</td><td>${buyQty}</td><td>${total}</td></tr>`);
+        $("#lblTotal").val("Rs: " + tempTot);
+
+        // validate disabled discount and cash
+        if (total != null) {
+            $("#discount").attr('disabled', false);
+            $("#cash").attr('disabled', false);
+        } else {
+            $("#discount").attr('disabled', true);
+            $("#cash").attr('disabled', true);
+        }
+    });
+
+    // place Order
+    $("#btnPlaceOrder").on('click', function () {
+        let orderID = $("#orderId").val();
+        let customerID = $("#cusId").val();
+        let orderDate = $("#orderDate").val();
+        let orderD = getItemDetails();
+
+        let ob = {
+            oid: orderID,
+            date: orderDate,
+            cusID: customerID,
+            orderDetails: orderD
+        }
+
+        //send request
+        $.ajax({
+            url: baseUrl + "purchase",
+            method: "post",
+            dataType: "json",
+            data: JSON.stringify(ob),
+            contentType: "application/json",
+            success: function (resp) {
+                alert(resp.message);
+                $("#tableAddCart").empty();
+                $("#orderId").val(generateOrderID());
+                generateOrderID();
+            },
+            error: function (error) {
+                alert(JSON.parse(error.responseText).message);
+            }
+        });
+    });
+
+    function getItemDetails() {
+        let rows = $("#tableAddCart").children().length;
+        var array = [];
+        for (let i = 0; i < rows; i++) {
+            let itCode = $("#tableAddCart").children().eq(i).children(":eq(0)").text();
+            let itQty = $("#tableAddCart").children().eq(i).children(":eq(3)").text();
+            let itPrice = $("#tableAddCart").children().eq(i).children(":eq(2)").text();
+            array.push({code: itCode, qty: itQty, price: itPrice});
+        }
+        return array;
+    }
+
+    // dblclick delete function
+    $("#tableAddCart").on('dblclick', function () {
+        $(this).children('tr').eq(0).remove();
+    });
+
+    $("#buyQty").on('click', function () {
+        let buyQty = $("#buyQty").val();
+        let cusId = $("#cusId").val();
+        let cmbCode = $("#cmbCode").val();
+
+        $("#btnAddCart").attr('disabled', true);
+
+        if ((cusId != null && cmbCode != null) && buyQty != null) {
+            $("#btnAddCart").attr('disabled', false);
+        } else {
+            $("#btnAddCart").attr('disabled', true);
+        }
+    });
+
+    // discount added and calculate total
+    $(document).on("change keyup blur", "#discount", function () {
+        discount = $("#discount").val();
+        discount = (total / 100) * discount;
+        subTotal = total - discount;
+
+        $("#subTotal").val("Rs: " + subTotal);
+    });
+
+    // added cash and check balance
+    $(document).on("change keyup blur", "#cash", function () {
+        let cash = $("#cash").val();
+        let balance = cash - subTotal;
+        $("#balance").val("Rs: " + balance);
+        if (balance < 0) {
+            $("#lblCheckSubtotal").parent().children('strong').text(balance + " : plz enter valid Balance");
+            $("#btnPlaceOrder").attr('disabled', true);
+        } else {
+            $("#lblCheckSubtotal").parent().children('strong').text("");
+            $("#btnPlaceOrder").attr('disabled', false);
+        }
+    });
 </script>
 </body>
 </html>
