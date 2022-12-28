@@ -55,7 +55,8 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="./orderDetails.html"><i class="bi bi-card-checklist"></i> Orders
+                        <a class="nav-link" aria-current="page" href="./orderDetails.html"><i
+                                class="bi bi-card-checklist"></i> Orders
                             Details</a>
                     </li>
 
@@ -158,7 +159,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="txtItemCode" class="form-label">Item Code</label>
-                        <input type="text" class="form-control prevent_tab_key_focus" id="txtItemCode"
+                        <input type="text" class="form-control prevent_tab_key_focus" readonly id="txtItemCode"
                                aria-describedby="idHelp" placeholder="Eg :- I00-001" name="code">
                         <div id="idHelp" class="form-text"></div>
                     </div>
@@ -212,7 +213,7 @@
 <!--<script src="assets/js/item.js"></script>-->
 
 <script>
-    let baseUrl="http://localhost:8080/App_11/";//Back end එකේ location URL එක.
+    let baseUrl = "http://localhost:8080/App_11/";//Back end එකේ location URL එක.
 
     //load all items from the database
     getAllItems();
@@ -222,7 +223,7 @@
     $("#btnItem").on('click', function () {
         let formData = $("#itemForm").serialize();
         $.ajax({
-            url: baseUrl+"item",
+            url: baseUrl + "item",
             method: "post",
             data: formData,
             dataType: "json", //මේ විදහට string එකක් browser එකට JSON එකක් විදිහට introduced කරන්න පුලුවන් data type එකෙන් response එකට විතරක් use කරන්න පුලුවන්. ඒකෙන් කරන්නේ directly response object එක JSON.parse එකට දාලා parse කරලා දෙන එක. (Response Header එකක් දාන්න පුලුවන් contentType කියලා ඊට අමතරව)
@@ -244,7 +245,7 @@
     $("#btnDeleteItem").on('click', function () {
         let code = $("#txtItemCode").val();
         $.ajax({
-            url: baseUrl+"item?code=" + code,
+            url: baseUrl + "item?code=" + code,
             method: "delete",
             success: function (resp) {
                 // invoked if the response status code is in 200 range
@@ -274,7 +275,7 @@
         }
 
         $.ajax({
-            url: baseUrl+"item",
+            url: baseUrl + "item",
             method: "put",
             contentType: "application/json",
             data: JSON.stringify(itemOb),
@@ -297,11 +298,17 @@
         getAllItems();
     });
 
+    //Clear Item Form Data
+    $("#btnClear").on('click',function () {
+        setTextFieldValues("","","");
+        getAllItems();
+    })
+
     //Get all Item Function
     function getAllItems() {
         $("#tblItem").empty();
         $.ajax({
-            url: baseUrl+"item",//දාපු baseUrl එක append කරනවා
+            url: baseUrl + "item",//දාපු baseUrl එක append කරනවා
             success: function (res) {
                 console.log(res);
                 for (let t of res.data) {
@@ -313,8 +320,13 @@
                     var row = "<tr><td>" + itemCode + "</td><td>" + itemName + "</td><td>" + itemQty + "</td><td>" + itemPrice + "</td></tr>";
                     $("#tblItem").append(row);
                 }
+                let lastId = $("#tblItem").children(":last-child").children(":first-child").text();
+                let digit = lastId.substring(6);
+                var number = parseInt(digit) + 1;
+
                 bindRowClickEvents();
                 setTextFieldValues("", "", "", "");
+                $("#txtItemCode").val(lastId.replace(digit, number));
             },
             error: function (error) {
                 let message = JSON.parse(error.responseText).message;
@@ -325,7 +337,7 @@
 
     //Bind events for the table rows function
     function bindRowClickEvents() {
-        $("#tblItem>tr").on('click', function () {
+        $("#tblItem > tr").on('click', function () {
             let code = $(this).children(":eq(0)").text();
             let name = $(this).children(":eq(1)").text();
             let qty = $(this).children(":eq(2)").text();
@@ -342,8 +354,7 @@
     }
 
     //Set text fields values function
-    function setTextFieldValues(code, name, qty, unitPrice) {
-        $("#txtItemCode").val(code);
+    function setTextFieldValues(name, qty, unitPrice) {
         $("#txtItemName").val(name);
         $("#txtItemQty").val(qty);
         $("#txtItemPrice").val(unitPrice);

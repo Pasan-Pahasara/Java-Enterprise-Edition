@@ -7,22 +7,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9ed5a5e-13b4-4601-8b26-b09f90135bf9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/10_POS_Front_End/orderDetails.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/11_POS_Back_End/src/servlet/PurchaseOrderServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/11_POS_Back_End/web/META-INF/context.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/App_07.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/App_07.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/3bac11d0-0da0-4ed7-ba39-5349b6a517e5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3bac11d0-0da0-4ed7-ba39-5349b6a517e5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/07_Simple_App/07_Simple_App.iml" beforeDir="false" afterPath="$PROJECT_DIR$/07_Simple_App/07_Simple_App.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/10_POS_Front_End/assets/js/sql.sql" beforeDir="false" afterPath="$PROJECT_DIR$/10_POS_Front_End/assets/js/sql.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/10_POS_Front_End/customer.html" beforeDir="false" afterPath="$PROJECT_DIR$/10_POS_Front_End/customer.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/10_POS_Front_End/item.html" beforeDir="false" afterPath="$PROJECT_DIR$/10_POS_Front_End/item.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/10_POS_Front_End/order.html" beforeDir="false" afterPath="$PROJECT_DIR$/10_POS_Front_End/order.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/11_POS_Back_End/11_POS_Back_End.iml" beforeDir="false" afterPath="$PROJECT_DIR$/11_POS_Back_End/11_POS_Back_End.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/10_POS_Front_End/orderDetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/10_POS_Front_End/orderDetails.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/11_POS_Back_End/src/servlet/CustomerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/11_POS_Back_End/src/servlet/CustomerServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/11_POS_Back_End/src/servlet/PurchaseOrderServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/11_POS_Back_End/src/servlet/PurchaseOrderServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +57,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/IJSE/Second Semester/AAD (Advance API Development)/Java-Enterprise-Edition/10_POS_Front_End&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ShEnUx/Desktop/Ajax&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
@@ -206,7 +199,14 @@
       <workItem from="1671876745380" duration="17513000" />
       <workItem from="1671944195494" duration="3295000" />
       <workItem from="1671958492753" duration="7485000" />
-      <workItem from="1672029221777" duration="5418000" />
+      <workItem from="1672029221777" duration="7552000" />
+      <workItem from="1672061080506" duration="3155000" />
+      <workItem from="1672064258379" duration="428000" />
+      <workItem from="1672073182761" duration="4085000" />
+      <workItem from="1672122212947" duration="8873000" />
+      <workItem from="1672136456159" duration="13555000" />
+      <workItem from="1672153977415" duration="18066000" />
+      <workItem from="1672203110912" duration="1558000" />
     </task>
     <servers />
   </component>

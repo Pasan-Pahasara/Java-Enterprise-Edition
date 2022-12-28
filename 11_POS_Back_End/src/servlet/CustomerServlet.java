@@ -39,6 +39,7 @@ public class CustomerServlet extends HttpServlet {
                 customer.add("salary", rst.getDouble("salary"));
                 allCustomers.add(customer.build());
             }
+
             JsonObjectBuilder load = Json.createObjectBuilder();
             load.add("state", "Ok");
             load.add("message", "Successfully Loaded..!");
@@ -59,10 +60,10 @@ public class CustomerServlet extends HttpServlet {
     //JSON
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String id = req.getParameter("id");
-        String name = req.getParameter("name");
-        String address = req.getParameter("address");
-        String salary = req.getParameter("salary");
+        String id = req.getParameter("id").trim();
+        String name = req.getParameter("name").trim();
+        String address = req.getParameter("address").trim();
+        String salary = req.getParameter("salary").trim();
 
         try {
             Class.forName("com.mysql.jdbc.Driver");

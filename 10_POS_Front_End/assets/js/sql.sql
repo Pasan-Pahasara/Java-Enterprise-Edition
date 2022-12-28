@@ -1,20 +1,3 @@
--- show databases;
--- drop database if exists JEPOS;
--- show databases;
--- create database if not exists JEPOS;
--- use JEPOS;
--- create table if not exists Customer(
---     id      varchar(45) not null,
---     name    varchar(45) null,
---     address text        null,
---     salary  double      null,
---     constraint primary key (id)
---     );
--- desc customer;
--- select * from customer;
--- delete from Customer where id=?;
--- DELETE FROM customer WHERE id = ?;
-
 DROP DATABASE IF EXISTS JEPOS;
 CREATE DATABASE IF NOT EXISTS JEPOS;
 SHOW DATABASES;
@@ -30,6 +13,10 @@ CREATE TABLE Customer
     CONSTRAINT PRIMARY KEY (id)
 );
 
+INSERT INTO Customer
+VALUES ('C00-001', 'Pahasara', 'Wakwalla,Galle', 50000),
+       ('C00-002', 'Manu', 'Bandaragama,Pandura', 25000);
+
 SHOW TABLES;
 DESCRIBE Customer;
 
@@ -43,17 +30,23 @@ CREATE TABLE Item
     CONSTRAINT PRIMARY KEY (code)
 );
 
+INSERT INTO Item
+VALUES ('I00-001', 'Pizza', 45, 999),
+       ('I00-002', 'Fish Buns', 15, 70);
+
 SHOW TABLES;
 DESCRIBE Item;
 
 DROP TABLE IF EXISTS Orders;
 CREATE TABLE Orders
 (
-    oid   VARCHAR(9) NOT NULL,
-    date  DATE,
-    cusId VARCHAR(9) NOT NULL,
+    oid      VARCHAR(9)  NOT NULL,
+    date     DATE,
+    cusId    VARCHAR(9)  NOT NULL,
+    subTotal DOUBLE,
+    discount INT,
     CONSTRAINT PRIMARY KEY (oid),
-    CONSTRAINT FOREIGN KEY (cusId) REFERENCES Customer(id) ON DELETE CASCADE ON UPDATE CASCADE
+    CONSTRAINT FOREIGN KEY (cusId) REFERENCES Customer (id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 SHOW TABLES;
@@ -62,12 +55,16 @@ DESCRIBE Orders;
 DROP TABLE IF EXISTS OrderDetails;
 CREATE TABLE OrderDetails
 (
-    oid   VARCHAR(9) NOT NULL,
-    code  VARCHAR(9) NOT NULL,
-    qty INT,
-    price DOUBLE,
+    oid         VARCHAR(9)  NOT NULL,
+    id          VARCHAR(9)  NOT NULL,
+    name        VARCHAR(45) NULL,
+    code        VARCHAR(9)  NOT NULL,
+    description VARCHAR(45) NULL,
+    qty         INT,
+    price       DOUBLE,
     CONSTRAINT PRIMARY KEY (oid),
     CONSTRAINT FOREIGN KEY (oid) REFERENCES Orders (oid) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT FOREIGN KEY (id) REFERENCES Customer (id) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT FOREIGN KEY (code) REFERENCES Item (code) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
@@ -75,4 +72,7 @@ SHOW TABLES;
 DESCRIBE OrderDetails;
 
 
-SELECT oid FROM Orders ORDER BY oid DESC LIMIT 1;
+SELECT oid
+FROM Orders
+ORDER BY oid DESC
+LIMIT 1;

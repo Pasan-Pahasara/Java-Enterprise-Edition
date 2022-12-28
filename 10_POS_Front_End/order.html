@@ -101,19 +101,15 @@
                 <div class="row mt-1">
                     <div class="col-12 col-md-6 col-lg-4">
                         <label for="orderId" class="form-label mb-1">Order ID :</label>
-                        <input placeholder="Ex : - O-001" class="form-control" disabled id="orderId" type="text"
-                               name="orderId">
+                        <input placeholder="Ex : - O-001" class="form-control" id="orderId" type="text">
                     </div>
                     <div class="col-12 col-md-6 col-lg-4">
                         <label for="orderDate" class="form-label mb-1">Order Date :</label>
-                        <input placeholder="Order Date" class="form-control" id="orderDate" type="date"
-                               name="orderDate">
+                        <input placeholder="Order Date" class="form-control" id="orderDate" type="date">
                     </div>
                     <div class="col-12 col-md-6 col-lg-4">
                         <label for="cusId" class="form-label mb-1">Customer ID :</label>
-                        <select aria-label="Default select example" class="form-select" id="cusId">
-                            <!--                            <option selected>-Select Customer-</option>-->
-                        </select>
+                        <select aria-label="Default select example" class="form-select" id="cusId"></select>
                     </div>
                 </div>
                 <div class="row mt-1">
@@ -123,13 +119,11 @@
                     </div>
                     <div class="col-12 col-md-6 col-lg-4">
                         <label for="cusAddress" class="form-label font-s mb-1">Address :</label>
-                        <input placeholder="Ex : - 28/A Wakwalla, Galle" class="form-control" disabled id="cusAddress"
-                               type="text">
+                        <input placeholder="Ex : - 28/A Wakwalla, Galle" class="form-control" disabled id="cusAddress" type="text">
                     </div>
                     <div class="col-12 col-md-6 col-lg-4">
                         <label for="cusSalary" class="form-label mb-1">Salary :</label>
-                        <input placeholder="Ex : - RS: 50000.00" class="form-control" disabled id="cusSalary"
-                               type="text">
+                        <input placeholder="Ex : - RS: 50000.00" class="form-control" disabled id="cusSalary" type="text">
                     </div>
                 </div>
             </div>
@@ -141,9 +135,7 @@
                 <div class="row mt-1">
                     <div class="col-12 col-md-6 col-lg-4">
                         <label for="cmbCode" class="form-label mb-1">Item Code :</label>
-                        <select aria-label="Default select example" class="form-select" id="cmbCode" name="cmbCode">
-                            <!--                            <option selected>-Select Item-</option>-->
-                        </select>
+                        <select aria-label="Default select example" class="form-select" id="cmbCode"></select>
                     </div>
                     <div class="col-12 col-md-6 col-lg-4">
                         <label for="iName" class="form-label mb-1">Item Name :</label>
@@ -283,7 +275,7 @@
     let subTotal = 0;
     let tempTot = 0;
 
-    // generateOrderID
+    //generateOrderID
     function generateOrderID() {
         $("#orderId").val("ORD-001");
         let res = searchOrder();
@@ -298,17 +290,32 @@
             $("#orderId").val("ORD-" + tempId);
         }
     }
+    //
+    // // order search function
+    // function searchOrder() {
+    //     let orderId = "";
+    //     $.ajax({
+    //         url: baseUrl + "purchase?option=GenerateOrderID",
+    //         dataType: "json",
+    //         method: "GET",
+    //         async: false,
+    //         success: function (resp) {
+    //             orderId = resp.orderId;
+    //             console.log(resp.orderId)
+    //         }
+    //     });
+    //     return orderId;
+    // }
 
     // order search function
     function searchOrder() {
         let orderId = "";
         $.ajax({
             url: baseUrl + "purchase?option=GenerateOrderID",
-            dataType: "json",
-            method: "GET",
-            async: false,
+            // dataType: "json",
+            // async: false,
             success: function (resp) {
-                orderId = resp.orderId;
+                orderId = resp.oid;
             }
         });
         return orderId;
@@ -387,6 +394,7 @@
         $.ajax({
             url: baseUrl + "item",
             dataType: "json",
+            method: "GET",
             async: false,
             success: function (resp) {
                 response = resp.data.filter((i) => {
@@ -447,12 +455,22 @@
         let orderID = $("#orderId").val();
         let customerID = $("#cusId").val();
         let orderDate = $("#orderDate").val();
+        let subTotal = $("#subTotal").val();
+        let discount = $("#discount").val();
+
+        let customerName = $("#cusName").val();
+        let itemName = $("#iName").val();
         let orderD = getItemDetails();
 
+        alert(orderD)
         let ob = {
             oid: orderID,
             date: orderDate,
             cusID: customerID,
+            subTotal: subTotal,
+            discount: discount,
+            name:customerName,
+            description:itemName,
             orderDetails: orderD
         }
 
@@ -466,8 +484,8 @@
             success: function (resp) {
                 alert(resp.message);
                 $("#tableAddCart").empty();
-                $("#orderId").val(generateOrderID());
-                generateOrderID();
+                // $("#orderId").val(generateOrderID());
+                // generateOrderID();
             },
             error: function (error) {
                 alert(JSON.parse(error.responseText).message);
@@ -482,7 +500,7 @@
             let itCode = $("#tableAddCart").children().eq(i).children(":eq(0)").text();
             let itQty = $("#tableAddCart").children().eq(i).children(":eq(3)").text();
             let itPrice = $("#tableAddCart").children().eq(i).children(":eq(2)").text();
-            array.push({code: itCode, qty: itQty, price: itPrice});
+            array.push({code: itCode, qty: itQty, price: itPrice,});
         }
         return array;
     }
@@ -512,7 +530,7 @@
         discount = (total / 100) * discount;
         subTotal = total - discount;
 
-        $("#subTotal").val("Rs: " + subTotal);
+        $("#subTotal").val(subTotal);
     });
 
     // added cash and check balance

@@ -57,7 +57,8 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="./orderDetails.html"><i class="bi bi-card-checklist"></i> Orders
+                        <a class="nav-link" aria-current="page" href="./orderDetails.html"><i
+                                class="bi bi-card-checklist"></i> Orders
                             Details</a>
                     </li>
 
@@ -154,7 +155,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="txtCustomerID" class="form-label">Customer ID</label>
-                        <input type="text" class="form-control prevent_tab_key_focus" id="txtCustomerID"
+                        <input type="text" class="form-control prevent_tab_key_focus" readonly id="txtCustomerID"
                                aria-describedby="idHelp" placeholder="Eg :- C00-001" name="id">
                         <div id="idHelp" class="form-text"></div>
                     </div>
@@ -207,7 +208,7 @@
 <!-- Customer JS -->
 
 <script>
-    let baseUrl="http://localhost:8080/App_11/";//Back end එකේ location URL එක.
+    let baseUrl = "http://localhost:8080/App_11/";//Back end එකේ location URL එක.
 
     //load all customers from the database
     getAllCustomers();
@@ -217,7 +218,7 @@
     $("#btnCustomer").on('click', function () {
         let formData = $("#customerForm").serialize();
         $.ajax({
-            url: baseUrl+"customer",
+            url: baseUrl + "customer",
             method: "post",
             data: formData,
             dataType: "json", //මේ විදහට string එකක් browser එකට JSON එකක් විදිහට introduced කරන්න පුලුවන් data type එකෙන් response එකට විතරක් use කරන්න පුලුවන්. ඒකෙන් කරන්නේ directly response object එක JSON.parse එකට දාලා parse කරලා දෙන එක. (Response Header එකක් දාන්න පුලුවන් contentType කියලා ඊට අමතරව)
@@ -239,7 +240,7 @@
     $("#btnDeleteCustomer").on('click', function () {
         let id = $("#txtCustomerID").val();
         $.ajax({
-            url: baseUrl+"customer?id=" + id,
+            url: baseUrl + "customer?id=" + id,
             method: "delete",
             success: function (resp) {
                 // invoked if the response status code is in 200 range
@@ -269,7 +270,7 @@
         }
 
         $.ajax({
-            url: baseUrl+"customer",
+            url: baseUrl + "customer",
             method: "put",
             contentType: "application/json",
             data: JSON.stringify(customerOb),
@@ -292,11 +293,17 @@
         getAllCustomers();
     });
 
+    //Clear Customer Form Data
+    $("#btnClear").on('click',function () {
+        setTextFieldValues("","","");
+        getAllCustomers();
+    })
+
     //Get all Customer Function
     function getAllCustomers() {
         $("#tblCustomer").empty();
         $.ajax({
-            url: baseUrl+"customer",//දාපු baseUrl එක append කරනවා
+            url: baseUrl + "customer",//දාපු baseUrl එක append කරනවා
             success: function (res) {
                 console.log(res);
                 for (let c of res.data) {
@@ -308,8 +315,26 @@
                     var row = "<tr><td>" + cusID + "</td><td>" + cusName + "</td><td>" + cusAddress + "</td><td>" + cusSalary + "</td></tr>";
                     $("#tblCustomer").append(row);
                 }
+                // bindRowClickEvents();
+                // setTextFieldValues("", "", "");
+
+                if ($("#tblCustomer").children(":last-child").children(":first-child").text()=="") {
+                    $("#txtCustomerID").val("C00-001");
+                }else{
+                    var lastId = $("#tblCustomer").children(":last-child").children(":first-child").text();
+                    let digit = lastId.substring(6);
+                    var number = parseInt(digit) + 1;
+
+                    $("#txtCustomerID").val(lastId.replace(digit, number));
+                }
+                // let lastId = $("#tblCustomer").children(":last-child").children(":first-child").text();
+                // let digit = lastId.substring(6);
+                // var number = parseInt(digit) + 1;
+
                 bindRowClickEvents();
-                setTextFieldValues("", "", "", "");
+                setTextFieldValues("", "", "");
+
+                $("#txtCustomerID").val(lastId.replace(digit, number));
             },
             error: function (error) {
                 let message = JSON.parse(error.responseText).message;
@@ -320,7 +345,7 @@
 
     //Bind events for the table rows function
     function bindRowClickEvents() {
-        $("#tblCustomer>tr").on('click', function () {
+        $("#tblCustomer > tr").on('click', function () {
             let id = $(this).children(":eq(0)").text();
             let name = $(this).children(":eq(1)").text();
             let address = $(this).children(":eq(2)").text();
@@ -337,8 +362,7 @@
     }
 
     //Set text fields values function
-    function setTextFieldValues(id, name, address, salary) {
-        $("#txtCustomerID").val(id);
+    function setTextFieldValues(name, address, salary) {
         $("#txtCustomerName").val(name);
         $("#txtCustomerAddress").val(address);
         $("#txtCustomerSalary").val(salary);
@@ -347,5 +371,3 @@
 </script>
 </body>
 </html>
-
-
