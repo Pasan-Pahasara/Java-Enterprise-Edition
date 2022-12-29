@@ -94,7 +94,7 @@
     <section class="col-12 row">
         <section class="col-xl-7 ps-4">
             <section class="col-12 mt-4 mb-5">
-                <form class="row g-3">
+                <form id="customizedCustomerForm" class="row g-3">
                     <div class="col-xl-6 col-lg-12">
                         <input type="search" class="form-control rounded-pill" id="txtSearchCustomer"
                                placeholder="Search Customer">
@@ -213,6 +213,12 @@
     //load all customers from the database
     getAllCustomers();
 
+    $(function () {
+        $("#customizedCustomerForm").submit(function () {
+            return false;
+        });
+    });
+
     //Button Events
     //Add Customer
     $("#btnCustomer").on('click', function () {
@@ -294,10 +300,55 @@
     });
 
     //Clear Customer Form Data
-    $("#btnClear").on('click',function () {
-        setTextFieldValues("","","");
+    $("#btnClear").on('click', function () {
+        setTextFieldValues("", "", "");
         getAllCustomers();
     })
+
+    //Search Customer Using Press ENTER
+    $("#txtSearchCustomer").on('keyup', function (event) {
+        if (event.code === "Enter") {
+            searchCustomer();
+        }
+    });
+
+    //Search Customer Using Search Customer Button
+    $("#btnSearchCustomer").on('click', function () {
+        searchCustomer();
+    });
+
+    //Search Customer Clear
+    $("#btnSearchCustomerClear").on('click', function () {
+        getAllCustomers();
+        setTextFieldValues("","","","");
+        $("#txtSearchCustomer").val("");
+    })
+
+    //Search Customer function
+    function searchCustomer() {
+        $("#tblCustomer").empty();
+        let customerID = $("#txtSearchCustomer").val();
+        $.ajax({
+            url: baseUrl + "customer",
+            dataType: "json",
+            async: false,
+            success: function (res) {
+                for (var c of res.data) {
+                    if (customerID.trim() === c.id) {
+                        $("#tblCustomer").append(`<tr><th>${c.id}</th><th>${c.name}</th><th>${c.address}</th><th>${c.salary}</th></tr>`);
+                        bindRowClickEvents();
+                        return;
+                    }
+                }
+                if (customerID.trim() !== c.id) {
+                    getAllCustomers();
+                    $("#txtSearchCustomer").val("")
+                    setTextFieldValues("", "", "", "");
+                    alert("There is no customer available for that " + customerID);
+                }
+            }
+        });
+    }
 
     //Get all Customer Function
     function getAllCustomers() {
@@ -305,36 +356,25 @@
         $.ajax({
             url: baseUrl + "customer",//දාපු baseUrl එක append කරනවා
             success: function (res) {
-                console.log(res);
+                if ($("#txtSearchCustomer").val() === "") {
+                    console.log(res);
                 for (let c of res.data) {
-                    let cusID = c.id;
-                    let cusName = c.name;
-                    let cusAddress = c.address;
-                    let cusSalary = c.salary;
-
-                    var row = "<tr><td>" + cusID + "</td><td>" + cusName + "</td><td>" + cusAddress + "</td><td>" + cusSalary + "</td></tr>";
-                    $("#tblCustomer").append(row);
+                    $("#tblCustomer").append(`<tr><td>${c.id}</td><td>${c.name}</td><td>${c.address}</td><td>${c.salary}</td></tr>`)
                 }
-                // bindRowClickEvents();
-                // setTextFieldValues("", "", "");
 
-                if ($("#tblCustomer").children(":last-child").children(":first-child").text()=="") {
+                if ($("#tblCustomer").children(":last-child").children(":first-child").text() === "") {
                     $("#txtCustomerID").val("C00-001");
-                }else{
+                } else {
                     var lastId = $("#tblCustomer").children(":last-child").children(":first-child").text();
-                    let digit = lastId.substring(6);
+                    var digit = lastId.substring(6);
                     var number = parseInt(digit) + 1;
-
-                    $("#txtCustomerID").val(lastId.replace(digit, number));
                 }
-                // let lastId = $("#tblCustomer").children(":last-child").children(":first-child").text();
-                // let digit = lastId.substring(6);
-                // var number = parseInt(digit) + 1;
-
                 bindRowClickEvents();
                 setTextFieldValues("", "", "");
-
                 $("#txtCustomerID").val(lastId.replace(digit, number));
+                } else {
+                    searchCustomer();
+                }
             },
             error: function (error) {
                 let message = JSON.parse(error.responseText).message;

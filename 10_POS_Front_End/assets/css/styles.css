@@ -23,6 +23,7 @@
 
 * {
     font-family: Ubuntu, sans-serif;
+    font-weight: normal;
 }
 
 /*start customer*/
@@ -53,13 +54,13 @@
     transform: translateY(-3px);
 }
 
-#btnAllCustomer{
+#btnAllCustomer {
     width: 170px;
     border: solid 2px #a55eea;
     color: #a55eea;
 }
 
-#btnAllCustomer:hover{
+#btnAllCustomer:hover {
     background-color: #a55eea;
     box-shadow: 0px 15px 20px #a074d5;
     color: #fff;
@@ -78,13 +79,13 @@
     transform: translateY(-3px);
 }
 
-#btnCustomer{
+#btnCustomer {
     width: auto;
     border: solid 2px #000000;
     color: #000000;
 }
 
-#btnCustomer:hover{
+#btnCustomer:hover {
     background-color: #000000;
     box-shadow: 0px 15px 20px #646161;
     color: #fff;
@@ -144,12 +145,14 @@
 
 thead {
     background: linear-gradient(to right, #805a4d, #332d2d);
+    font-weight: bolder!important;
 }
 
 #tblCustomer tbody > tr:hover * {
     font-weight: bold;
     color: rgb(54, 49, 49);
 }
+
 /*end customer*/
 
 /*start item*/
@@ -180,13 +183,13 @@ thead {
     transform: translateY(-3px);
 }
 
-#btnAllItem{
+#btnAllItem {
     width: 170px;
     border: solid 2px #a55eea;
     color: #a55eea;
 }
 
-#btnAllItem:hover{
+#btnAllItem:hover {
     background-color: #a55eea;
     box-shadow: 0px 15px 20px #a074d5;
     color: #fff;
@@ -205,13 +208,13 @@ thead {
     transform: translateY(-3px);
 }
 
-#btnItem{
+#btnItem {
     width: auto;
     border: solid 2px #000000;
     color: #000000;
 }
 
-#btnItem:hover{
+#btnItem:hover {
     background-color: #000000;
     box-shadow: 0px 15px 20px #646161;
     color: #fff;
@@ -273,10 +276,15 @@ thead {
     background: linear-gradient(to right, #805a4d, #332d2d);
 }
 
+#itemTblContainer {
+    font-weight: normal !important;
+}
+
 #tblItem tbody > tr:hover * {
-    font-weight: bold;
+    /*font-weight: bold;*/
     color: rgb(54, 49, 49);
 }
+
 /*end item*/
 
 /*start placeOrder*/
@@ -305,4 +313,5 @@ thead {
     color: #fff;
     transform: translateY(-3px);
 }
+
 /*end placeOrder*/

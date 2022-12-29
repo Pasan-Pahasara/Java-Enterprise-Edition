@@ -165,14 +165,7 @@
             success: function (res) {
                 console.log(res);
                 for (let o of res.data) {
-                    let orderId = o.oid;
-                    let orderDate = o.date;
-                    let cusId1 = o.cusId;
-                    let subTotal = o.subTotal;
-                    let discount = o.discount;
-
-                    var row = "<tr><td>" + orderId + "</td><td>" + orderDate + "</td><td>" + cusId1 + "</td><td>" + subTotal + "</td><td>" + discount + "</td></tr>";
-                    $("#tblOrder").append(row);
+                    $("#tblOrder").append(`<tr><td>${o.oid}</td><td>${o.date}</td><td>${o.cusId}</td><td>${o.subTotal}</td><td>${o.discount}</td></tr>`)
                 }
             },
             error: function (error) {
@@ -190,16 +183,6 @@
             success: function (res) {
                 console.log(res);
                 for (let od of res.data) {
-                   // let oid = od.oid;
-                   // let cusId = od.id;
-                   // let cusName = od.name;
-                   // let code = od.code;
-                   // let itemName = od.description;
-                   // let qty = od.qty;
-                   // let price = od.price;
-                   //
-                   //  var row = "<tr><td>" + oid + "</td><td>" + cusId + "</td><td>" + cusName + "</td><td>" + code + "</td><td>" + itemName + "</td><td>" + qty + "</td><td>" + price + "</td></tr>";
-                   //  $("#tblOrderDetails").append(row);
                     $("#tblOrderDetails").append(`<tr><td>${od.oid}</td><td>${od.id}</td><td>${od.name}</td><td>${od.code}</td><td>${od.description}</td><td>${od.qty}</td><td>${od.price}</td></tr>`)
                 }
             },

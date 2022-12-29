@@ -93,7 +93,7 @@
     <section class="col-12 row">
         <section class="col-xl-7 ps-4">
             <section class="col-12 mt-4 mb-5">
-                <form class="row g-3">
+                <form id="customizedForm" class="row g-3">
                     <div class="col-xl-6 col-lg-12">
                         <input type="search" class="form-control rounded-pill" id="txtSearchItem"
                                placeholder="Search Item">
@@ -118,7 +118,7 @@
             <section>
                 <div class="col-12 d-flex rounded-2 shadow overflow-auto">
                     <!--Item Table-->
-                    <table class="table table-hover">
+                    <table class="table table-hover" id="itemTblContainer">
                         <!--Table head-->
                         <thead class="text-white card-header-tabs table-responsive sticky-top">
                         <!--Table head row-->
@@ -144,7 +144,7 @@
             </section>
         </section>
 
-        <!--Customer Manage Form-->
+        <!--Item Manage Form-->
         <section class="col-xl-5 row justify-content-xl-end d-grid gap-2 d-md-flex justify-content-sm-center">
             <section class="col-8 border item-container mt-3 mb-3">
                 <form id="itemForm">
@@ -153,7 +153,7 @@
                         </button>
                     </div>
                     <div style="display: inline-block" class="col d-grid gap-2 d-md-flex justify-content-md-end">
-                        <button style="margin-bottom: 8px;margin-top: 8px;" id="btnDeleteItem" class="btn-modern">
+                        <button style="margin-bottom: 8px;margin-top: 8px;" id="btnDeleteItem" class="btn-modern" type="button">
                             Delete
                         </button>
                     </div>
@@ -161,27 +161,27 @@
                         <label for="txtItemCode" class="form-label">Item Code</label>
                         <input type="text" class="form-control prevent_tab_key_focus" readonly id="txtItemCode"
                                aria-describedby="idHelp" placeholder="Eg :- I00-001" name="code">
-                        <div id="idHelp" class="form-text"></div>
+                        <small class="control-error text-danger" id="lblItemID"></small>
                     </div>
                     <div class="mb-3">
                         <label for="txtItemName" class="form-label">Item Name</label>
                         <input type="text" class="form-control prevent_tab_key_focus" id="txtItemName"
                                aria-describedby="nameHelp" placeholder="Eg :- Pizza" name="description">
-                        <div id="nameHelp" class="form-text"></div>
+                        <small class="control-error text-danger" id="lblItemName"></small>
                     </div>
                     <div class="mb-3">
                         <label for="txtItemQty" class="form-label">Item Qty</label>
                         <input type="text" class="form-control prevent_tab_key_focus" id="txtItemQty"
                                aria-describedby="addressHelp" placeholder="Eg :- 100"
                                name="qtyOnHand">
-                        <div id="addressHelp" class="form-text"></div>
+                        <small class="control-error text-danger" id="lblItemAddress"></small>
                     </div>
                     <div class="mb-3">
                         <label for="txtItemPrice" class="form-label">Unit Price</label>
                         <input type="text" class="form-control prevent_tab_key_focus" id="txtItemPrice"
                                aria-describedby="salaryHelp"
                                placeholder="Eg :- 200 or 250.00" name="unitPrice">
-                        <div id="salaryHelp" class="form-text"></div>
+                        <small class="control-error text-danger" id="lblItemSalary"></small>
                     </div>
                     <div style="display: inline-block" class="me-2">
                         <button style="margin-bottom: 8px;margin-top: 8px;" id="btnItem" class="btn-modern"
@@ -215,11 +215,18 @@
 <script>
     let baseUrl = "http://localhost:8080/App_11/";//Back end එකේ location URL එක.
 
-    //load all items from the database
+    // load all items from the database
     getAllItems();
 
-    //Button Events
-    //Add Item
+    // default submit false
+    $(function () {
+        $("#customizedForm").submit(function () {
+            return false;
+        });
+    });
+
+    // Button Events Start
+    // add item
     $("#btnItem").on('click', function () {
         let formData = $("#itemForm").serialize();
         $.ajax({
@@ -241,7 +248,7 @@
         });
     });
 
-    //Delete item
+    // delete item
     $("#btnDeleteItem").on('click', function () {
         let code = $("#txtItemCode").val();
         $.ajax({
@@ -260,7 +267,7 @@
         });
     });
 
-    //Update Item
+    // update item
     $("#btnUpdateItem").on('click', function () {
         let itemCode = $("#txtItemCode").val();
         let itemName = $("#txtItemName").val();
@@ -293,40 +300,91 @@
         });
     });
 
-    //Get All Item
+    // get all item
     $("#btnAllItem").on('click', function () {
         getAllItems();
     });
 
-    //Clear Item Form Data
-    $("#btnClear").on('click',function () {
-        setTextFieldValues("","","");
+    // clear item form data
+    $("#btnClear").on('click', function () {
+        setTextFieldValues("", "", "");
         getAllItems();
     })
 
-    //Get all Item Function
+    // search item using press ENTER
+    $("#txtSearchItem").on('keyup', function (event) {
+        if (event.code === "Enter") {
+            searchItem();
+        }
+    });
+
+    // search item using search item button
+    $("#btnSearchItem").on('click', function () {
+        searchItem();
+    });
+
+    // search item clear
+    $("#btnSearchItemClear").on('click', function () {
+        getAllItems();
+        setTextFieldValues("", "", "", "");
+        $("#txtSearchItem").val("");
+    })
+    // Button Events End
+
+    // Functions Start
+    // search item function
+    function searchItem() {
+        $("#tblItem").empty();
+        let itemCode = $("#txtSearchItem").val();
+        $.ajax({
+            url: baseUrl + "item",
+            dataType: "json",
+            async: false,
+            success: function (res) {
+                for (var s of res.data) {
+                    if (itemCode.trim() === s.code) {
+                        $("#tblItem").append(`<tr><th>${s.code}</th><th>${s.description}</th><th>${s.qtyOnHand}</th><th>${s.unitPrice}</th></tr>`);
+                        bindRowClickEvents();
+                        return;
+                    }
+                }
+                if (itemCode.trim() !== s.code) {
+                    getAllItems();
+                    $("#txtSearchItem").val("");
+                    setTextFieldValues("", "", "", "");
+                    alert("There is no item available for that " + itemCode);
+                }
+            }
+        });
+    }
+
+    // get all item function
     function getAllItems() {
         $("#tblItem").empty();
         $.ajax({
             url: baseUrl + "item",//දාපු baseUrl එක append කරනවා
             success: function (res) {
-                console.log(res);
-                for (let t of res.data) {
-                    let itemCode = t.code;
-                    let itemName = t.description;
-                    let itemQty = t.qtyOnHand;
-                    let itemPrice = t.unitPrice;
+                if ($("#txtSearchItem").val() === "") {
+                    console.log(res);
+                    $("#tblItem").empty();
+                    for (let t of res.data) {
+                        $("#tblItem").append(`<tr><th>${t.code}</th><th>${t.description}</th><th>${t.qtyOnHand}</th><th>${t.unitPrice}</th></tr>`)
+                    }
 
-                    var row = "<tr><td>" + itemCode + "</td><td>" + itemName + "</td><td>" + itemQty + "</td><td>" + itemPrice + "</td></tr>";
-                    $("#tblItem").append(row);
+                    if ($("#tblItem").children(":last-child").children(":first-child").text() === "") {
+                        $("#txtItemCode").val("I00-001");
+                    } else {
+                        var lastId = $("#tblItem").children(":last-child").children(":first-child").text();
+                        var digit = lastId.substring(6);
+                        var number = parseInt(digit) + 1;
+                    }
+
+                    bindRowClickEvents();
+                    setTextFieldValues("", "", "", "");
+                    $("#txtItemCode").val(lastId.replace(digit, number));
+                } else {
+                    searchItem();
                 }
-                let lastId = $("#tblItem").children(":last-child").children(":first-child").text();
-                let digit = lastId.substring(6);
-                var number = parseInt(digit) + 1;
-
-                bindRowClickEvents();
-                setTextFieldValues("", "", "", "");
-                $("#txtItemCode").val(lastId.replace(digit, number));
             },
             error: function (error) {
                 let message = JSON.parse(error.responseText).message;
@@ -335,7 +393,7 @@
         });
     }
 
-    //Bind events for the table rows function
+    // bind events for the table rows function
     function bindRowClickEvents() {
         $("#tblItem > tr").on('click', function () {
             let code = $(this).children(":eq(0)").text();
@@ -353,12 +411,155 @@
         });
     }
 
-    //Set text fields values function
-    function setTextFieldValues(name, qty, unitPrice) {
+    // set text fields values function
+    function setTextFieldValues(id, name, qty, unitPrice) {
+        $("#txtItemCode").val(id);
         $("#txtItemName").val(name);
         $("#txtItemQty").val(qty);
         $("#txtItemPrice").val(unitPrice);
     }
+    // Functions End
+
+    // Regex Patterns Start
+    // regex patterns
+    let regItemCode = /^(I00-)[0-9]{3,4}$/;
+    let regItemName = /^[A-z ]{3,20}$/;
+    let regItemQtyOnHand = /^[0-9]{1,3}$/;
+    let regItemPrice = /^[0-9]{1,10}$/;
+
+    // item validation array
+    let itemValidations = [];
+
+    itemValidations.push({
+        itemReg: regItemCode,
+        itemField: $('#txtItemCode'),
+        itemError: 'Item ID Pattern is Wrong : I00-001'
+    });
+    itemValidations.push({
+        itemReg: regItemName,
+        itemField: $('#txtItemName'),
+        itemError: 'Item Name Pattern is Wrong : A-z 5-20'
+    });
+    itemValidations.push({
+        itemReg: regItemQtyOnHand,
+        itemField: $('#txtItemQty'),
+        itemError: 'Item Quantity Pattern is Wrong : 100'
+    });
+    itemValidations.push({
+        itemReg: regItemPrice,
+        itemField: $('#txtItemPrice'),
+        itemError: 'Item Price Pattern is Wrong : 100 or 100.00,/'
+    });
+
+    // disable tab key of all four text fields using grouping selector in CSS
+    $("#txtItemCode, #txtItemName, #txtItemQty, #txtItemPrice").on('keydown', function (event) {
+        if (event.key === "Tab") {
+            event.preventDefault();
+        }
+    });
+
+    // grouping all fields keyup event using and call check validity function
+    $("#txtItemCode, #txtItemName, #txtItemQty, #txtItemPrice").on('keyup', function (event) {
+        checkItemValidity();
+    });
+
+    // grouping all fields blur event using and call check validity function
+    $("#txtItemCode, #txtItemName, #txtItemQty, #txtItemPrice").on('blur', function (event) {
+        checkItemValidity();
+    });
+
+    // item-id focus event
+    $("#txtItemCode").on('keydown', function (event) {
+        if (event.key === "Enter" && itemCheck(regItemCode, $("#txtItemCode"))) {
+            $("#txtItemName").focus();
+        } else {
+            focusItemText($("#txtItemCode"));
+        }
+    });
+
+    // item-name focus event
+    $("#txtItemName").on('keydown', function (event) {
+        if (event.key === "Enter" && itemCheck(regItemName, $("#txtItemName"))) {
+            focusItemText($("#txtItemQty"));
+        }
+    });
+
+    // item-quantity focus event
+    $("#txtItemQty").on('keydown', function (event) {
+        if (event.key === "Enter" && itemCheck(regItemQtyOnHand, $("#txtItemQty"))) {
+            focusItemText($("#txtItemPrice"));
+        }
+    });
+
+    // item-price focus event
+    $("#txtItemPrice").on('keydown', function (event) {
+        if (event.key === "Enter" && itemCheck(regItemPrice, $("#txtItemPrice"))) {
+            $("#btnItem").focus();
+        }
+    });
+
+    // check validity function
+    function checkItemValidity() {
+        let itemErrorCount = 0;
+        for (let itemValidation of itemValidations) {
+            if (itemCheck(itemValidation.itemReg, itemValidation.itemField)) {
+                textItemSuccess(itemValidation.itemField, "");
+            } else {
+                itemErrorCount = itemErrorCount + 1;
+                setItemTextError(itemValidation.itemField, itemValidation.itemError);
+            }
+        }
+        setItemButtonState(itemErrorCount);
+    }
+
+    // check regex pattern function
+    function itemCheck(regex, txtField) {
+        let itemInputValue = txtField.val();
+        return regex.test(itemInputValue) ? true : false;
+    }
+
+    // error text fields function
+    function setItemTextError(txtField, error) {
+        if (txtField.val().length <= 0) {
+            defaultItemText(txtField, "");
+        } else {
+            txtField.css('border', '2px solid red');
+            txtField.parent().children('small').text(error);
+        }
+    }
+
+    // success text fields function
+    function textItemSuccess(txtField, error) {
+        if (txtField.val().length <= 0) {
+            defaultItemText(txtField, "");
+        } else {
+            txtField.css('border', '2px solid green');
+            txtField.parent().children('small').text(error);
+        }
+    }
+
+    // default text fields function
+    function defaultItemText(txtField, error) {
+        txtField.css("border", "1px solid #ced4da");
+        txtField.parent().children('small').text(error);
+    }
+
+    // focus texts function
+    function focusItemText(txtField) {
+        txtField.focus();
+    }
+
+    // button state function
+    function setItemButtonState(value) {
+        if (value > 0) {
+            $("#btnItem").attr('disabled', true);
+            $("#btnUpdateItem").attr('disabled', true);
+        } else {
+            $("#btnItem").attr('disabled', false);
+            $("#btnUpdateItem").attr('disabled', false);
+        }
+    }
+    // Regex Patterns End
 </script>
 </body>
 </html>

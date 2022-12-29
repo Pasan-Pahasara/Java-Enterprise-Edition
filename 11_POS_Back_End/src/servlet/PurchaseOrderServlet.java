@@ -1,7 +1,5 @@
 package servlet;
 
-import sun.misc.FloatingDecimal;
-
 import javax.annotation.Resource;
 import javax.json.*;
 import javax.servlet.ServletException;
