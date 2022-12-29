@@ -218,6 +218,10 @@
     // load all items from the database
     getAllItems();
 
+    // disabled addCustomer button and updateCustomer button
+    $("#btnItem").attr('disabled', true);
+    $("#btnUpdateItem").attr('disabled', true);
+
     // default submit false
     $(function () {
         $("#customizedForm").submit(function () {

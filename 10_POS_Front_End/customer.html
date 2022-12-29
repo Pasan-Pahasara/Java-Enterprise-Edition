@@ -157,27 +157,27 @@
                         <label for="txtCustomerID" class="form-label">Customer ID</label>
                         <input type="text" class="form-control prevent_tab_key_focus" readonly id="txtCustomerID"
                                aria-describedby="idHelp" placeholder="Eg :- C00-001" name="id">
-                        <div id="idHelp" class="form-text"></div>
+                        <small class="control-error text-danger" id="lblCusID"></small>
                     </div>
                     <div class="mb-3">
                         <label for="txtCustomerName" class="form-label">Customer Name</label>
                         <input type="text" class="form-control prevent_tab_key_focus" id="txtCustomerName"
                                aria-describedby="nameHelp" placeholder="Eg :- Pahasara" name="name">
-                        <div id="nameHelp" class="form-text"></div>
+                        <small class="control-error text-danger" id="lblCusName"></small>
                     </div>
                     <div class="mb-3">
                         <label for="txtCustomerAddress" class="form-label">Address</label>
                         <input type="text" class="form-control prevent_tab_key_focus" id="txtCustomerAddress"
                                aria-describedby="addressHelp" placeholder="Eg :- N0/02, Godahena Watta, Galle"
                                name="address">
-                        <div id="addressHelp" class="form-text"></div>
+                        <small class="control-error text-danger" id="lblCusAddress"></small>
                     </div>
                     <div class="mb-3">
                         <label for="txtCustomerSalary" class="form-label">Salary</label>
                         <input type="text" class="form-control prevent_tab_key_focus" id="txtCustomerSalary"
                                aria-describedby="salaryHelp"
                                placeholder="Eg :- 200 or 250.00" name="salary">
-                        <div id="salaryHelp" class="form-text"></div>
+                        <small class="control-error text-danger" id="lblCusSalary"></small>
                     </div>
                     <div style="display: inline-block" class="me-2">
                         <button style="margin-bottom: 8px;margin-top: 8px;" id="btnCustomer" class="btn-modern"
@@ -210,17 +210,22 @@
 <script>
     let baseUrl = "http://localhost:8080/App_11/";//Back end එකේ location URL එක.
 
-    //load all customers from the database
+    // load all customers from the database
     getAllCustomers();
 
+    // disabled addCustomer button and updateCustomer button
+    $("#btnCustomer").attr('disabled', true);
+    $("#btnUpdateCustomer").attr('disabled', true);
+
+    // default submit false
     $(function () {
         $("#customizedCustomerForm").submit(function () {
             return false;
         });
     });
 
-    //Button Events
-    //Add Customer
+    // Button Events Start
+    // add customer
     $("#btnCustomer").on('click', function () {
         let formData = $("#customerForm").serialize();
         $.ajax({
@@ -242,7 +247,7 @@
         });
     });
 
-    //Delete Customer
+    // delete customer
     $("#btnDeleteCustomer").on('click', function () {
         let id = $("#txtCustomerID").val();
         $.ajax({
@@ -261,7 +266,7 @@
         });
     });
 
-    //Update Customer
+    // update customer
     $("#btnUpdateCustomer").on('click', function () {
         let cusId = $("#txtCustomerID").val();
         let cusName = $("#txtCustomerName").val();
@@ -294,37 +299,39 @@
         });
     });
 
-    //Get All Customer
+    // get all customer
     $("#btnAllCustomer").on('click', function () {
         getAllCustomers();
     });
 
-    //Clear Customer Form Data
+    // clear customer form data
     $("#btnClear").on('click', function () {
         setTextFieldValues("", "", "");
         getAllCustomers();
     })
 
-    //Search Customer Using Press ENTER
+    // search customer using press ENTER
     $("#txtSearchCustomer").on('keyup', function (event) {
         if (event.code === "Enter") {
             searchCustomer();
         }
     });
 
-    //Search Customer Using Search Customer Button
+    // search customer using search customer button
     $("#btnSearchCustomer").on('click', function () {
         searchCustomer();
     });
 
-    //Search Customer Clear
+    // search customer clear
     $("#btnSearchCustomerClear").on('click', function () {
         getAllCustomers();
-        setTextFieldValues("","","","");
+        setTextFieldValues("", "", "", "");
         $("#txtSearchCustomer").val("");
     })
+    // Button Events End
 
-    //Search Customer function
+    // Functions Start
+    // search customer function
     function searchCustomer() {
         $("#tblCustomer").empty();
         let customerID = $("#txtSearchCustomer").val();
@@ -350,7 +357,7 @@
         });
     }
 
-    //Get all Customer Function
+    // get all customer function
     function getAllCustomers() {
         $("#tblCustomer").empty();
         $.ajax({
@@ -358,20 +365,20 @@
             success: function (res) {
                 if ($("#txtSearchCustomer").val() === "") {
                     console.log(res);
-                for (let c of res.data) {
-                    $("#tblCustomer").append(`<tr><td>${c.id}</td><td>${c.name}</td><td>${c.address}</td><td>${c.salary}</td></tr>`)
-                }
+                    for (let c of res.data) {
+                        $("#tblCustomer").append(`<tr><td>${c.id}</td><td>${c.name}</td><td>${c.address}</td><td>${c.salary}</td></tr>`)
+                    }
 
-                if ($("#tblCustomer").children(":last-child").children(":first-child").text() === "") {
-                    $("#txtCustomerID").val("C00-001");
-                } else {
-                    var lastId = $("#tblCustomer").children(":last-child").children(":first-child").text();
-                    var digit = lastId.substring(6);
-                    var number = parseInt(digit) + 1;
-                }
-                bindRowClickEvents();
-                setTextFieldValues("", "", "");
-                $("#txtCustomerID").val(lastId.replace(digit, number));
+                    if ($("#tblCustomer").children(":last-child").children(":first-child").text() === "") {
+                        $("#txtCustomerID").val("C00-001");
+                    } else {
+                        var lastId = $("#tblCustomer").children(":last-child").children(":first-child").text();
+                        var digit = lastId.substring(6);
+                        var number = parseInt(digit) + 1;
+                    }
+                    bindRowClickEvents();
+                    setTextFieldValues("", "", "");
+                    $("#txtCustomerID").val(lastId.replace(digit, number));
                 } else {
                     searchCustomer();
                 }
@@ -383,7 +390,7 @@
         });
     }
 
-    //Bind events for the table rows function
+    // bind events for the table rows function
     function bindRowClickEvents() {
         $("#tblCustomer > tr").on('click', function () {
             let id = $(this).children(":eq(0)").text();
@@ -401,13 +408,154 @@
         });
     }
 
-    //Set text fields values function
+    // set text fields values function
     function setTextFieldValues(name, address, salary) {
         $("#txtCustomerName").val(name);
         $("#txtCustomerAddress").val(address);
         $("#txtCustomerSalary").val(salary);
     }
+    // Functions End
 
+    // Regex Patterns Start
+    // regex patterns
+    let regCusID = /^(C00-)[0-9]{3,4}$/;
+    let regCusName = /^[A-z ]{3,20}$/;
+    let regCusAddress = /^[A-z0-9/ ]{6,30}$/;
+    let regCusSalary = /^[0-9]{1,}[.]?[0-9]{1,2}$/;
+
+    // customer validation array
+    let customerValidations = [];
+
+    customerValidations.push({
+        reg: regCusID,
+        field: $('#txtCustomerID'),
+        error: 'Customer ID Pattern is Wrong : C00-001'
+    });
+    customerValidations.push({
+        reg: regCusName,
+        field: $('#txtCustomerName'),
+        error: 'Customer Name Pattern is Wrong : A-z 5-20'
+    });
+    customerValidations.push({
+        reg: regCusAddress,
+        field: $('#txtCustomerAddress'),
+        error: 'Customer Address Pattern is Wrong : A-z 0-9 ,/'
+    });
+    customerValidations.push({
+        reg: regCusSalary,
+        field: $('#txtCustomerSalary'),
+        error: 'Customer Salary Pattern is Wrong : 100 or 100.00'
+    });
+
+    // disable tab key of all four text fields using grouping selector in CSS
+    $("#txtCustomerID, #txtCustomerName, #txtCustomerAddress, #txtCustomerSalary").on('keydown', function (event) {
+        if (event.key === "Tab") {
+            event.preventDefault();
+        }
+    });
+
+    // grouping all fields keyup event using and call check validity function
+    $("#txtCustomerID, #txtCustomerName, #txtCustomerAddress, #txtCustomerSalary").on('keyup', function (event) {
+        checkValidity();
+    });
+
+    // grouping all fields blur event using and call check validity function
+    $("#txtCustomerID, #txtCustomerName, #txtCustomerAddress, #txtCustomerSalary").on('blur', function (event) {
+        checkValidity();
+    });
+
+    // customer-id focus event
+    $("#txtCustomerID").on('keydown', function (event) {
+        if (event.key === "Enter" && check(regCusID, $("#txtCustomerID"))) {
+            $("#txtCustomerName").focus();
+        } else {
+            focusText($("#txtCustomerID"));
+        }
+    });
+
+    // customer-name focus event
+    $("#txtCustomerName").on('keydown', function (event) {
+        if (event.key == "Enter" && check(regCusName, $("#txtCustomerName"))) {
+            focusText($("#txtCustomerAddress"));
+        }
+    });
+
+    // customer-address focus event
+    $("#txtCustomerAddress").on('keydown', function (event) {
+        if (event.key === "Enter" && check(regCusAddress, $("#txtCustomerAddress"))) {
+            focusText($("#txtCustomerSalary"));
+        }
+    });
+
+    // customer-salary focus event
+    $("#txtCustomerSalary").on('keydown', function (event) {
+        if (event.key === "Enter" && check(regCusSalary, $("#txtCustomerSalary"))) {
+            $("#btnCustomer").focus();
+        }
+    });
+
+    // check validity function
+    function checkValidity() {
+        let errorCount = 0;
+        for (let validation of customerValidations) {
+            if (check(validation.reg, validation.field)) {
+                textSuccess(validation.field, "");
+            } else {
+                errorCount = errorCount + 1;
+                setTextError(validation.field, validation.error);
+            }
+        }
+        setButtonState(errorCount);
+    }
+
+    // check regex pattern function
+    function check(regex, txtField) {
+        let inputValue = txtField.val();
+        return regex.test(inputValue) ? true : false;
+    }
+
+    // error text fields function
+    function setTextError(txtField, error) {
+        if (txtField.val().length <= 0) {
+            defaultText(txtField, "");
+        } else {
+            txtField.css('border', '2px solid red');
+            txtField.parent().children('small').text(error);
+        }
+    }
+
+    // success text fields function
+    function textSuccess(txtField, error) {
+        if (txtField.val().length <= 0) {
+            defaultText(txtField, "");
+        } else {
+            txtField.css('border', '2px solid green');
+            txtField.parent().children('small').text(error);
+        }
+    }
+
+    // default text fields function
+    function defaultText(txtField, error) {
+        txtField.css("border", "1px solid #ced4da");
+        txtField.parent().children('small').text(error);
+    }
+
+    // focus texts function
+    function focusText(txtField) {
+        txtField.focus();
+    }
+
+    // button state function
+    function setButtonState(value) {
+        if (value > 0) {
+            $("#btnCustomer").attr('disabled', true);
+            $("#btnUpdateCustomer").attr('disabled', true);
+        } else {
+            $("#btnCustomer").attr('disabled', false);
+            $("#btnUpdateCustomer").attr('disabled', false);
+        }
+    }
+    // Regex Patterns End
 </script>
 </body>
 </html>
