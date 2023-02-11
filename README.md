@@ -23,7 +23,8 @@ https://github.com/Pasan-Pahasara/Java-Enterprise-Edition.git
  
 ![GitHub forks](https://img.shields.io/github/forks/Pasan-Pahasara/Java-Enterprise-Edition?&labelColor=black&color=0fb9b1&style=for-the-badge)
 ![GitHub stars](https://img.shields.io/github/stars/Pasan-Pahasara/Java-Enterprise-Edition?&labelColor=black&color=f7b731&style=for-the-badge)
-![GitHub LastCommit](https://img.shields.io/github/last-commit/Java-Enterprise-Edition?logo=github&labelColor=black&color=d1d8e0&style=for-the-badge)
+![GitHub LastCommit](https://img.shields.io/github/last-commit/Pasan-Pahasara/Java-Enterprise-Edition?logo=github&labelColor=black&color=d1d8e0&style=for-the-badge)
+
 
 </div>
 
